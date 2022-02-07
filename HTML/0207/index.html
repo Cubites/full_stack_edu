@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td {
+            border:1px solid #000;
+            width:300px
+        }
+        td {
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 테이블 생성-->
+    <table>
+        <tr>
+            <!-- <th>표</th> -->
+            <caption>제목</caption>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td>나이</td>
+            <td>점수</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>25</td>
+            <td>70</td>
+        </tr>
+        <tr>
+            <td>김영희</td>
+            <td>22</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td>김철수</td>
+            <td>30</td>
+            <td>90</td>
+        </tr>
+    </table>
+
+    <!-- 열 병합 -->
+    <table>
+        <tr>
+            <td>a</td>
+            <td>b</td>
+        </tr>
+        <tr>
+            <td colspan="2">c</td>
+        </tr>
+    </table>
+
+    <!-- 행 병합 -->
+    <table>
+        <tr>
+            <td rowspan="3">a</td>
+            <td>b</td>
+        </tr>
+        <tr>
+            <td>c</td>
+        </tr>
+        <tr>
+            <td>d</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td colspan="2">참가자</td>
+            <td rowspan="2">점수</td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td>나이</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>19</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>김철수</td>
+            <td>22</td>
+            <td>70</td>
+        </tr>
+    </table>
+</body>
+</html>
