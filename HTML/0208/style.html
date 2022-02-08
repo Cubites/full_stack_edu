@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+        body{
+            margin: 0px; /* 웹 페이지 기본 마진 8px을 없애는 방법 */
+            text-align:center;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-style: normal; /* italic, oblique, <i></i> */
+            font-weight: 400; /* bold, bolder 300 400(normal) 500 */
+            font-size: 16px;
+        }
+        .box{
+            border:1px solid #333;
+            outline:10px dashed greenyellow;
+            width:100%; /* 반응형 웹을 만들 때 박스의 사이즈 자동 조절 */
+            max-width:1000px; 
+            height:400px;
+            background-color: aquamarine;
+            padding: 30px;
+            margin: 30px 50px 20px;
+            box-sizing: border-box;
+            margin: 40px auto 20px;
+            text-align:center;
+        }
+        .box2{
+            border:1px solid #333;
+            width:200px;
+            height:200px;
+            padding: 30px;
+            margin-top: 30px; /* margin값이 서로 충돌하면(margin-top, margin-bottom) 상쇄됨 */
+            font-variant: small-caps; /* normal */
+        }
+        .box3{
+            border:1px solid #333;
+            width:200px;
+            height:200px;
+            padding: 30px;
+            margin: 30px 50px 20px;
+            box-sizing: border-box; /* border(경계)와 padding이 내부로 늘어나게 함 */
+            text-align:center;
+            /* block인 box를 중앙 정렬하는 방법 >> auto */
+            margin: auto;
+        }
+        .box4{
+            border:1px solid #333;
+            width:200px;
+            height:200px;
+            margin-left:auto;
+        }
+        .box5{
+            font-family: 'Jua', sans-serif;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <span>안녕하세요.</span>
+    <div class="box">
+        <p>안녕하세요.</p>
+    </div>
+    <div class="box2">
+        <h1>안녕하세요.</h1>
+        <p>hello, everyone.</p>
+    </div>
+    <div class="box3">
+        <p>안녕하세요.</p>
+    </div>
+    <div class="box4">
+        <p>안녕하세요.</p>
+    </div>
+    <div class="box5">
+        <h1>아무 폰트 적용하기</h1>
+    </div>
+</body>
+</html>

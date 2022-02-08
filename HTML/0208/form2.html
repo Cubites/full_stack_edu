@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>폼데이터 fieldset</h2>
+    <p>
+        <strong>fieldset</strong> 요소는 양식에서 관련 데이터를 구룹화하는데 사용된다.
+        <strong>legend</strong> 요소는 fieldset 요소에 대한 캡션을 정의한다.
+    </p>
+
+    <form action="form.html" target= "_blank" method="get" autocomplete="on">
+        <!-- novalidate : 전송 시, 검수를 하지 않음 -->
+        <fieldset>
+            <legend>회원로그인</legend>
+            <label for="userid">이메일:</label><br>
+            <input type="email" name="userid" id="userid" placeeholder="아이디"><br>
+            <!-- 옛날 브라우저는 required가 동작하지 않음-->
+            <!-- 때문에 js로 구현했음-->
+            
+            <label for="userpass">비밀번호:</label><br>
+            <input type="password" name="userpass" id="userpass" placeholder="비밀번호"><br><br>
+            <button type="reset">취소</button>
+            <button type="submit">전송</button>
+        </fieldset>
+    </form>
+
+    <form action="" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="range" id="a" name="a"value="50">
+        <input type="number" id="b" name="b" value="50">
+        <output name="x" for="a b"></output>
+    </form>
+</body>
+</html>

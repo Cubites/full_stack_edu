@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" target="_blank" method="get">
+        <fieldset>
+            <legend>회원가입</legend>
+            <label for="username">이름:</label>
+            <input type="text" name="username" id="username" placeholder="이름"><br>
+            <label for="userid">아이디:</label>
+            <input type="text" name="userid" id="userid" placeholder="아이디">
+            <input type="button" value="중복검사"><br>
+            <label for="password">비밀번호:</label>
+            <input type="password" name="password" id="password" placeholder="비밀번호"><br>
+            <label for="pwcheck">비밀번호확인:</label>
+            <input type="password" name="pwcheck" id="pwcheck" placeholder="비밀번호확인"><br><br>
+
+            <label for="email">이메일</label>
+            <input type="email" name="email" id="email" placeholder="이메일"><br>
+            <label for="phonenum">전화번호</label>
+            <input type="text" name="phonenum" id="phonenum" maxlength="3">
+            <input type="text" name="phonenum" id="phonenum" maxlength="3">
+            <input type="text" name="phonenum" id="phonenum" maxlength="3"><br><br>
+
+            <label for="address">주소</label>
+            <input type="text" name="address" id="address">
+            <input type="button" value="검색"><br>
+            <label for="detailadd">상세주소</label>
+            <input type="text" name="detailadd" id = "detailadd" placeholder="상세주소"><br><br>
+
+            <label>남성<input type="radio" name="male" value="male" checked></label>
+            <label>여성<input type="radio" name="female" value="female"></label><br>
+            
+            <label for="hobby">취미:</label>
+            <input type="textarea" name="hobby" row="1" cols="20"><br>
+
+            <label for="job">직업</label>
+            <select name="job">
+                <option value="teacher">교사</option>
+                <option value="student" selected>학생</option>
+                <option value="no_job">무직</option>
+            </select>
+            <br><br>
+            <input type="reset">
+            <button type="submit">회원가입</button>
+        </fieldset>
+    </form>
+</body>
+</html>
