@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Sunflower:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body{
+    font-family: 'Sunflower', sans-serif;
+    font-size:20px;
+}
+.container{
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+.nanum_pen{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 20px;
+    text-align-last: center;
+    /* direction: rtl; */
+    line-height: 50px;
+}
+.green{
+    color:green;
+}
+h1{
+    background-color: lightblue;
+    color: blueviolet;
+}
+.rtl{
+    direction:rtl;
+    unicode-bidi: bidi-override;
+}
+.vertical{
+    width: 400px;
+    height: 200px;
+    border: 1px solid #333;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 10%;
+    box-sizing: border-box;
+}
+.txt{
+    vertical-align: top;
+}
+a{
+    text-decoration: none;
+}
+.overline{
+    text-decoration: overline green double;
+}
+.over_under{
+    text-decoration: overline underline purple dashed;
+}
+.line-through{
+    text-decoration: line-through red dotted;
+}
+ol{
+    width: 300px;
+    margin: auto;
+}
+li{
+    height: 40px;
+    border-bottom:1px dashed #333;
+    line-height: 40px;
+}
