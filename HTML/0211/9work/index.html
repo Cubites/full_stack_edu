@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해운대빛축제</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="#"><img src="images/logo.png" alt="해운대빛축제로고"></a>
+        <ul class="navigation">
+            <li><a href="#">이용안내</a>
+                <ul class="subnav">
+                    <li><a href="#">이용방법</a></li>
+                    <li><a href="#">이용시간</a></li>
+                    <li><a href="#">이용요금</a></li>
+                </ul>
+            </li>
+            <li><a href="#">이벤트정보</a>
+                <ul class="subnav">
+                    <li><a href="#">현장이벤트</a></li>
+                    <li><a href="#">온라인이벤트</a></li>
+                    <li><a href="#">이벤트예약</a></li>
+                </ul>
+            </li>
+            <li><a href="#">프로그램</a>
+                <ul class="subnav">
+                    <li><a href="#">프로그램안대</a></li>
+                    <li><a href="#">온라인예약</a></li>
+                    <li><a href="#">단체예약상담</a></li>
+                </ul>
+            </li>
+            <li><a href="#">고객센터</a>
+                <ul class="subnav">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">자주묻는질문</a></li>
+                    <li><a href="#">자료실</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="banner">
+            <img src="images/banner01.jpg" alt="배너">
+            <h1>제 7회 해운대 빛축제</h1>
+        </div>
+        <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+        <h1 class="text-center">회원가입</h1>
+        <form name="joinForm" id="joinForm" action="" method="post">
+            <ul class="join-form">
+                <li>
+                    <label for="username">이름</label>
+                    <input type="text" name="username" id="username" placeholder="이름" class="input-text">
+                </li>
+                <li>
+                    <label for="userid">아이디</label>
+                    <input type="text" name="id" id="id" placeholder="아이디" class="input-text">
+                </li>
+                <li>
+                    <label for="userpass">비밀번호</label>
+                    <input type="password" name="userpass" id="userpass" placeholder="비밀번호" class="input-text">
+                </li>
+                <li>
+                    <label for="reuserpass">비밀번호확인</label>
+                    <input type="password" name="reuserpass" id="reuserpass" placeholder="비밀번호확인" class="input-text">
+                </li>
+                <li>
+                    <label>이메일</label>
+                    <input type="email" name="useremail" id="useremail" placeholder="이름" class="input-text">
+                </li>
+                <li>
+                    <label for="tell">전화번호</label>
+                    <input type="number" name="tell1" class="input-tel-text"> - 
+                    <input type="number" name="tell2" class="input-tel-text"> - 
+                    <input type="number" name="tell3" class="input-tel-text">
+                </li>
+                <li>
+                    <label for="image">사진</label>
+                    <input type="file" name="image" id="image">
+                </li>
+                <li>
+                    <label>성별</label>
+                    <label class="label"><input type="radio" name="gender" value="male" checked>남자</label>
+                    <label class="label">
+                    <input type="radio" name="gender" value="female">여자</label>
+                </li>
+                <li>
+                    <label>취미</label>
+                    <label class="label">
+                        <input type="checkbox" name="gongbu" value="공부" checked>
+                        공부
+                    </label>
+                    <label class="label">
+                        <input type="checkbox" name="sancheck" value="산책">
+                        산책
+                    </label>
+                    <label class="label">
+                        <input type="checkbox" name="dokseo" value="독서" checked>
+                        독서
+                    </label>
+                    <label class="label">
+                        <input type="checkbox" name="sports" value="스포츠">
+                        스포츠
+                    </label>
+                </li>
+
+                <li>
+                    <label>사는지역</label>
+                    <select name="area">
+                        <option value="">지역을 선택 하세요.</option>
+                        <option value="서울">서울</option>
+                        <option value="김포">김포</option>
+                    </select>
+                </li>
+                <li>
+                    <label>하고싶은말</label>
+                    <textarea name="comment" class="comment"></textarea>
+                </li>
+                <li class="text-center">
+                    <button type="reset" class="reset myButton">취소</button>
+                    <button type="submit" class="submit myButton">전송</button>
+                </li>
+            </ul>
+        </form>
+        <div class="footer">
+            <img src="images/logo_gray.png" alt="로고">
+            <span>Copyright &copy; test. 2022.</span>
+        </div>
+    </div>
+    <!-- <div class="idpassword">
+        <iframe width="760" height="1000" src="idpassword.html"></iframe>
+    </div> -->
+</body>
+</html>
