@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <p id="sale"></p> -->
+</head>
+<body>
+    <script>
+        // 1. 첫번째 : 문자열은 따옴표로 싸서 변수에 대입한다.
+        // 2. 두번째 : 숫자열은 그대로 변수에 대입한다.
+        // 3. 변수 : 숫자열처럼 그대로 변수에 대입한다.
+
+        // var str;
+        // var str = "1. 첫 번째 : 문자열은 따옴표로 싸서 변수에 대입한다.";
+        // str += "2. 두 번째 : 숫자열은 그대로 변수에 대입한다.";
+        // str += "3. 변수 : 숫자열처럼 그대로 변수에 대입한다.";
+// 
+        // var num1 = 10;
+        // var num2 = 3;
+// 
+        // num1 += num2;
+        // num1 -= num2;
+        // num1 *= num2;
+        // num1 *= num2;
+
+        //변수의 값을 1만큼 감소시킨다.
+        //변수--; 또는 --변수
+        //변수의 값을 1만큼 증가시킨다.
+        //변수++; 또는 ++변수
+        // ** : 제곱근
+        // === : 타입까지 모두 같은 지 확인
+        
+        // || : or 연산 , && : and 연산 , ! : not
+        
+        // 우선순위
+        // 1. ()
+        // 2. 단항 연산(--, ++, !)
+        // 3. 산술 연산(*, /, +, -, **)
+        // 4. 비교 연산(>, >=, <, <=, ==, ===, !==)
+        // 5. 논리 연산 (&&, ||)
+        // 6. 대입 연산 (=, +=, -=, *=, /=, %= **=)
+
+        // 3항 연산
+        // 조건식?실행문1:실행문2;
+
+        // 문제: 변수 a는 10, 변수 b는 3, a가 b보다 크면 성공, 작으면 실패 출력
+        // var a = 10;
+        // var b = 3;
+        // var result = (a > b)? "성공" : "실패";
+        // document.write(result);
+
+        // alert("경고창"); : 경고창
+        // confirm("할래"); : 확인, 취소 (true , false)
+        // prompt("이름이"); : 입력값을 받음
+
+        // 문제: 진영이의 하루 지출 내역이 다음과 같다고 할 때, 하루 지출 비용의 합계를 구한 후 적정 비용의 초과 여부를 출력하세요.
+        // 진영이의 하루 지출 내역은 교통비 3,000원, 식비 6,000원, 음료비 3,000원입니다.
+        // 삼항 조건 연산자를 사용하여 하루 적정 지출 비용인 1만원을 초과했을 경우
+        // "많이썼어!000원 초과"라고 출력하고, 아닐 경우 "돈관리를 잘 했어요."라고 출력하시오.
+        //var pr1 = 3000;
+        //var pr2 = 6000;
+        //var pr3 = 3000;
+        //var total = pr1 + pr2 + pr3;
+        //var result = total > 10000 ? "많이썼어!" + (total - 10000) + "원 초과!" : "돈관리를 잘 했어요!"
+        //document.write(result);
+
+        // var trans = Number(prompt("교통비"));
+        // var meal = Number(prompt("식비"));
+        // var drink = Number(prompt("음료비"));
+        // var total = trans + meal + drink;
+        // document.write((total > 10000)?"많이썼어!" + (total - 10000) + "원 초과":"돈관리를 잘 했어요.");
+       
+        // 평균판매량을 구하고, 4분기 판매량을 입력하여 평균 판매량의 이상/미달 값을 출력하라.
+        // 문제: prompt창을 이용하여 4분기 판매량을 입력하고, 전 분기 평균 판매량보다 판매량이 높거나 같을 경우에는 '판매량이 평균 이상입니다.', 낮을 경우에는 '판매량이 평균 미달입니다.'라고 출력하세요.
+        // 1분기 1,200 , 2분기 1,300 , 3분기 1,000
+        // var avgSale = (1200 + 1300 + 1000) / 3;
+        // var fsale = prompt("4분기 판매량을 입력하시오.", "0");
+        // var str1 = "판매량이 평균 이상입니다.";
+        // var str2 = "판매량이 평균 미달입니다.";
+// 
+        // var result = fsale >= avgSale ? str1 : str2;
+        // document.getElementById("sale").innerHTML = result;
+        
+        // var quarter1 = 1200;
+        // var quarter2 = 1300;
+        // var quarter3 = 1000;
+        // var average = (quarter1 + quarter2 + quarter3) / 3;
+        // var quarter4 = Number(prompt("4분기 판매량을 입력하시오."));
+        // document.write(quarter4 > average ? "판매량이 평균 이상입니다." : "판매량이 평균 미달입니다.");
+
+        var b1 = Boolean(0);
+        var b2 = Boolean(-0);
+        var b3 = Boolean("");
+        var x;
+        var b4 = Boolean(x);
+        var b5 = Boolean(null);
+        var b6 = Boolean(false);
+
+        document.write(b1, "<br>")
+        document.write(b2, "<br>")
+        document.write(b3, "<br>")
+        document.write(b4, "<br>")
+        document.write(b5, "<br>")
+        document.write(b6, "<br>")
+    </script>
+</body>
+</html>

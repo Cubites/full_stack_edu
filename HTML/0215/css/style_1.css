@@ -1,0 +1,38 @@
+/* navbar */
+ul{
+    list-style-type: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 15px;
+    width: 200px;
+    /* background-color: #efefef; */
+}
+nav a{
+    display: block; /* 글자가 있는 공간 전체에 링크를 걸기 위해 a 태그를 block으로 변환 */
+    color: #000;
+    text-decoration: none;
+    padding: 10px 18px;
+}
+nav a:hover/*, nav a.act*/{
+    background-color: rgb(186, 173, 207);
+    /* background-color: #666; */
+    /* color:#fff; */
+}
+
+/*** 직접 실습 ***/
+nav{
+    width: 200px;
+    height: 350px;
+    border: 1px solid #666;
+    border-bottom-left-radius: 30px;
+}
+.first{
+    text-align: center;
+    border-bottom: 8px solid red;
+    margin: 15px;
+    padding: 0;
+}
+li{
+    box-sizing: border-box;
+    border-bottom: 1px dashed black;
+}
