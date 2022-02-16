@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gnb{
+            background-color: #4caf;
+            color: #fff;
+            padding: 18px;
+            font-size: 18px;
+            width: 150px;
+            position: relative;
+        }
+        .gnb>a{
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+        }
+        .lnb{
+            background: #efefef;
+            border: 1px solid #ddd;
+            border-bottom-left-radius: 10px;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            z-index: 100;
+            display: none;
+        }
+        .lnb li{
+            border-bottom: 1px dashed #555;
+        }
+        .lnb li:last-child{
+            border: none;
+        }
+        .lnb li a{
+            display: block;
+            text-decoration: none;
+            color: #555;
+            padding: 20px 10px;
+        }
+        .gnb:hover .lnb{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="gnb">
+        <a href="#">드롭다운메뉴</a>
+        <ul class="lnb">
+            <li><a href="#">서브메뉴1</a></li>
+            <li><a href="#">서브메뉴2</a></li>
+            <li><a href="#">서브메뉴3</a></li>
+            <li><a href="#">서브메뉴4</a></li>
+        </ul>
+    </div>
+    <p><strong>주의: </strong>이 메뉴를 사용하기 위해서는 반드시 마우스를 메뉴위로 올려야 합니다.</p>
+</body>
+</html>

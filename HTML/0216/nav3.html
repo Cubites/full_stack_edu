@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+    <style>
+        *{box-sizing: border-box;}
+        h1{
+            text-align: center;
+            border-bottom: 2px solid red;
+            margin-bottom: 40px;
+            width: 150px;
+            margin: 40px auto;
+        }
+        .container{
+            width: 800px;
+            padding: 30px;
+            border: 1px solid #999;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .container::after{
+            content:"";
+            display: table;
+            clear: both
+        }
+        img{
+            width: 100%;
+        }
+        .imgbox{
+            height: 150px;
+            overflow: hidden;
+            position: relative;
+        }
+        .imgview{
+            position: absolute;
+            z-index: 100;
+            top: 130px;
+            left: 90px;
+            width: 100%;
+            display: none;
+        }
+        /* .imgbox:hover{
+            overflow: auto;
+            height: auto;
+        } */
+        .card{
+            float: left;
+            width: 25%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .card:hover .imgview{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>상품목록</h1>
+    <div class="container">
+        <div class="row">
+            <!-- loop -->
+
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/001.gif" alt="001">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+                <div class="imgview">
+                    <img src="../pd/001.gif" alt="001">
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/002.gif" alt="002">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+                <div class="imgview">
+                    <img src="../pd/002.gif" alt="002">
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/003.gif" alt="003">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+                <div class="imgview">
+                    <img src="../pd/003.gif" alt="001">
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/004.jpg" alt="004">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+                <div class="imgview">
+                    <img src="../pd/004.jpg" alt="001">
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/005.gif" alt="005">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/006.gif" alt="006">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/007.gif" alt="007">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/008.gif" alt="008">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/009.gif" alt="009">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/010.gif" alt="008">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/011.gif" alt="008">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/012.gif" alt="008">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/013.gif" alt="008">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/014.gif" alt="008">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/015.gif" alt="008">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="../pd/016.gif" alt="008">
+                </div>
+                <h3>상품목록1</h3>
+                <p>좋은 상품입니다.</p>
+            </div>
+            <!-- loop -->
+
+        </div>
+    </div>
+</body>
+</html>

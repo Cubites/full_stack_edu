@@ -1,0 +1,93 @@
+.container{
+    width: 800px;
+    height: 600px;
+    border: 1px solid #333;
+    overflow-y: auto;
+    position: relative;
+}
+nav{
+    position: absolute;
+    position: -webkit-sticky;
+    z-index: 2; /* absolute가 있어야 z-index 적용됨 */
+    top: 0;
+    /* margin: 0;
+    padding: 0; */
+    width: 100%;
+}
+.gnb{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #666;
+    overflow: auto;
+}
+.lnb{
+    border: 1px solid #666;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 30px;
+    left: 0;
+}
+.lnb li{
+    border-bottom: 1px dashed #666;
+    height: 35px;
+}
+.lnb li>a{
+    display: block;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    color: #666;
+}
+.lnb li>a:hover{
+    background: #666;
+    color: #fff;
+}
+/* .gnb:after{
+    content:"";
+    display: block;
+    clear: both;
+} */
+.gnb a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    padding: 15px 18px;
+}
+.gnb li{
+    /* display: inline-block; 다른 작업할 때 번거로워져서 대신 float를 사용함*/
+    float: left;
+    display: relative;
+}
+
+.gnb>li:hover ul.lnb{
+    display: block;
+}
+
+li a:hover, .act{
+    background-color: brown;
+}
+.gnb li:last-child{
+    float: right;
+}
+#home{
+    padding: 100px 30px;
+    background: yellow;
+}
+#news{
+    padding: 100px 30px;
+    background: yellowgreen;
+}
+#product{
+    padding: 100px 30px;
+    background: pink;
+}
+#contact{
+    padding: 100px 30px;
+    background: gray;
+}

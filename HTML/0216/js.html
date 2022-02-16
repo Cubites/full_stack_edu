@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-제어문1</title>
+</head>
+<body>
+    <script>
+        // if 문
+        // var num = prompt("당신의 좋아하는 숫자는?");
+        // if(num % 2 == 1){
+        //     document.write("당신이 좋아하는 숫자는 홀수입니다.", "<br>");
+        // }else{
+        //     document.write("당신이 좋아하는 숫자는 짝수입니다.", "<br>");
+        // }
+        
+        // 2중 if 문
+        // var id = "best";
+        // var pw = 123456;
+// 
+        // var userid = prompt("아이디는?");
+        // var userpass = prompt("비번은?");
+// 
+        // if(userid == id){
+        //     if(userpass == pw){
+        //         document.write(userid + "님 반갑습니다.");
+        //     }else{
+        //         alert("비밀번호가 일치하지 않습니다.");
+        //         location.reload();
+        //     }
+        // }else{
+        //     alert("아이디가 일치하지 않습니다.");
+        //     location.reload();
+        // }
+
+        // switch 문
+        var site = prompt("당신이 즐겨 쓰는 포털 사이트는?");
+        var url
+
+        switch(site){
+            case "구글":
+                url = "http://google.com";
+                break;
+            case "네이버":
+                url = "http://naver.com";
+                break;
+            case "다음":
+                url = "http://daum.net";
+                break;
+            default:
+                alert("그 사이트가 어딘지 모르겠어요");
+        }
+
+        if(url) location.href=url; //location.reload();
+    </script>
+</body>
+</html>
