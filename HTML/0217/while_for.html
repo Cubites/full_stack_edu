@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .blue{
+            color: blue;
+        }
+        .pink{
+            color: pink;
+        }
+        .green{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // var num = 1;
+        // while(num < 11){
+        //     document.write(num, "<br>");
+        //     num++;
+        // }
+        
+        // 0 부터 10까지에서 짝수만 출력하시오.
+        // var num = 0;
+        // while(num < 11){
+        //     if(num % 2 == 0){
+        //         document.write(num, "<br>");
+        //     }
+        //     num++;
+        // }
+
+        // 1 ~ 30 중에 2와 6의 공배수를 출력하시오.
+        // var num = 1;
+        // while(num <= 30){
+        //     if(num % 2 == 0 && num % 6 == 0){
+        //         document.write(num, "<br>");
+        //     }
+        //     num++;
+        // }
+
+        // 20부터 10까지 숫자중 짝수일 경우에는 빨간색, 홀수인 경우에는 파란색으로 출력하시오.
+        // var num = 20;
+        // while(num >= 10){
+        //     if(num % 2 == 0){
+        //         document.write("<p class='red'>" + num + "</p>", "<br>");
+        //     }else{
+        //         document.write("<p class='blue'>" + num + "</p>", "<br>");
+        //     }
+        //     num--;
+        // }
+
+        // var num = 4;
+        // do{
+        //     document.write("안녕?" + num, "<br>");
+        //     num--;
+        // }while(num < 3);
+        
+        // for(var i = 1; i <= 10; i++){
+        //     document.write("반복" + num + "<br>");
+        // }
+
+        // 1부터 500까지 정수 중 5의 배수일 경우 빨간색 글자, 7의 배수일 경우 초록색 글자, 
+        // 하지만 5의 배수이면서 7의 배수일 경우에는 핑크색 글자로 출력하라.
+        // for(var i = 1; i <= 500; i++){
+        //     if(i % 35 == 0){
+        //         document.write("<p class='pink'>" + i + "</p>");
+        //     }else if(i % 5 == 0){
+        //         document.write("<p class='red'>" + i + "</p>");
+        //     }else if(i % 7 == 0){
+        //         document.write("<p class='green'>" + i + "</p>");
+        //     }
+        // }
+
+        // while 또는 for 문을 이용하여 1부터 100까지의 합을 구하시오.
+        var ans = 0;
+        for(var i = 1; i <= 100; i++){
+            ans += i;
+        }
+        document.write(ans);
+
+        document.write("<br>")
+        ans = 0;
+        i = 0;
+        while(i <= 100){
+            ans += i++;
+        }
+        document.write(ans);
+    </script>
+</body>
+</html>

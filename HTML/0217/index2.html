@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            padding: 5px 10px;
+            font-size: 18px;
+        }
+        .btn span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+            margin-right: 10px;
+            background-color: #fff;
+            background-image: url(images/icon.png);
+            background-repeat: no-repeat
+        }
+        .btn-groub span{
+            background-position: 5px 5px;
+        }
+        .btn-map span{
+            background-position: -33px 5px;
+        }
+        .btn-facebook span{
+            background-position: -110px 5px;
+        }
+        .btn-insta span{
+            background-position: -110px -36px;
+        }
+        .btn-heart span{
+            background-position: -110px -118px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="btn btn-groub"><span></span>groub</button>
+    <button type="button" class="btn btn-map"><span></span>map</button>
+    <button type="button" class="btn btn-facebook"><span></span>facebook</button>
+    <button type="button" class="btn btn-insta"><span></span>insta</button>
+    <button type="button" class="btn btn-heart"><span></span>heart</button>
+
+    <!-- CSS Attribute Selectors -->
+    <style>
+        a[href^="#"]{
+            background-color: gold;
+        }
+        a[href*="example"]{
+            background-color: #ddd;
+        }
+    </style>
+    <ul>
+        <li><a href="#internal">test1</a></li>
+        <li><a href="http://example.com">test2</a></li>
+        <li><a href="#InSensitive">test3</a></li>
+        <li><a href="http://example.org">test4</a></li>
+    </ul>
+
+    <!-- CSS Attribute Selectors, input -->
+    <style>
+        input[type=text], input[type=password]{
+            width: 100%;
+            padding: 30px;
+            border: 1px dashed red;
+        }
+        input[type=text]:focus, input[type=password]:focus{
+            border: 1px dashed green;
+            background: yellowgreen;
+        }
+        input::placeholder{
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+    <form name="form">
+        <input type="text" name="box" placeholder="box">
+        <input type="password" name="box2" placeholder="box2">
+        <input type="button" value="버튼">
+    </form>
+</body>
+</html>
