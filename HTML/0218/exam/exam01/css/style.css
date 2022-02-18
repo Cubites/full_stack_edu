@@ -1,0 +1,172 @@
+*{box-sizing: border-box;}
+body{
+    color: #222328;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+    color: #666;
+}
+a:hover{
+    color: #222328;
+}
+.text-center{
+    text-align: center;
+}
+/******* 기본값 셋팅 끝 **********/
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+header{
+    height: 100px;
+    background-color: #c4e9f5;
+    border-top: 2px solid #18c0f8;
+    padding: 25px;
+}
+nav{
+    width: 55%;
+    float: right;
+    position: relative;
+}
+.gnb, .lnb{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.gnb>li{
+    width: 157px;
+    height: 40px;
+    float: left;
+}
+.lnb>li{
+    width: 157px;
+    float: left;
+}
+.gnb li>a,
+.lnb li>a{
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    background-color: #4ecffa;
+    color: #222328;
+    font-weight: bold;
+    font-size: 18px;
+}
+.gnb li a{
+    border-top: 1px solid #0d83aa;
+    border-bottom: 1px solid #0d83aa;
+    border-right: 1px solid #0d83aa;
+}
+.gnb li:first-child a{
+    border-left: 1px solid #0d83aa;
+}
+.lnb{
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 40px;
+    left: 0;
+}
+nav:hover>ul.lnb{
+    display: block;
+}
+.lnb li a{
+    border-right: 1px dashed #0d83aa;
+    border-bottom: 1px dashed #0d83aa;
+}
+.lnb li a:first-child{
+    border-top: 1px solid #0d83aa;
+}
+.lnb li a:last-child{
+    border-bottom: none;
+}
+.gnb li>a:hover,
+.lnb li>a:hover{
+    background-color: #0d83aa;
+    color: #fff;
+}
+
+/** slide 할게없음 아직은 **/
+.slide{
+    height: 300px;
+}
+
+/** main **/
+.main{
+    height: 200px;
+    overflow: hidden;
+}
+section{
+    float: left;
+}
+section{
+    width: 30%;
+    padding: 15px;
+}
+section.notice{
+    width: 40%;
+}
+section h1{
+    width: 150px;
+    margin: 0 auto;
+    border-bottom: 2px solid #0d83aa;
+}
+.notice li{
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.notice li:hover{
+    border-bottom: 1px solid #18c0f8;
+    background: #c4e9f5;
+}
+.banner h1{
+    margin-bottom: 20px;
+}
+.banner img{
+    margin-bottom: 15px;
+}
+
+/** footer **/
+footer{
+    height: 100px;
+    background-color: #444;
+    color: #fff;
+}
+.blogo{
+    padding-top: 25px;
+    padding-left: 25px;
+}
+.blogo, .sns{
+    width: 250px;
+    float: left;
+}
+.copy{
+    width: 700px;
+    height: 100px;
+    padding-top: 15px;
+    text-align: center;
+    color: #efefef;
+    float: left;
+}
+.copy p{
+    margin: 0;
+    padding: 0;
+}
+/*** sns ***/
+.sns a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin-top: 30px;
+    margin-left: 10px;
+    background-image: url(../images/sns.jpg);
+    background-repeat: no-repeat;
+    background-color: #0d83aa;
+}
+.face-sns{
+    background-position: -
+}
