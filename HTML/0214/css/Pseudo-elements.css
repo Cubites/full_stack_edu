@@ -1,0 +1,63 @@
+.nav a{
+    display: inline-block;
+    width: 50px;
+    margin: 0 5px;
+    height: 35px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    line-height: 35px;
+    border-bottom: 3px dashed red;
+    position: relative;
+}
+.nav a:hover{
+    border-bottom: 2px solid blue;
+}
+/* 가상 요소 before 연습 */
+a:hover::before{
+    content: "하트";
+    display: block;
+    position: absolute;
+    top: 35px;
+    right: 0;
+}
+/* 가상 요소 after 연습 */
+.container{
+    box-sizing: border-box;
+    margin-top: 50px;
+    width: 300px;
+    background: yellowgreen;
+    padding: 5px;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background: purple;
+    padding: 5px;
+    float: left;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* 가상요소 marker 연습 */
+::marker{
+    color: red;
+    font-size: 25px;
+}
+/* 가상요소 first-line, first-letter, selection 연습 */
+p::first-line{
+    color: green;
+    font-size:17px;
+}
+p::first-letter{
+    color: darkgreen;
+    font-weight: bold;
+    font-size:xx-large; /* = 200% */
+}
+::selection{
+    color: violet;
+    background: yellow;
+}

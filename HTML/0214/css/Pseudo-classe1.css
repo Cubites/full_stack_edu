@@ -1,0 +1,48 @@
+body{
+    height: 4000px;
+}
+p{
+    background-color: yellow;
+}
+/* div.container>p{
+    background-color: yellowgreen;
+} */
+/* div + p{
+    background-color: purple;
+} */
+div + p{
+    background-color: blue;
+}
+div ~ p{
+    background-color: red;
+}
+a, a:link{
+    color: #ff0000;
+    cursor: pointer;
+}
+/* 방문되었던 링크 */
+a:visited{
+    color: green;
+}
+/* 누를 때 */
+a:active{
+    color: blue;
+}
+/* 마우스를 올려 놓을 때 */
+a:hover{
+    color: purple;
+    font-weight: bold;
+    text-decoration: none;
+}
+div.view{
+    width: 600px;
+    padding: 30px;
+    text-align: center;
+    background-color: skyblue;
+    margin-top: 30px;
+    border: 1px solid black;
+    display: none;
+}
+div.help:hover > div.view{
+    display: block;
+}
