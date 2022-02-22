@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;} /* padding, border의 값을 모두 인라인 처리 */
+        body{
+            margin: 20px;
+            font-size: 14px;
+        }
+        .container{
+            width: 1200px;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        header{
+            background: #ddd;
+            text-align: center;
+            padding: 20px;
+        }
+        nav{
+            background-color: #333;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            /* float:left 될 경우  nav::after 에 clear:both 해도 되고 
+               nav에 overflow:hidden 또는 overflow:auto를 줘도 됨*/
+            overflow: hidden; 
+        }
+        nav a{
+            display: block;
+            padding: 15px 18px;
+            color: #ddd;
+            text-decoration: none;
+            text-align: center;
+            float: left;
+        }
+        nav a:hover{
+            background-color: #ddd;
+            color: #333;
+        }
+        aside, main{
+            float: left;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        aside{
+            width: 25%;
+        }
+        main{
+            width: 50%;
+            font-size: 1em;
+        }
+        .row{
+            margin-left: -10px;
+            margin-right: -10px;
+            overflow: auto;
+        }
+        .init{
+            background-color: #ddd;
+            padding: 20px;
+            min-height: 100px;
+        }
+        footer{
+            padding: 20px;
+            background: #333;
+            color: #f2f2f2;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Header</h1>
+        </header>
+        <nav>
+            <a href="#">Link1</a>
+            <a href="#">Link2</a>
+            <a href="#">Link3</a>
+        </nav>
+        <div class="row">
+            <aside>
+                <div class="init">aside left</div>
+            </aside>
+            <style>
+                main, .init, .init>div{
+                    font-size: 1.2em;
+                }
+            </style>
+            <main>
+                test(16.8)
+                <div class="init">test (16.8 * 1.2)
+                    <div>test (16.8 * 1.2 * 1.2)</div>
+                </div>
+            </main>
+            <aside>
+                <div class="init">aside right</div>
+            </aside>
+        </div>
+        <footer>
+            <p>footer</p>
+        </footer>
+    </div>
+</body>
+</html>

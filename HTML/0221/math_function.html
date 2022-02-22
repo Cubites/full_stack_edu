@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        body{
+            color: black;
+        }
+        .container{
+            width: 1200px;
+            padding: 30px;
+            border: 1px solid #333;
+            margin: 30px auto;
+        }
+        .container:after{
+            content:"";
+            display: table;
+            clear: both;
+        }
+        .container>div{
+            float: left;
+        }
+        .xbox{
+            width: 400px;
+            height: 400px;
+            background: pink;
+        }
+        .ybox{
+            background: green;
+            height: 400px;
+            padding: 15px;
+            /* width: calc(100% - 400px); */
+            width: max(50%, 400px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="xbox">
+
+        </div>
+        <div class="ybox">
+
+        </div>
+    </div>
+</body>
+</html>
