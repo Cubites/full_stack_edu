@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var tv = new Object();
+        tv.color = "흰색";
+        tv.price = "15000000";
+        tv.info = function(){
+            document.write("tv색상" + this.color);
+            document.write("<br>");
+            document.write("tv가격" + this.price);
+        }
+
+        document.write("tv정보" + "<br>");
+        tv.info();
+        document.write("<br><br>")
+
+        var car = new Object();
+        car.color = "회색";
+        car.price = "60000000";
+        car.info = function(){
+            document.write("car색상" + this.color);
+            document.write("<br>");
+            document.write("car가격" + this.price);
+        }
+        document.write("car정보<br>");
+        car.info();
+        document.write("<br><br>")
+
+        var toDay = new Date();
+        document.write("오늘은<br>");
+        document.write(toDay.getFullYear() + "년 ");
+        document.write(toDay.getMonth() + 1 + "월 ");
+        document.write(toDay.getDate() + "일 입니다.")
+
+        var birthday = new Date(1997, 2, 25);
+        var birthweek = birthday.getDay();
+        console.log(birthweek);
+        document.write("<br><br>");
+        
+        var hday = birthday.getTime();
+        var tday = toDay.getTime();
+        var diff = tday - hday;
+        document.write(diff);
+    </script>
+</body>
+</html>
