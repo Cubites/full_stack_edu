@@ -1,0 +1,8 @@
+div.wrapper h1,
+.contents,
+.footer{
+    text-align: center;
+}
+.contents{
+    font-weight: bold;
+}

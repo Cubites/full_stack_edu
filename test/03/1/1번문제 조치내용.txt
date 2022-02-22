@@ -1,0 +1,1 @@
+웹표준에 어긋나는 <b> 태그 대신에 style시트에서 font-weight: bold; 를 적용하는 것으로 대체하였고 <center>가 되어 있는 부분들은 text-align: center;를 적용하여 중앙정렬하였다.

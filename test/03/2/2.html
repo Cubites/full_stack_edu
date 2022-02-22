@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type:none;
+        }
+        .navigation>li{
+            float: left;
+        }
+        .subnavigation{
+            margin: 0;
+            padding: 0;
+            display:none;
+        } 
+        .navigation>li:hover .subnavigation{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <ul class="navigation">
+        <li>
+            <a href="#">메인메뉴1</a>
+            <ul class="subnavigation">
+                <li>
+                    <a href="#">서브메뉴1</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">메인메뉴2</a>
+            <ul class="subnavigation">
+                <li>
+                    <a href="#">서브메뉴2</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+</body>
+</html>

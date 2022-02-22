@@ -1,0 +1,157 @@
+*{box-sizing: border-box;}
+body{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #333;
+}
+.container{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul li a{
+    text-decoration: none;
+    color: #333;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* header */
+header{
+    width: 100%;
+    height: 100px;
+    padding: 25px;
+    position: relative;
+}
+.logo{
+    display: inline-block;
+    width: 50px;
+}
+nav{
+    float: right;
+}
+ul.gnb{
+    float: right;
+}
+ul.gnb li{
+    width: 150px;
+    height: 50px;
+    padding-top: 15px;
+    text-align: center;
+    float: left;
+}
+ul.gnb li:hover,
+div.lnb ul li:hover{
+    background-color: orange;
+    color: #fff;
+}
+div.lnb{
+    display: none;
+    position: absolute;
+    top: 75px;
+    right: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+div.lnb ul{
+    float: left;
+}
+div.lnb ul li{
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+}
+nav:hover div.lnb{
+    display: block;
+}
+
+/** banner **/
+section.banner{
+    height: 400px;
+}
+section.banner img{
+    width: 100%;
+    height: 400px;
+}
+/** section **/
+section.variable{
+    width: 100%;
+    height: 200px;
+}
+section.variable a{
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+.first,
+.second,
+.third{
+    float: left;
+    width: 33.3333%;
+    height: 200px;
+    text-align: center;
+    padding: 50px;
+}
+.first{
+    background-color: goldenrod;
+}
+.second{
+    background-color: rgb(195, 228, 79);
+}
+.third{
+    background-color: aquamarine;
+}
+
+
+/** footer **/
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: darkgray;
+}
+.flogo{
+    float: left;
+    height: 100px;
+    padding: 25px;
+    display: inline-block;
+}
+div.copy{
+    float: left;
+    padding-left: calc(33.3333% - 100px);
+    margin-left: auto;
+    margin-right: auto;
+}
+div.copy p{
+    margin: 10px;
+    text-align: center;
+}
+div.sns{
+    float: right;
+    width: 300px;
+}
+div.sns div{
+    float: left;
+}
+.kakao,
+.facebook,
+.twitter{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 25px;
+    background-image: url(../images/sns.png)
+}
+.kakao{
+    background-position: -250px -55px;
+}
+.twitter{
+    background-position: -250px 0;
+}
