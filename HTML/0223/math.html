@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 2.1234;
+        // 1. 숫자 10, 5, 8, 30 중 최댓값을 구하라.
+        var maxNum = Math.max(10, 5, 8, 30);
+        document.write(maxNum, "<br>");
+        
+        // 2. 10, 5, 8, 30 중 최소값을 구하라.
+        var minNum = Math.min(10, 5, 8, 30);
+        document.write(minNum, "<br>");
+
+        // 3. 변수 num의 소수점 첫째 자리를 반올림하라.
+        var rNum = Math.round(num);
+        document.write(rNum, "<br>");
+
+        // 4. 변수 num의 소수점 첫째 자리를 내림하라.
+        var fNum = Math.floor(num);
+        document.write(fNum, "<br>");
+        
+        // 5. 변수 num의 소수점 첫째 자리를 올림하라.
+        var cNum = Math.ceil(num);
+        document.write(cNum, "<br>");
+
+        // 6. 0과 1사이의 난수를 발생시켜라.
+        var raNum = Math.random();
+        document.write(raNum, "<br>");
+
+        // 7. 반지름이 8인 원의 넓이를 구하라.
+        var pNum = Math.PI;
+        document.write(pNum, "<br>");
+        document.write(pNum * Math.pow(8, 2))
+
+        document.write("<br><br>")
+        var raNum = Math.floor(Math.random()*11);
+        document.write(raNum, "<br>");
+
+        var meme = ['a', 'b', 'c', 'd', 'e'];
+        document.write(meme[Math.floor(Math.random()*5)])
+    </script>
+</body>
+</html>

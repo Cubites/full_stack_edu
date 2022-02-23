@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            float: left;
+        }
+        .box1{ /* linear-gradient(방향, 컬러1, 컬러2) */
+            /* background-image: linear-gradient(to right, red, orange, yellow, green, blue, darkblue, purple); */
+            /* background-image: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0)); */
+            background-image: repeating-linear-gradient(to right, blue 10%, yellow 60%);
+        }
+        .box2{
+            background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+            background-image: -webkit-radial-gradient(red 5%, yellow 15%, green 60%);
+            background-image: -moz-radial-gradient(red 5%, yellow 15%, green 60%);
+            background-image: -o-radial-gradient(red 5%, yellow 15%, green 60%);
+            background-image: -ms-radial-gradient(red 5%, yellow 15%, green 60%);
+        }
+        h1{
+            color: #999;
+            /* text-shadow: x축두께 y축두께 블러(px) 색상; */
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .box2{
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3) inset;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Shadow effect!</h1>
+    <div class="box4">
+        <div class="box1"></div>
+    </div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

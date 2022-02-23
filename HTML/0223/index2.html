@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        h1, p{
+            text-align: center;
+        }
+        .container{
+            width: 1200px;
+            max-width: 100%;
+            margin: 10px auto;
+        }
+        .row{
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        .row::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .col-4{
+            width: 25%;
+            float: left;
+            padding: 15px;
+        }
+        div.card{
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2),
+                        0 6px 20px 0 rgba(0, 0, 0, .19);
+        }
+        div.card:hover{
+            box-shadow: 2px 6px 8px 0 rgba(0, 0, 0, .3),
+                        2px 8px 20px 0 rgba(0, 0, 0, .25);
+            cursor: pointer;
+        }
+        .header{
+            height: 220px;
+        }
+        .header img{
+            max-width: 100%;
+        }
+        .contents{
+            text-align: center;
+            padding: 10px;
+        }
+        .contents p{
+            /* 공식처럼 외워야 할 것 */
+            white-space: nowrap; /* 줄바꿈을 허용하지 않음 */
+            overflow: hidden; /* 박스에 넘치는 부분이 보이지 않게 함 */
+            text-overflow: ellipsis; /* 넘친 부분의 텍스트 끝에 말줄임을 붙임 clip */
+        }
+        #imgbox{
+            width: 600px;
+            height: 400px;
+            position:fixed;
+            border: 2px solid #333;
+            border-radius: 15px;
+            overflow: hidden;
+            background: yellowgreen;
+            top: calc(50% - 200px);
+            left: calc(50% - 300px);
+            display: none;
+        }
+        #imgbox img{
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Gallery</h1>
+    <p>box-shadow 기능 연습</p>
+    <div class="container">
+        <div class="row">
+            <!-- loop -->
+            <div class="col-4">
+                <div class="card" onclick="vimg('001');">
+                    <div class="header">
+                        <img src="images/001.jpg" alt="001">
+                    </div>
+                    <div class="contents">
+                        <p>불법촬영물등의 유통 방지를 위한 기술적・관리적 조치 적용 안내 01</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card">
+                    <div class="header">
+                        <img src="images/002.jpg" alt="002">
+                    </div>
+                    <div class="contents">
+                        <p>올림픽 이미지 02</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card">
+                    <div class="header">
+                        <img src="images/003.jpg" alt="003">
+                    </div>
+                    <div class="contents">
+                        <p>올림픽 이미지 03</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card">
+                    <div class="header">
+                        <img src="images/004.jpg" alt="004">
+                    </div>
+                    <div class="contents">
+                        <p>올림픽 이미지 04</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card">
+                    <div class="header">
+                        <img src="images/005.jpg" alt="005">
+                    </div>
+                    <div class="contents">
+                        <p>올림픽 이미지 05</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card">
+                    <div class="header">
+                        <img src="images/006.jpg" alt="006">
+                    </div>
+                    <div class="contents">
+                        <p>올림픽 이미지 06</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card">
+                    <div class="header">
+                        <img src="images/007.jpg" alt="007">
+                    </div>
+                    <div class="contents">
+                        <p>올림픽 이미지 07</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card">
+                    <div class="header">
+                        <img src="images/008.jpg" alt="008">
+                    </div>
+                    <div class="contents">
+                        <p>올림픽 이미지 08</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card">
+                    <div class="header">
+                        <img src="images/009.jpg" alt="009">
+                    </div>
+                    <div class="contents">
+                        <p>올림픽 이미지 09</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card">
+                    <div class="header">
+                        <img src="images/010.jpg" alt="010">
+                    </div>
+                    <div class="contents">
+                        <p>올림픽 이미지 10</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card">
+                    <div class="header">
+                        <img src="images/011.jpg" alt="011">
+                    </div>
+                    <div class="contents">
+                        <p>올림픽 이미지 11</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card">
+                    <div class="header">
+                        <img src="images/012.jpg" alt="012">
+                    </div>
+                    <div class="contents">
+                        <p>올림픽 이미지 12</p>
+                    </div>
+                </div>
+            </div>
+            <!-- / loop -->
+        </div>
+    </div>
+    
+    <div id="imgbox"></div>
+    <script>
+        function vimg(e){
+            var doc = document.getElementById("imgbox");
+            doc.innerHTML = "<img src='images/"+e+".jpg' alt='"+e+"'>";
+            doc.style.display = "block";
+        }
+    </script>
+</body>
+</html>
