@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보 게임</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">가위, 바위, 보 게임</h1>
+        <div class="result-box">
+            <p class="text-center" id="result">가위, 바위, 보 중 하나를 선택하세요.</p>
+        </div>
+        <div class="result-img">
+            <div class="me">
+                <div id="me" style="background-image: url(images/sc.png)"></div>
+                <p class="text-center">나</p>
+            </div>
+            <div class="com">
+                <div id="com" style="background-image: url(images/sc.png)"></div>
+                <p class="text-center">컴퓨터</p>
+            </div>
+        </div>
+
+        <div class="btn-box">
+            <button class="srp s" onclick="srp(0)"> 가위 </button>
+            <button class="srp r" onclick="srp(1)"> 바위 </button>
+            <button class="srp p" onclick="srp(2)"> 보 </button>
+        </div>
+    </div>
+
+    <script src="js/custom.js"></script>
+</body>
+</html>
