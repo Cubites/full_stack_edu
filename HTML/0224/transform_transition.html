@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+           width:100px;
+           height:100px;
+           margin:50px;
+           background:red;
+           border-radius:8px;
+           /* transition: width 2s, height 10s, transform 4s; */
+           transition-property: width, height, transform;
+           transition-duration: 2s, 5s, 4s;
+           transition-delay: 1s, 1s, 1s; 
+       } 
+       div.box2:hover{
+           transform: rotate(50deg);
+           width: 200px;
+           height: 200px;
+       }
+
+    </style>
+</head>
+<body>
+    <h1>transform</h1>
+    <ol>
+        <li>
+            이동옵션 : translate(x축, y축); , translateX(단위), translateY(단위)
+        </li>
+        <li>
+            회전옵션 : rotate(Ndeg); , rotateX(20deg), rotateY(30deg), rotateZ(30deg)
+        </li>
+        <li>
+            크기옵션 : scale(x축 1.5, y축 1.3), scaleX(), scaleY() (단위 : 몇 배)
+        </li>
+        <li>
+            모서리각도조정 : skew(Xdeg, Ydeg), skewX(), skewY()
+        </li>
+        <li>
+            행렬 : matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translate(Y()))
+        </li>
+    </ol>
+
+    <h1>transition</h1>
+    <ul>
+        <li>transition-duration : 변환되는 속도 지정</li>
+        <li>transition-delay : 변환대기 시간</li>
+        <li>transition-property : width, height</li>
+        <li>transition-timing-function:
+            <ul>
+                <li>linear : 처음부터 끝까지 같은 속도 (0, 0, 1, 1)</li>
+                <li>ease : 처음, 끝을 부드럽게 (default) (0.25, 0.1, 0.25, 1)</li>
+                <li>ease-in : 처음을 느리게</li>
+                <li>ease-out : 마지막을 느리게</li>
+                <li>ease-in-out : 처음, 마지막을 느리게</li>
+                <li>cubic-bezier(n, n, n, n) : 속도를 직접 지정</li>
+            </ul>
+        </li>
+        <li>transition: property duration timing-function delay</li>
+    </ul>
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>
