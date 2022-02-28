@@ -1,0 +1,65 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:16px;
+    color:#000;
+    overflow-x:hidden;
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration:none;
+    color:#222;
+}
+.container{
+    width:1360px;
+}
+a.brand{
+    display:block;
+    width:110px;
+    height:80px;
+    text-align:center;
+    font-size:25px;
+    font-weight:900;
+    color:#ff5555;
+    line-height:80px;
+}
+a.brand span.material-icons{
+    font-size:35px;
+    vertical-align:middle;
+}
+.weight{
+    font-weight:700;
+}
+.red{
+    color:#ff5555;
+}
+nav{
+    padding-left:60px;
+}
+nav a{
+    line-height:80px;
+    padding-left:10px;
+    padding-right:10px;
+    font-weight:300;
+}
+nav a:hover{
+    color:#ff5555;
+    font-weight: 700;
+}
+.text-center{
+    text-align:center;
+}
+.text-right{
+    text-align:right;
+}
+nav span.bar{
+    border-right:1px solid #ddd;
+    width:1px;
+    height:12px;
+    margin-left:5px;
+    margin-right:5px;
+    display:inline-block;
+}
+a.search{
+    line-height:80px;
+}
