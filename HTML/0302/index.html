@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media</title>
+    <link rel="stylesheet" href="css/grid.css">
+    <style>
+        body{
+            background-color: yellow;
+            color: #000;
+            margin-top: 60px;
+        }
+        nav{
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            top: 0;
+            left: 0;
+        }
+        nav span{
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            padding-left: 30px;
+            padding-right: 50px;
+        }
+        nav a{
+            padding: 14px 18px;
+            color: #f2f2f2;
+            text-decoration: none;
+            line-height: 50px;
+        }
+        @media screen and (max-width: 768px){
+            body{
+                background-color: blue;
+                color: yellow;
+            }
+        }
+        @media screen and (max-width: 430px){
+            body{
+                background-color: olive;
+                color: white;
+                margin-top: 0;
+            }
+            nav{
+                position: static;
+                height: auto;
+            }
+            nav a{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <span>LOGO</span>
+            <a href="#">Link1</a>
+            <a href="#">Link2</a>
+            <a href="#">Link3</a>
+            <a href="#">Link4</a>
+        </nav>
+        <h1>헤더</h1>
+        <div class="row">
+            <div class="col-3 col-tb-6 col-mb-12">box1</div>
+            <div class="col-3 col-tb-6 col-mb-12">box2</div>
+            <div class="col-3 col-tb-6 col-mb-12">box3</div>
+            <div class="col-3 col-tb-6 col-mb-12">box4</div>
+        </div>
+    </div>
+</body>
+</html>
