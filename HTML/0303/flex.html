@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       .container{
+            padding:50px;
+            display:flex;
+            width:1200px;
+            height:500px;
+            max-width:100%;
+            margin:10px auto;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items:center;
+        }
+
+       .tooltip{
+           border-bottom:1px dashed #333;
+           width:100px;
+           margin:80px;
+           padding:10px;
+           position:relative;
+       }
+       .tooltiptext{
+           display:inline-block;
+           width:160px;
+           background:#333;
+           color:#fff;
+           text-align:center;
+           padding:10px;
+           border-radius:5px;
+           position:absolute;
+           z-index:1;
+           opacity:0;
+           transition: all .5s;
+       }
+       .tooltiptext1{
+            bottom:50px;
+            left:-30px;
+       }
+       .tooltiptext2{
+            top: -10px;
+            right: -200px;
+       }
+       .tooltiptext3{
+            top: 60px;
+            right: -20px;
+       }
+       .tooltiptext4{
+            top: 0px;
+            right: 130px;
+       }
+       .tooltiptext::after{
+           content:"";
+           display:block;
+           width:0;
+           height:0;
+           position:absolute;
+       }
+       .tooltiptext1::after{
+            border-top: 10px solid #333;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            left:80px;
+            top:40px;
+       }
+       .tooltiptext2::after{
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid #333;
+            border-bottom: 10px solid transparent;
+            left: -20px;
+            top:20px;
+       }
+       .tooltiptext3::after{
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #333;
+            left: 80px;
+            top: -20px;
+       }
+       .tooltiptext4::after{
+            border-top: 10px solid transparent;
+            border-left: 10px solid #333;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            left: 180px;
+            top: 10px;
+       }
+       .tooltip:hover .tooltiptext{
+           opacity:1;
+       }
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="tooltip tooltip1">위쪽툴팁
+            <span class="tooltiptext tooltiptext1">위쪽툴팁에 대한 설명</span>
+        </div>
+        <div class="tooltip tooltip2">오른쪽툴팁
+            <span class="tooltiptext tooltiptext2">오른쪽툴팁에 대한 설명</span>
+        </div>
+        <div class="tooltip tooltip3">아래쪽툴팁
+            <span class="tooltiptext tooltiptext3">아래쪽툴팁에 대한 설명</span>
+        </div>
+        <div class="tooltip tooltip4">왼쪽툴팁
+            <span class="tooltiptext tooltiptext4">왼쪽툴팁에 대한 설명</span>
+        </div>
+
+    </div>
+
+</body>
+</html>

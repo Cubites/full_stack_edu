@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 문제1. prompt창으로 영문 이름을 받아 대문자로 출력하시오.
+        // var name = prompt("영문 이름을 입력해 주세요.");
+        // document.write(name.toUpperCase(), "<br>");
+
+        // 문제2. prompt창으로 전화번호를 받아 보안을 위해 마지막 4자를 ****로 표시하시오.
+        // var utel = prompt("전화번호를 입력해주세요.");
+        // var b_secure = utel.slice(0, -4) + "****";
+        // document.write(b_secure);
+
+        // var sliceTel = utel.substring(0, utel.length - 4);
+        // var sliceTel = utel.substr(0, utel.length - 4);
+        //document.write("당신의 전화번호는 : " + sliceTel + "**** 입니다.")
+
+        // 문제 3. prompt창으로 이메일 주소를 받아 유효성 검사를 하시오.
+        // 하위 도메인은 co.kr, com, net, or.kr, go.kr, org, ac.kr 안에 있어야 함
+
+        var domain = ["co.kr", "com", "net", "or.kr", "go.kr", "org", "ac.kr"]
+        var uemail = prompt("이메일을 입력해 주세요");
+        var check = false;
+        // @가 있는지 확인
+        if(uemail.search("@") == -1){
+            alert("올바른 이메일을 입력해주세요.(@ 없음)");
+        }
+        else{
+            for(i in domain){
+                // 유효 도메인이 입력받은 이메일의 마지막에 위치한지 확인
+                if(uemail.substring(uemail.length - domain[i].length, uemail.length) == domain[i]){
+                    alert("이메일 : " + uemail);
+                    check = true;
+                    break;
+                }
+            }
+            if(check == false){
+                alert("유효하지 않는 이메일 입니다.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            background-color: orange;
+        }
+        .overlay{
+            position: absolute;
+            background-color: darkblue;
+            overflow: hidden;
+            height: 100%;
+            width: 0%;
+            transition: 1s;
+        }
+        .text{
+            white-space: nowrap;
+            position: absolute;
+            color: #fff;
+            font-weight: bold;
+            font-size: 30px;
+            width: 100%;
+            top: 40%;
+            left: 20%;
+        }
+        .container:hover .overlay{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay">
+            <div class="text">test sentence</div>
+        </div>
+    </div>
+</body>
+</html>

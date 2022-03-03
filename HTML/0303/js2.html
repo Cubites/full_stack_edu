@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 문제 4. 선택장애인 철수를 위해 "짜장면", "돈가스", "된장국", "김치찌개", "회덮밥", "라면", "햄버거" 중에서 점심 메뉴를 랜덤으로 선택하시오.
+        var meal = ["짜장면", "돈가스", "된장국", "김치찌개", "회덮밥", "라면", "햄버거"];
+        var select = Math.random() * meal.length;
+        document.write("철수의 점심 메뉴는 " + meal[Math.floor(select)] + "입니다");
+    </script>
+</body>
+</html>
