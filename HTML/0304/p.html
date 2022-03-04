@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            background-color: darkblue;
+            height: 10px;
+            transform: height 200px;
+            transition-duration: 1s;
+        }
+        .container div{
+            background-color: skyblue;
+            width: 200px;
+            height: 100%;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 40px;
+            font-weight: 700px;
+            overflow: hidden;
+        }
+        .container:hover{
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>

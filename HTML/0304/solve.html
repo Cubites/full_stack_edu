@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 1200px;
+            height: 100%;
+            background-color: #323232;
+        }
+        #button{
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body id="bcolor">
+    <input type="button" id="button" value="배경색 바꾸기" onclick="colorChange();">
+
+    <script>
+        // 문제
+        // 배열로 만들어진 색상모음이 있다. white, yellow, aqua, purple, pink
+        // 배경색 바꾸기란 버튼을 만들어 (onclick="함수();") 버튼을 누르는 순서대로 배경색이 바뀌도록 코딩하다.
+        function colorChange() {
+            var arr = ["white", "yellow", "aqua", "purple", "pink"];
+            var num = Math.floor(Math.random() * arr.length);
+            document.getElementById("bcolor").style.backgroundColor=arr[num];
+        }
+    </script>
+</body>
+</html>

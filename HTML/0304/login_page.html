@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border: 3px solid black;
+            width: 800px;
+            margin: 100px auto;
+            border-radius: 20px;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0 auto;
+            width: 600px;
+        }
+        li{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #333;
+        }
+        li:last-child{
+            border: none;
+        }
+        label{
+            display: inline-block;
+            width: 100px;
+            padding-right: 15px;
+            text-align: right;
+            font-weight: 700;
+        }
+        input[type=text], input[type=password]{
+            width: 70%;
+            padding: 5px 10px;
+            border-radius: 15px;
+            background-color: #fff;
+        }
+        .text-center{
+            text-align: center;
+        }
+        button{
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100px;
+            height: 30px;
+            border-radius: 30px;
+        }
+        button:hover{
+            background-color: #444;
+            color: #fff;
+            font-weight: 800px;
+        }
+        .alert{
+            display: none;
+            background: pink;
+            padding: 15px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+
+        <ul>
+            <li><label> 아이디 </label>
+                <input type="text" name="userid" id="userid" placeholder="아이디" onclick="alertOff(0)">
+                <span class="alert"> 아이디가 틀렸습니다. </span>
+            </li>
+
+            <li><label> 비밀번호 </label>
+                <input type="password" name="userpass" id="userpass" placeholder="비밀번호" onclick="alertOff(1)">
+                <span class="alert"> 비밀번호가 틀렸습니다. </span>
+            </li>
+            <li class="text-center">
+                <button type="reset"> 취소 </button>
+                <button type="button" onclick="login()"> 로그인 </button>
+            </li>
+        </ul>
+    </form>
+
+    <script>
+        var orid = "korea";
+        var oppass = "12345";
+        // location.href="https://naver.com";
+        function login(){
+            var userid = document.getElementById("userid").value;
+            var userpass = document.getElementById("userpass").value;
+            var alert0 = document.getElementsByClassName("alert")[0];
+            var alert1 = document.getElementsByClassName("alert")[1];
+            var check1 = false;
+            var check2 = false;
+            // id check
+            if(userid){
+                if(userid != orid){
+                    alert0.style.display="block";
+                    alert0.innerHTML = "아이디가 틀렸습니다.";
+                }else{
+                    check1 = true;
+                }
+            }else{
+                alert0.innerHTML = "아이디를 입력하세요.";
+                alert0.style.display="block";
+            }
+            // password check
+            if(userpass){
+                if(userpass != oppass){
+                    alert1.style.display="block";
+                    alert1.innerHTML = "비밀번호가 틀렸습니다.";
+                }else{
+                    check2 = true;
+                }
+            }else{
+                alert1.innerHTML = "비밀번호를 입력하세요.";
+                alert1.style.display="block";
+            }
+            // both check
+            if(check1){
+                if(check2){
+                    location.href="https://www.naver.com/";
+                }
+            }
+        }
+        function alertOff(n){
+            var arr1 = ["userid", "userpass"];
+            document.getElementById(arr1[n]).value = "";
+            document.getElementsByClassName("alert")[n].style.display = "none";
+            document.getElementById(arr1[n]).style.backgroundColor = "rgba(156, 185, 247, 0.3)";
+        }
+
+        // function focusOff(){
+        //     document.getElementById(arr1[n])
+        // }
+    </script>
+</body>
+</html>

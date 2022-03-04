@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            /*
+            padding: 30px;
+            margin: 30px auto;
+            background-color: dodgerblue;
+            display: flex;
+            align-items: stretch;
+            justify-content: center; */
+            display: flex;
+            height: 300px;
+            background-color: #ddd;
+        }
+        .container>div{
+            background: chocolate;
+            color: #fff;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 80px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!--
+        <div style="flex-grow:3">1</div>
+        <div style="flex-grow:5">2</div>
+        <div style="flex-grow:2">3</div> -->
+
+        <!-- 
+        <div style="order:1">4</div>
+        <div style="order:6">5</div>
+        <div style="order:4">6</div> -->
+
+        <!-- 
+        <div>1</div>
+        <div style="flex-shrink:0">2</div>
+        <div>3</div>
+        <div style="flex-basis: 100px">1</div> -->
+        <div>1</div>
+        <div>2</div>
+        <div style="align-self: center;">3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>
