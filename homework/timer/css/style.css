@@ -1,0 +1,28 @@
+*{box-sizing: border-box;}
+div.back{
+    width: 500px;
+    height: 500px;
+    background-color: darkgrey;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+img{
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 2px);
+    transform: rotate(-180deg);
+    transform-origin: top center;
+}
+button{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
