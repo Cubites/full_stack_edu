@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        html, body{
+            height: 100%;
+            margin: 0;
+        }
+        .tab{
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 15px 17px;
+            font-size: 17px;
+            width: 25%;
+            float: left;
+        }
+        .tab:hover{
+            background-color: #999;
+        }
+        .tabcontent{
+            color: #efefef;
+            padding: 200px;
+            text-align: center;
+            height: 100%;
+            display: none;
+        }
+        #menu1{
+            background-color: red;
+        }
+        #menu2{
+            background-color: green;
+        }
+        #menu3{
+            background-color: dodgerblue;
+        }
+        #menu4{
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="tab" onclick="tab('menu1', this, 'red')">홈</button>
+    <button class="tab" onclick="tab('menu2', this, 'green')">메뉴1</button>
+    <button class="tab" onclick="tab('menu3', this, 'dodgerblue')">메뉴2</button>
+    <button class="tab" onclick="tab('menu4', this, 'orange')">메뉴3</button>
+
+    <div id="menu1" class="tabcontent">
+        <h1>메뉴1</h1>
+        <div>
+            <img src="https://picsum.photos/id/247/800/400">
+        </div>
+    </div>
+    <div id="menu2" class="tabcontent">
+        <h1>메뉴2</h1>
+        <div>
+            <img src="https://picsum.photos/id/239/800/400">
+        </div>
+    </div>
+    <div id="menu3" class="tabcontent">
+        <h1>메뉴3</h1>
+        <div>
+            <img src="https://picsum.photos/id/255/800/400">
+        </div>
+    </div>
+    <div id="menu4" class="tabcontent">
+        <h1>메뉴4</h1>
+        <div>
+            <img src="https://picsum.photos/id/312/800/400">
+        </div>
+    </div>
+
+    <script>
+        function tab(pgname, el, color){
+            var i, tabcontent, tab;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            tab = document.getElementsByClassName("tab");
+            for(i = 0; i < tabcontent.length; i++){
+                tabcontent[i].style.display = "none";
+            }
+            for(i = 0; i < tabcontent.length; i++){
+                tab[i].style.backgroundColor = "";
+            }
+            document.getElementById(pgname).style.display = "block";
+            el.style.backgroundColor = color;
+        }
+
+        document.getElementsByClassName("tab")[0].style.backgroundColor = 'red';
+        document.getElementById('menu1').style.display = "block";
+    </script>
+</body>
+</html>

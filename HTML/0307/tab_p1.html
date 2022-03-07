@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        div.tab{
+            width: 10%;
+            float: left;
+        }
+        .tab .tablinks{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-left: 1px solid #ddd;
+            border-top: 1px solid #ddd;
+        }
+        .tablinks:last-child{
+            border-bottom: 1px solid #ddd;
+        }
+        .tablinks:hover, .active{
+            font-weight: bold;
+            background-color: #ddd;
+            color: #333;
+        }
+        div.content{
+            width: 90%;
+            height: 150px;
+            float: right;
+            border: 1px solid #ddd;
+            background-color: #ddd;
+        }
+        .tabcontent{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class= tab>
+            <div class="tablinks" onclick="visible(0)">탭1</div>
+            <div class="tablinks" onclick="visible(1)">탭1</div>
+            <div class="tablinks" onclick="visible(2)">탭1</div>
+        </div>
+        <div class="content">
+            <div class="tabcontent" id="a">
+                <p>심장은 불러 있는 하여도 살 반짝이는 새가 되려니와, 것이다.</p>
+                <p>만물은 충분히 대중을 위하여, 이상 어디 얼마나 같으며, 피다.</p>
+            </div>
+            <div class="tabcontent" id="b">
+                <p>보이는 방황하여도, 예수는 찬미를 인간의 것이다. </p>
+                <p>끓는 불어 그들은 청춘에서만 못할 같지 운다. </p>
+            </div>
+            <div class="tabcontent" id="c">
+                <p>지혜는 그들에게 풀이 심장은 불어 귀는 찾아 뜨거운지라, 인생을 피다. </p>
+                <p>현저하게 아름답고 찾아다녀도, 뿐이다.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var i = 0;
+        var tablinks = document.getElementsByClassName("tablinks");
+        var tabcontent = document.getElementsByClassName("tabcontent");
+        tablinks[0].className += " active";
+        tabcontent[0].style.display = "block";
+        var ids = {0:"a", 1:"b", 2:"c"};
+        function visible(n){
+            for(i = 0; i < tablinks.length; i++){
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            tablinks[n].className += " active";
+            for(i = 0; i < tabcontent.length; i++){
+                tabcontent[i].style.display = "none";
+            }
+            document.getElementById(ids[n]).style.display = "block";
+        }
+
+    </script>
+</body>
+</html>

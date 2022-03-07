@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id = "color">
+    <button onClick="colorChange()">random color</button>
+    <script>
+        // 1. 버튼을 클릭할 때마다 함수가 실행되어 5개(#ff0, #6c0, #fcf, #cf0, #39f)의 색상값 중 1개가 랜덤으로 body에 적용되도록 만든다.
+        function colorChange(){
+            var arrColor = ["#ff0", "#6c0", "#fcf", "cf0", "#39f"];
+            var randomNum = Math.floor(Math.random() * arrColor.length);
+
+            document.getElementById("color").style.backgroundColor = arrColor[randomNum];
+        }
+
+        // 2. 객체 생성자 함수를 만들어 두 학생(김철, 이써니)의 객체를 생성하고 속성으로 이름, 국어점수, 영어점수를 등록 
+        // getTestInfo(이름, 국어, 영어 모두 출력하는 함수),
+        // getAvg(영어, 국어의 평균점수) 를 출력
+        function TestScore(name, kor, eng){
+            this.userName = name;
+            this.korNum = kor;
+            this.engNum = eng;
+
+            this.getTestInfo = function(){
+                document.write("이름: " + this.userName, "<br>");
+                document.write("국어: " + this.korNum, "<br>");
+                document.write("영어: " + this.engNum, "<br>");
+            }
+            this.getAvg = function(){
+                return (this.korNum + this.engNum) / 2;
+            }
+        }
+
+        var kim = new TestScore("김철", 80, 60);
+        var Lee = new TestScore("이써니", 75, 85);
+
+        kim.getTestInfo();
+        document.write("평균점수 : " + kim.getAvg(), "<br><br>");
+
+        Lee.getTestInfo();
+        document.write("평균점수 : " + Lee.getAvg());
+    </script>
+</body>
+</html>

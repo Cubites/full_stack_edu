@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onclick="naver(0)">이동</h1>
+    <h1 onclick="naver(1)">새로고침</h1>
+    <script>
+        function naver(e){
+            if(e){
+                location.relead();
+            }else{
+                location.href = "https://naver.com";
+            }
+        }
+        console.log(location.search);
+    </script>
+</body>
+</html>

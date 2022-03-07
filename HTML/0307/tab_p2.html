@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        div.container{
+            width: 500px;
+            height: 700px;
+            overflow: hidden;
+            position: relative;
+        }
+        .tab{
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            bottom: 0;
+            text-align: center;
+        }
+        .tab a{
+            width: 25%;
+            padding-top: 25px;
+            border-left: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            text-decoration: none;
+            color: #333;
+        }
+        .tab a:last-child{
+            border-right: 1px solid #ddd;
+        }
+        .tab a:hover, .active{
+            background: #ddd;
+            color: black;
+            font-weight: bold;
+        }
+        .content{
+            width: 100%;
+            height: 90%;
+            overflow: hidden;
+        }
+        .tabcontent{
+            display: none;
+        }
+        img{
+            display: block;
+            width: 100%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tab">
+            <a href="javascript:void(0)" class="tablinks" onclick="visible(0)">001</a>
+            <a href="javascript:void(0)" class="tablinks" onclick="visible(1)">002</a>
+            <a href="javascript:void(0)" class="tablinks" onclick="visible(2)">003</a>
+            <a href="javascript:void(0)" class="tablinks" onclick="visible(3)">004</a>
+        </div>
+        <div class="content">
+            <div class="tabcontent">
+                <img src="images/t01.jpg" alt="t01">
+            </div>
+            <div class="tabcontent">
+                <img src="images/t02.jpg" alt="t02">
+            </div>
+            <div class="tabcontent">
+                <img src="images/t03.jpg" alt="t03">
+            </div>
+            <div class="tabcontent">
+                <img src="images/t04.jpg" alt="t04">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var i;
+        var tablinks = document.getElementsByClassName("tablinks");
+        var tabcontent = document.getElementsByClassName("tabcontent");
+
+        tablinks[0].className += " active";
+        tabcontent[0].style.display = "block";
+
+        function visible(n){
+            for(i = 0; i < tablinks.length; i++){
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+        }
+    </script>
+</body>
+</html>
