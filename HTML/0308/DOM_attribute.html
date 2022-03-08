@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showFirstAttr(){
+            var firstP = document.getElementById("p1");
+            var resultText = document.getElementById("result");
+            // 속성이 있는지 확인 > 있으면 속성들 출력, 없으면 지정 text 출력
+            if(firstP.hasAttributes()){
+                var attrs = firstP.attributes;
+                var text = "";
+                for(var i = attrs.length-1; i >= 0; i--){
+                    text += attrs[i].name + " -> " + attrs[i].value;
+                }
+                resultText.value = text;
+            }else{
+                resultText.value = "읽을 수 있는 내용이 없습니다.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <p id="p1" style="color: green;">첫 번째 문장</p>
+    <form>
+        <p>
+            <input type="button" value="첫 번째 버튼입니다." onclick="showFirstAttr();">
+            <input type="text" id="result">
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- a태그에 링크 넣기 -->
+    <p><a href="#" id="test" target="_black">링크이동</a></p>
+
+    <!-- a태그 이외에 다른 태그에 링크 넣기 -->
+    <p id ="test2">이동버튼</p>
+
+    <script>
+        document.getElementById("test").setAttribute('href', 'https://naver.com');
+
+        document.getElementById("test2").onclick = function(){
+            location.href = "https://naver.com";
+        }
+    </script>
+</body>
+</html>

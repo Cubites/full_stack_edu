@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        div{
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            background: url(images/ch.jpg) no-repeat;
+            position: relative;
+        }
+        .tongue{
+            position: absolute;
+            top: 190px;
+            left: 165px;
+            display: none;
+        }
+        p{
+            position: absolute;
+            top: 10px;
+            right: 40px;
+            padding: 20px;
+            border-radius: 20px;
+            background: #fff;
+        }
+    </style>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('p, .tongue').hide();
+            $('.btn').click(function(){
+                $('p').fadeToggle();
+                $('.tongue').slideToggle();
+            })
+        });
+    </script>
+</head>
+<body>
+    <button class="btn"> 메롱 </button>
+    <div>
+        <p>메롱</p>
+        <img src="images/th.png" alt="tongue" class="tongue">
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <!-- 연동하는 다른 방법 -->
+    <!-- <script src="https://code.jquery.com/jquery-latest.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery.min.js"></script> -->
+    <script>
+        // jquery의 기본 형식
+        // $(document).ready(function(){});
+
+        // 축약
+        // $(function(){});
+
+        $(document).ready(function(){
+            // $(selector).action();
+            // $(셀렉터).메소드();
+            $('p').click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>클릭</p>
+</body>
+</html>

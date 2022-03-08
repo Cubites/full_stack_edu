@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <style>
+        img{
+            width: 300px;
+            position: absolute;
+        }
+        .face{
+            position: relative;
+        }
+        .thung{
+            width: 15px;
+            height: 30px;
+            background-color: rgb(250, 162, 162);
+            border-bottom-left-radius: 7.5px;
+            border-bottom-right-radius: 7.5px;
+            position: absolute;
+            top: 181px;
+            left: 142px;
+            border: 1px solid #333;
+            border-top: none;
+        }
+        .thung span{
+            display: block;
+            width: 1px;
+            height: 15px;
+            margin-top: 15px;
+            margin-left: 7px;
+            background-color: #333;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('.btn').click(function(){
+                $('.thung').slideToggle(1000);
+            })
+        });
+    </script>
+</head>
+<body>
+    <button class="btn"> 메롱 </button>
+
+    <div class="face">
+        <img src="images/merong.jpg" alt="face">
+        <div class="thung">
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>
