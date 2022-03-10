@@ -1,0 +1,25 @@
+*{box-sizing: border-box;}
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif; 
+}
+.container{
+    width: 1365px;
+}
+.logo{
+    width: 270px;
+    height: 120px;
+    background-color: red;
+    text-align: center;
+    padding-top: 27.5px;
+}
+nav{
+    width: 1095px;
+}
+.top-nav{
+    height: 30px;
+    background-color: black;
+    padding-left: 16px;
+}

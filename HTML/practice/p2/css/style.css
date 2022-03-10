@@ -1,0 +1,42 @@
+*{box-sizing: border-box;}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #222328;
+}
+div.container{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 800px;
+    background-color: darkolivegreen;
+}
+/** header **/
+header{
+    width: 100%;
+    height: 100px;
+    padding: 30px;
+}
+div.logo{
+    float: left;
+}
+ul.gnb{
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+ul.gnb li{
+    display: block;
+    width: 150px;
+    height: 40px;
+    list-style-type: none;
+    float: left;
+    line-height: 10px;
+}
+ul.gnb li a{
+    display: block;
+    text-decoration: none;
+    color: #222328;
+    text-align: center;
+}

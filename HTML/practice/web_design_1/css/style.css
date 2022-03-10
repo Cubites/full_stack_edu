@@ -1,0 +1,167 @@
+*{box-sizing: border-box;}
+body{
+    background-color: #fff;
+    color: #222328;
+}
+.container{
+    width: 1200px;
+    height: 700px;
+    /* background-color: darkcyan; */
+    margin-left: auto;
+    margin-right: auto;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #222328
+}
+
+/* header */
+header{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    /* background-color: darkgray; */
+    justify-content: space-between;
+    align-content: center;
+}
+.logo{
+    width: 20%;
+    display: block;
+    text-align: center;
+}
+.logo img{
+    margin-top: 30px;
+}
+nav{
+    width: 50%;
+    margin-right: 5%;
+}
+.gnb{
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+    border: 1px solid #000;
+    display: flex;
+}
+.gnb li{
+    width: 25%;
+    border-right: 1px solid #000;
+}
+.gnb li:last-child{
+    border-right: none;
+}
+.gnb li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: bold;
+}
+nav:hover .lnb{
+    display: block;
+}
+ul.gnb>li:hover a{
+    background-color: #222328;
+    color: #fff;
+}
+.lnb{
+    width: 100%;
+    border: 1px solid #000;
+    border-top: none;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    z-index: 10;
+}
+.lnb>li>ul{
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+.lnb>li>ul>li{
+    width: 25%;
+}
+.lnb>li>ul>li>a{
+    display: block;
+    padding-top: 10px;
+    width: 100%;
+    height: 40px;
+}
+.lnb li a:hover{
+    background-color: #222328;
+    color: #fff;
+}
+
+/* slide */
+div.slide{
+    height: 300px;
+    position: relative;
+    z-index: 1;
+}
+.slide img{
+    z-index: 1
+}
+
+
+/* section */
+section{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    /* background-color: darkgreen */
+}
+.section{
+    width: calc(100% / 3);
+    height: 100%;
+    padding-top: 10px;
+}
+.section .sec-header{
+    display: flex;
+    margin-left: 10px;
+    height: 20%;
+    text-align: center;
+}
+.notice-tab, .gallery-tab{
+    width: 30%;
+    height: 100%;
+    padding-top: 10px;
+    border: 1px solid #000;
+    border-bottom: none;
+    font-weight: bold;
+    background-color: #afafaf;
+}
+.contents, .gallery{
+    margin: 0 10px;
+    padding: 10px 30px;
+    padding-right: 10px;
+    border: 1px solid #000;
+}
+.contents li{
+    padding-left: 10px;
+    list-style-type: circle;
+    font-size: 15px;
+}
+.active{
+    background-color: #fff;
+    color: #222328;
+}
+.gallery{
+    display: flex;
+    overflow: hidden;
+    height: 142px;
+    justify-content: space-between;
+    padding: 11px 20px;
+    display: none;
+}
+.gallery img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    align-self: center;
+}
