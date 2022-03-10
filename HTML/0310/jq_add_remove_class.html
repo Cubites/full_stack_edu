@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: fixed;
+            width: 400px;
+            height: 300px;
+            text-align: center;
+            background: #ededed;
+            box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.3);
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+        /*
+            addClass() - 클래스를 추가하는 함수
+            removeClass() - 클래스를 삭제하는 함수
+            toggleClass() - 클래스를 토글
+            hasClass() - 클래스가 있는지 확인
+                ex) if($('li').hasClass('selected')){ 자바스크립트 실행 }
+
+            css() - 연속해서 스타일시트를 쓸 때
+                1. css('color', 'blue').css('background', 'yellow');
+                2. css({'color': 'blue', 'background': 'yellow'});
+        */
+        $(function(){
+            $('.btn').click(function(){
+                if($('.box').hasClass('banish')){ // act 클래스를 가지고 있는 li가 있는 경우
+                    alert("접근금지");
+                }else{
+                    $('.box').removeClass('hide');
+                }
+            });
+
+            $('.btn2').click(function(){
+                $('.box').addClass('hide');
+            });
+
+            $('.btn3').click(function(){
+                $(".box").removeClass('banish');
+            })
+        });
+    </script>
+</head>
+<body>
+    <button class="btn"> 보이기 </button>
+    <button class="btn2"> 안보이기 </button>
+    <button class="btn3"> 금지해제 </button>
+
+    <div class="box banish hide">
+        <h1>이곳은 팝업입니다.</h1>
+        <p>팝업 박스를 테스트합니다.</p>
+    </div>
+</body>
+</html>

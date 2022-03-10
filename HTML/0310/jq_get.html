@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                var a = $('.box').text();
+                var b = $('#box').val();
+                var c = $('a').attr("href");
+                //값 가져오기(get)
+                alert(c);
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>글씨출력</button>
+    <div class="box">박스안</div>
+    <input type="text" id="box" value="input안">
+    <a href="http://naver.com">링크</a>
+</body>
+</html>

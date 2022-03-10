@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                $('.box').text('<h1>html문서입니다.</h1>');
+                $('#box').val("안에 내용을 씁니다.");
+                $('a').attr({"href": "http://naver.com", "title": "네이버"}).text('네이버 링크');
+                // 값 넣기(set)
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>글씨출력</button>
+    <div class="box"></div>
+    <input type="text" id="box">
+    <a href="">링크</a>
+</body>
+</html>

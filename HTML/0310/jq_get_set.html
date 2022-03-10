@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+        /*
+            html(), text(), attr(),
+            append() - 요소 내부의 뒤쪽에 추가
+            prepend() - 요소 내부의 앞쪽에 추가
+            after() - 요소 바깥의 뒤에 추가
+            before() - 요소 바깥의 앞에 추가
+
+            remove(), empty()
+
+            addClass() - 클래스를 추가하는 함수
+            removeClass() - 클래스를 삭제하는 함수
+            toggleClass() - 클래스를 토글
+            css() - 연속해서 스타일시트를 쓸 때
+                1. css('color', 'blue').css('background', 'yellow');
+                2. css({'color': 'blue', 'background': 'yellow'});
+        */
+        $(function(){
+            var num = 3;
+            $('.btn').click(function(){
+                num++;
+                $('ol').append("<li>리스트 " + num + "</li>");
+                // $('ol').prepend("<li>리스트 " + num + "</li>");
+                // $('ol').after("<li>리스트 " + num + "</li>");
+                // $('ol').before("<li>리스트 " + num + "</li>");
+            });
+
+            $('.btn2').click(function(){
+                $('li:last-child').remove(); // 요소 지우기
+                num--;
+            });
+
+            $('.btn3').click(function(){
+                $('li:first-child').empty(); // 내용 지우기
+            });
+        });
+    </script>
+</head>
+<body>
+    <button class="btn"> 추가하기 </button>
+    <button class="btn2"> 삭제하기 </button>
+    <button class="btn3"> 비우기 </button>
+    <!-- before -->
+    <ol>
+        <!-- prepend -->
+        <li>리스트 1</li>
+        <li>리스트 2</li>
+        <li>리스트 3</li>
+        <!-- append -->
+    </ol>
+    <!-- after -->
+</body>
+</html>

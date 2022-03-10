@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .mycar{
+            position: absolute;
+            left: 100px;
+            text-align: center;
+            width: 60px;
+            height: auto;
+            transform: rotate(180deg);
+        }
+        .cld{
+            position: absolute;
+            bottom: -75px;
+            left: 15px;
+            display: none;
+        }
+        .park{
+            width: 70px;
+            height: 70px;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            border: 5px solid #333;
+            border-top: none;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <!-- <script src="js/jquery.js"></script> -->
+    <script>
+        $(document).ready(function(){
+
+            var px = parseInt($('.park').position().left);
+            var py = parseInt($('.park').position().top);
+            console.log(px, py);
+
+
+
+            $(document).keydown(function(e){
+                console.log(e.keyCode);
+                // 왼쪽 37 위 38 오른쪽 39 아래 40
+                switch(e.keyCode){
+                    case 37:
+                        $('.mycar').css('transform', 'rotate(270deg)');
+                        $('.cld').show();
+                        $('.mycar').stop().animate({left: '-=50px'}, 500, function(){
+                            $('.cld').hide();
+                            cx = parseInt($(this).position().left);
+                            cy = parseInt($(this).position().top);
+                            console.log(cx, cy);
+                        });
+                        break;
+                    case 38:
+                        $('.mycar').css('transform', 'rotate(0deg)');
+                        $('.cld').show();
+                        $('.mycar').stop().animate({top: '-=50px'}, 500, function(){
+                            $('.cld').hide();
+                            cx = parseInt($(this).position().left);
+                            cy = parseInt($(this).position().top);
+                            console.log(cx, cy);
+                        });
+                        break;
+                    case 39:
+                        $('.mycar').css('transform', 'rotate(90deg)');
+                        $('.cld').show();
+                        $('.mycar').stop().animate({left: '+=50px'}, 500, function(){
+                            $('.cld').hide();
+                            cx = parseInt($(this).position().left);
+                            cy = parseInt($(this).position().top);
+                            console.log(cx, cy);
+                        });
+                        break;
+                    case 40:
+                        $('.mycar').css('transform', 'rotate(180deg)');
+                        $('.cld').show();
+                        $('.mycar').stop().animate({top: '+=50px'}, 500, function(){
+                            $('.cld').hide();
+                            cx = parseInt($(this).position().left);
+                            cy = parseInt($(this).position().top);
+                            console.log(cx, cy);
+                        });
+                        break;
+                }
+                var end1x = parseInt($('.park').position().left) - 10;
+                var end1y = parseInt($('.park').position().top) - 60;
+                var end2x = parseInt($('.park').position().left) - 60;
+                var end2y = parseInt($('.park').position().top) - 10;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="mycar">
+        <img src="images/car.png" alt="방구차">
+        <img src="images/cloud.gif" alt="연기" class="cld">
+    </div>
+
+    <div class="park"></div>
+</body>
+</html>

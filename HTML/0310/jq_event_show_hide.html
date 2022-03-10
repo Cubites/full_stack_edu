@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 20px;
+        }
+        .lnb{
+            display: none;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('ul.lnb').hide(); // == ul.lnb{ display: none; }
+
+            // $('.gnb.li').mouseenter(function(){
+            //     $('.lnb').slideDown();
+            // }).mouseleave(function(){
+            //     $('.lnb').slideUp();
+            // })
+
+            $('.gnb>li').hover(function(){
+                $('.lnb').fadeToggle(500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul class="gnb">
+        <li><a href="#">메뉴1</a>
+            <ul class="lnb">
+                <li><a href="#">서브메뉴</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
