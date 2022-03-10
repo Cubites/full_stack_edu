@@ -36,13 +36,14 @@ var num = 0;
 
 $(function(){
     setInterval(function (){
-        if(num == -900){
-            num = 0;
-            document.getElementsByClassName('slideImage')[0].style.top = '0px';
-        }
         num -= 300;
         var loc = num + 'px';
-        $('.slide>img').animate({'top': loc})
+        $('.slide>img').animate({'top': loc}, function (){
+            if(num == -900){
+                num = 0;
+                $('.slide>img').attr('style', 'top: 0;');
+            }
+        });
     }, 2000);
 
     
