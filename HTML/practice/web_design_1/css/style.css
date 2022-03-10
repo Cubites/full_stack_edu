@@ -19,6 +19,18 @@ a{
     text-decoration: none;
     color: #222328
 }
+.z-index-1{
+    position: relative;
+    z-index: 1;
+}
+.z-index-2{
+    position: relative;
+    z-index: 2;
+}
+.z-index-3{
+    position: relative;
+    z-index: 3;
+}
 
 /* header */
 header{
@@ -40,11 +52,11 @@ header{
 nav{
     width: 50%;
     margin-right: 5%;
+    margin: 30px 0;
 }
 .gnb{
     width: 100%;
     height: 40px;
-    margin-top: 30px;
     border: 1px solid #000;
     display: flex;
 }
@@ -76,8 +88,6 @@ ul.gnb>li:hover a{
     border-top: none;
     display: none;
     background-color: rgba(255, 255, 255, 0.7);
-    position: relative;
-    z-index: 10;
 }
 .lnb>li>ul{
     width: 100%;
@@ -97,24 +107,21 @@ ul.gnb>li:hover a{
     background-color: #222328;
     color: #fff;
 }
+/* /header */
 
 /* slide */
 div.slide{
     height: 300px;
-    position: relative;
-    z-index: 1;
-}
-.slide img{
-    z-index: 1
+    overflow: hidden;
 }
 
 
-/* section */
+/* section first */
 section{
     display: flex;
     width: 100%;
     height: 200px;
-    /* background-color: darkgreen */
+    /* background-color: darkgreen; */
 }
 .section{
     width: calc(100% / 3);
@@ -135,6 +142,10 @@ section{
     border-bottom: none;
     font-weight: bold;
     background-color: #afafaf;
+    margin-top: 1px;
+}
+.gallery-tab{
+    border-left: none;
 }
 .contents, .gallery{
     margin: 0 10px;
@@ -157,11 +168,25 @@ section{
     height: 142px;
     justify-content: space-between;
     padding: 11px 20px;
-    display: none;
 }
 .gallery img{
     display: block;
     width: 100px;
     height: 100px;
     align-self: center;
+}
+/* section second */
+.second{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: darkgreen;
+}
+.second a{
+    display: block;
+    align-self: center;
+    width: 80%;
+    height: 20%;
+    margin: 10px 0;
+    background-color: darkgoldenrod;
 }

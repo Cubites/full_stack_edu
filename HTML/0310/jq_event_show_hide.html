@@ -10,7 +10,7 @@
             font-size: 20px;
         }
         .lnb{
-            display: none;
+            /* display: none; */
         }
     </style>
     <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -25,7 +25,7 @@
             // })
 
             $('.gnb>li').hover(function(){
-                $('.lnb').fadeToggle(500);
+                $('.lnb').slideUp(500);
             });
         });
     </script>
