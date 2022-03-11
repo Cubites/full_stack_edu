@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .traversing, .traversing * {
+            display: block;
+            border: 2px solid #ccc;
+            color: #ccc;
+            padding: 5px;
+            margin: 15px;
+        }
+        div{
+            width: 500px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body class="traversing">body
+    <div>div
+        <ul class="a">ul
+            <li>li
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <p>1번입니다.</p>
+        <p>2번입니다.</p>
+        <p class="act">3번입니다.</p>
+        <p>4번입니다.</p>
+        <p class="act" id="act">5번입니다.</p>
+    </div>
+
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function(){
+            // 나와 부모(조상) 관계
+            // $('span').parent().css({'color' : 'red', 'border': '2px solid red'});
+            // $('span').parents().css({'color' : 'red', 'border': '2px solid red'});
+            //$('span').parents('div').css({'color' : 'red', 'border': '2px solid red'});
+            //$('span').parentsUntil('div').css({'color' : 'red', 'border': '2px solid red'});
+
+            // 나와 자식(자손) 관계
+            // $('div').children('ul.a').css({'color' : 'red', 'border': '2px solid red'});
+            // $('div').find('ul.a').css({'color' : 'red', 'border': '2px solid red'});
+            // $('div').find('*').css({'color' : 'red', 'border': '2px solid red'});
+
+            // 특별하게 선택
+            // $('p').eq(2).css("background", "pink");
+            // $('p').filter('.act').css("background", "pink");
+            // $('p').filter('#act').css("background", "pink");
+            $('p').not('.act').css("background", "pink");
+        });
+    </script>
+</body>
+</html>

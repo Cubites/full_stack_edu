@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myCanvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body onload="draw();">
+    <!-- width, height 값은 canvas 태그에 직접 넣어야함 (stylesheet에서 하면 에러남) -->
+    <canvas id="myCanvas" width="150" height="150">
+
+    </canvas>
+    <script>
+        function draw(){
+            var c = document.getElementById('myCanvas');
+            if(c.getContext){
+                var ctx = c.getContext("2d");
+                ctx.fillRect(25, 25, 50, 50);
+                
+                ctx.translate(25, 25);
+                ctx.fillStyle = 'red';
+                ctx.fillRect(25, 25, 50, 50);
+
+                ctx.translate(25, 25);
+                ctx.fillStyle = 'blue';
+                ctx.fillRect(25, 25, 50, 50);
+                
+            }
+        }
+    </script>
+</body>
+</html>
