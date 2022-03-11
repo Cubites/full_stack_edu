@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myCanvas{
+            border: 1px solid #000;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body onload="draw();">
+    <!-- width, height 값은 canvas 태그에 직접 넣어야함 (stylesheet에서 하면 에러남) -->
+    <canvas id="myCanvas" width="150" height="150">
+
+    </canvas>
+    <script>
+        function draw(){
+            var c = document.getElementById('myCanvas');
+            if(c.getContext){
+                var ctx = c.getContext("2d");
+
+                // ctx.fillRect(25, 25, 100, 100);
+                // ctx.clearRect(50, 50, 50, 50);
+
+                // ctx.beginPath();
+                // ctx.moveTo(75, 50);
+                // ctx.lineTo(100, 75);
+                // ctx.lineTo(100, 25);
+                // ctx.fill();
+
+                ctx.beginPath();
+                ctx.arc(75, 75, 50, 0, Math.PI * 2, true);
+                ctx.moveTo(110, 75); // 커서 이동 (원의 최상단에 있었음)
+                ctx.arc(75, 75, 35, 0, Math.PI, false); // 입(반원)
+                ctx.moveTo(65, 65);
+                ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // 왼쪽 눈
+                ctx.moveTo(95, 65);
+                ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // 오른쪽 눈
+                ctx.stroke();
+                
+            }
+        }
+        /* 선 그리기
+        ctx.moveTo(0, 0);
+        ctx.lineTo(300, 150);
+        ctx.stroke();
+        */
+        /* 원 그리기
+        ctx.beginPath();
+        ctx.arc(95, 50, 40, 0, 2*Math.PI);
+        ctx.stroke(); */
+
+        /* fill
+        ctx.fillStyle = "rgb(200, 0, 0)";
+        ctx.fillRect(10, 10, 50, 50); */
+
+    </script>
+</body>
+</html>
