@@ -61,4 +61,12 @@ $(function(){
         $('.contents').hide();
         $('.gallery').show();
     });
+
+    $('.popup button').click(function(){
+        $('div.background').attr({"style": "display: none"})
+    })
 });
+
+function popup(){
+    $('.background').css("display", "block");
+}
