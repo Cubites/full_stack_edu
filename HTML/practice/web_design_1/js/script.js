@@ -38,11 +38,11 @@ $(function(){
     setInterval(function (){
         if(num == -900){
             num = 0;
-            document.getElementsByClassName('slideImage')[0].style.top = '0px';
+            document.getElementsByClassName('images')[0].style.top = '0px';
         }
         num -= 300;
         var loc = num + 'px';
-        $('.slide>img').animate({'top': loc})
+        $('.images').animate({'top': loc})
     }, 2000);
 
     
@@ -60,4 +60,12 @@ $(function(){
         $('.contents').hide();
         $('.gallery').show();
     });
+
+    $('.popup button').click(function(){
+        $('div.background').attr({"style": "display: none"})
+    })
 });
+
+function popup(){
+    $('.background').css("display", "block");
+}
