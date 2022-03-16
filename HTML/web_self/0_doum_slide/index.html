@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>도움카페</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/style copy.css">
+</head>
+<body>
+    <!-- header -->
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-2 col-tb-12">
+                    <a class="brand" href="#">
+                       <span class="material-icons">flutter_dash</span> CAFE
+                    </a>
+                </div>
+                <a href="javascript:void(0);" class="nav-btn" onclick="openNav()"><span class="material-icons">density_medium</span></a>
+                <nav class="col-10" id="mynav">
+                    <a href="javascript:void(0)" class="close-btn" onclick="closeNav()"><span class="material-icons">close</span></a>
+                    <div class="row">
+                       <div class="col-8 col-tb-12">
+                           <a href="#" class="weight red">홈</a>
+                           <a href="#">팬카페</a>
+                           <a href="#">카페랭킹</a>
+                           <a href="#">내카페</a>
+                           <span class="bar"></span>
+                           <a href="#" class="red">온라인교실</a>
+                       </div>
+                       <div class="col-4 col-tb-12 text-right">
+                          <a href="#" class="search"><span class="material-icons">search</span></a>
+                       </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div> 
+    <!-- /header --> 
+    <div class="slider">
+        <div class="slide-arrow">
+            <a href="javascript:void(0);" class="left-arrow" onclick="slideMove(0)"><span class="material-icons">arrow_back_ios</span></a>
+            <a href="javascript:void(0);" class="right-arrow" onclick="slideMove(1)"><span class="material-icons">arrow_forward_ios</span></a>
+        </div>
+        <div class="container cont-1 cont" style="display: block;">
+            <h3><span class="light">이야기 하나</span> '밥친구' 하기 좋은 유튜버 리스트</h3>
+            <ul>
+                <li>
+                    <a href="#"><span class="list-text active">여행 유튜버가 흥정에 지지 않는 택시기...</span> <span class="cafe-text">여행하기</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">훈수충이 없는 운동 유튜버.jpg </span><span class="cafe-text">*여성시대</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">입짧은햇님 케이크 먹방 특징.gif </span><span class="cafe-text">옆집언니</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">역대급 킹받는다는 침착맨 킹뚜껑 먹방.jpg </span><span class="cafe-text">먹방시대</span></a> 
+                </li>                                       
+            </ul>
+        </div>
+        <div class="container cont-2 cont" style="display: none;">
+            <h3><span class="light">이야기 둘</span> 오늘날까지도 반복되는 전쟁의 역사</h3>
+            <ul>
+                <li>
+                    <a href="#"><span class="list-text active">세계 전쟁사 3대 레전드 배틀</span> <span class="cafe-text">樂soccer</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">세계 전쟁사 최대 미스테리.jpg</span><span class="cafe-text">쭉빵카페</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">러시아는 왜 우크라이나를 침공했을...</span><span class="cafe-text">우리동네</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">글제목한국ㆍ일본처럼 사이가 안좋은 아...</span><span class="cafe-text">훌리건 천국</span></a> 
+                </li>                                       
+            </ul>
+        </div>
+        <div class="container cont-3 cont" style="display: none;">
+            <h3><span class="light">이야기 셋</span> SNS 올리면 어디냐고 물어보는 카페</h3>
+            <ul>
+                <li>
+                    <a href="#"><span class="list-text active">부산 영도에 있는 초대형 카페</span> <span class="cafe-text">도탁스</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">도심 속 작은 숲?? 뷰 맛집 브런치...</span><span class="cafe-text">연악과 산으...</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">파주 더티트렁크 카페 다녀왔어요</span><span class="cafe-text">7수오</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">바다를 병풍처럼 두른 카페가 있다?...</span><span class="cafe-text">먹방시대</span></a> 
+                </li>                                       
+            </ul>
+        </div>
+        <div class="container cont-4 cont" style="display: none;">
+            <h3><span class="light">이야기 넷</span> 원조 다크 히어로의 귀환, 배트맨</h3>
+            <ul>
+                <li>
+                    <a href="#"><span class="list-text active">이래도 되나 싶을정도로 힙한 조이...</span> <span class="cafe-text">소울드레서</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">올해 가장 기대되는 영화1위: 더 배트맨</span><span class="cafe-text">내가 아는...</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">영화 '더 배트맨' 시사회 반응.jpg</span><span class="cafe-text">옆집언니</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">DC [더 배트맨] 리들러 수수께끼 번...</span><span class="cafe-text">도탁스</span></a> 
+                </li>                                       
+            </ul>
+        </div>
+        <div class="container cont-5 cont" style="display: none;">
+            <h3><span class="light">이야기 다섯</span> '밥친구' 하기 좋은 유튜버 리스트</h3>
+            <ul>
+                <li>
+                    <a href="#"><span class="list-text active">사람들이 리메이크곡인지 잘 모르는 노래</span> <span class="cafe-text">방석 위에...</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">에스파 세비지에서 떠오른다는 노래</span><span class="cafe-text">방석 위에...</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">글제목이효리와 아이유가 서로를 묘사하...</span><span class="cafe-text">방석 위에...</span></a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="list-text">글제목들으면 황홀해지는, 동화에서 차용...</span><span class="cafe-text">방석 위에...</span></a> 
+                </li>                                       
+            </ul>
+        </div>
+    </div>
+    <!-- my cafe -->
+    <div class="mycafe">
+        <div class="container">
+
+        </div>
+    </div>
+    <script src="js/custom copy.js"></script>
+</body>
+</html>
