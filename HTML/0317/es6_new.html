@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        /*
+            1. function이 매우 중요한 절차적 언어 프로그램
+            class // 포로토타입을 베이스로한 class 흉내를 낸 object
+
+            2. 함수이름을 보고 어떤 작업을 할 함수인지 짐작할 수 있어야 함
+            3. 함수이름으로 어떤 값을 리턴할지 예상할 수 있어야 함
+            4. 하나의 함수는 한 가지 일만 하도록 해야 함
+            5. 변수이름을 지을 때는 명사형, 함수이름을 지을 때는 동사형
+            6. 자바스크립트에서는 함수역시 object 임 (예 : let num = (function{}))
+            7. 프로그램을 구성하는 기본적인 빌딩블록 서브프로그램이라고도 불리면 여러번 재사용이 가능
+        */
+
+        function printHi(){
+            console.log('Hi');
+        };
+        function log(message){
+            console.log(message);
+        };
+        printHi();
+        log('Hello');
+        log('안녕');
+        log(123456);
+        let str = '하이';
+
+
+        function changeName(obj){
+            obj.name = '김철수';
+        }
+        const uname = {name: '홍길동'}
+        changeName(uname);
+        console.log(uname);
+
+        // default parameters - es6에서 새로 생긴 문법
+        function smessage(message, from = '무명씨'){ // ECMA script 6 버전에서 예외처리
+            // if(from == undefined){
+            //     from = '무명씨'; // from 입력이 없을 때 예외처리
+            // }
+            console.log(`${message} by ${from}`);
+        }
+        smessage('반갑습니다.')
+
+        // 배열형 파라미터 (...) - es6에서 새로 생긴 문법
+        function memberAll(...args){ // 매개변수를 배열로 받음
+            // for(let i = 0; i < args.length; i++){
+            //     console.log(args[i])
+            // }
+            for(const arg of args){
+                console.log(arg);
+            }
+        }
+        memberAll('철수', '민수', '명수', '상수');
+    </script>
+</body>
+</html>

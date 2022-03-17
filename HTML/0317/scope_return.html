@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        /*
+            1. function이 매우 중요한 절차적 언어 프로그램
+            class // 포로토타입을 베이스로한 class 흉내를 낸 object
+
+            2. 함수이름을 보고 어떤 작업을 할 함수인지 짐작할 수 있어야 함
+            3. 함수이름으로 어떤 값을 리턴할지 예상할 수 있어야 함
+            4. 하나의 함수는 한 가지 일만 하도록 해야 함
+            5. 변수이름을 지을 때는 명사형, 함수이름을 지을 때는 동사형
+            6. 자바스크립트에서는 함수역시 object 임 (예 : let num = (function{}))
+            7. 프로그램을 구성하는 기본적인 빌딩블록 서브프로그램이라고도 불리면 여러번 재사용이 가능
+        */
+
+        // 함수의 스코프
+        let globalVar = 'global';
+        function scopeMessage(){
+            let message = '안녕';
+            console.log(message); // 지역변수
+            console.log(globalVar); // 전역변수
+            function innMessage(){
+                console.log(message);
+                let childMessage = '비가와요';
+                console.log(childMessage);
+                console.log(globalVar); // 전역변수
+            }
+            // console.log(childMessage);
+        }
+        // console.log(message);
+
+        scopeMessage();
+
+        // return 타입
+        function sum(a, b){
+            console.log(a + b);
+            return undefined; // return이 없는 경우 undefined 반환
+        }
+        let num1 = 3;
+        let num2 = 5;
+
+        const result = sum(num1, num2);
+        console.log(result);
+
+        // 예시
+        function adultMember(userAge){
+            // if(userAge < 19){
+            //     // asdhbt
+            // }else{
+            //     // 정상적인 실행;
+            // }
+            if(userAge < 19){
+                return ;
+            }
+        }
+        // 조건에 맞을 때는 빨리 리턴을 해서 함수를 종료시키는 것이 좋음
+
+        // 함수는 다른 변수와 마찬가지로 변수에 할당할 수 있고 파라미터로 전달이 되며 리턴 값으로 리턴될 수도 있음
+
+        // print(); // 익명함수는 호이스팅되지 않음
+        print2();
+
+        const print = function(){
+            console.log('print');
+        }
+
+        function print2(){
+            console.log('print2');
+        }
+
+        const newPrint = print;
+        newPrint();
+
+        // 1. ok 라는 대답을 받는 함수를 만든다.
+        // 2. ok 라는 대답을 받은 함수가 정상적으로 실행되면 printYes()라는 함수가 실행
+        // 3. ok 라는 함수가 비정상적으로 실행되면 printNo()라는 함수를 실행
+
+        function ok(ans, printYes, printNo){ // 콜백함수
+            if(ans == 'ok'){
+                printYes();
+            }else{
+                printNo();
+            }
+        }
+
+        const printYes = function(){
+            console.log('good!');
+        }
+        const printNo = function(){
+            console.log('Not good!');
+        }
+        ok('ok', printYes, printNo);
+        ok('no', printYes, printNo);
+
+    </script>
+</body>
+</html>
