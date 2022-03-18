@@ -1,0 +1,130 @@
+*{box-sizing: border-box;}
+.container{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* header */
+header{
+    width: 100%;
+    height: 200px;
+}
+
+/** top **/
+.top{
+    width: 100%;
+    height: 24px;
+    display: flex;
+    justify-content:space-between;
+}
+.top a.home{
+    display: block;
+    width: 42px;
+    height: 17px;
+    background: url("../images/minidaum_v5.png") no-repeat;
+    background-size: 280%;
+    align-self: center;
+}
+.top-right{
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+}
+.top-right a.login{
+    display: block;
+    width: 52px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    text-decoration: none;
+    color: #999;
+    font-size: 13px;
+    border: 1px solid #ddd;
+}
+.top-right a.mail{
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("../images/minidaum_v5.png") no-repeat;
+    background-position: 0px -20px;
+    background-size: 120px 960px;
+    /* overflow: hidden; */
+}
+.top-right a.menu{
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("../images/minidaum_v5.png") no-repeat;
+    background-position: -30px -20px;
+    background-size: 120px 960px;
+}
+/** /top **/
+/** nav **/
+.nav{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    padding: 20px 0;
+    justify-content: space-between;
+    position: relative;
+}
+
+a.cafe-home{
+    display: block;
+    width: 74px;
+    height: 28px;
+    background: url(../images/ico_cafenew_190703.png) no-repeat;
+    align-self: center;
+}
+ul.gnb{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    position: relative;
+    left: 0;
+}
+ul.gnb li{
+    display: block;
+    margin: 5px 10px;
+    font-size: 17px
+}
+ul.gnb li:first-child a{
+    color: rgb(255, 86, 86);
+    font-weight: bold;
+}
+ul.gnb li a{
+    text-decoration: none;
+    color: #333;
+}
+ul.gnb li:last-child a{
+    color: rgb(255, 86, 86);
+    padding-left: 20px;
+    border-left: 1px solid #ddd;
+}
+/** /nav **/
+/** search **/
+.search-type{
+    font-size: 13px;
+    color: #333;
+}
+.search .search-types{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    border: 1px solid #333;
+}
+.search-types li a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    color: #333;
+}
+.search input{
+    width: 150px;
+}
