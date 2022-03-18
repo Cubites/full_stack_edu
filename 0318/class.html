@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Javascript class
+        // 1. 클래스의 필수 가족 (생성자와 메소드)
+        class Person{
+            //생성자
+            constructor(name, age){
+                // field (속성)
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        const chulsu = new Person('chulsu', 30);
+        const sooni = new Person('sooni', 28);
+        console.log(`이름 : ${chulsu.name}, 나이 : ${chulsu.age}`);
+        console.log(`이름 : ${sooni.name}, 나이 : ${sooni.age}`);
+        
+        class Jeans{
+            constructor(name, color, price){
+                this.name = name;
+                this.color = color;
+                this.price = price;
+            }
+            showPrice(){
+                console.log(`이 ${this.name}의 가격은 ${this.price}이며 색깔은 ${this.color}입니다.`);
+            }
+        }
+
+        const myjean = new Jeans("Lee", "white blue", "200,000원");
+        myjean.showPrice();
+
+        // 의자 클래스를 생성하고 속성으로 색깔, 앉은 높이, 앉은 크기, 가격을 만들고
+        // 메소드를 이용해서 전체 속성 정보를 보여줍니다.
+        // 메소드를 console에 출력해 보세요.
+        class Chairs{
+            constructor(color, sit_height, sit_size, price){
+                this.color = color;
+                this.sit_height = sit_hegiht;
+                this.sit_size = sit_size;
+                this.price = price;
+            }
+            showChair(){
+                console.log(`이 의자의 색깔은 ${this.color}이고`);
+            }
+        }
+        
+        // 2. getter 와 setter 의 이용
+        // 커피자판기를 만ㄷ르자 300원 이상을 넣으면 밀크커피가 나오고 300원 미만을 넣으면 모자라요.
+        class CoffeeMachine{
+            constructor(money){
+                this.coffee = '맥심';
+                this.sugar = '설탕';
+                this.cream = '프리마';
+                this.money = money;
+            }
+            get money(){
+                return this._money;
+            }
+
+            set money(value){
+                this._money = value > 299 ? this.make() : console.log('돈이 모자라요.');
+            }
+
+            make(){
+                console.log(`1. ${this.coffee}를 넣습니다.`);
+                console.log(`2. ${this.sugar}를 넣습니다.`);
+                console.log(`3. ${this.cream}을 넣습니다.`);
+                console.log(`잘 저어 줍니다.`);
+                console.log(`커피가 나왔습니다. 맛있게 드세요.`);
+            }
+        }
+
+        const a = new CoffeeMachine(150);
+        a.money;
+        const b = new CoffeeMachine(300);
+        b.money;
+    </script>
+</body>
+</html>
