@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대한은행</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.12.3.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#"><img src="images/logo.jpg" alt="logo"></a>
+            <nav>
+                <ul class="gnb">
+                    <li><a href="#">개인</a></li>
+                    <li><a href="#">기업</a></li>
+                    <li><a href="#">금융상품</a></li>
+                    <li><a href="#">카드</a></li>
+                </ul>
+                <div class="lnb">
+                    <ul>
+                        <li><a href="#">조회</a></li>
+                        <li><a href="#">이체</a></li>
+                        <li><a href="#">공과금</a></li>
+                        <li><a href="#">예금/신탁</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">조회</a></li>
+                        <li><a href="#">이체</a></li>
+                        <li><a href="#">전자결재</a></li>
+                        <li><a href="#">수표/어음</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">저축상품</a></li>
+                        <li><a href="#">대출상품</a></li>
+                        <li><a href="#">투자상품</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">카드 정보</a></li>
+                        <li><a href="#">카드 신청</a></li>
+                        <li><a href="#">이용내역조회</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="slide">
+            <div class="slider">
+                <img src="images/slide01.jpg" alt="slide01">
+                <img src="images/slide02.jpg" alt="slide02">
+                <img src="images/slide03.jpg" alt="slide03">
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-left">
+                <div class="m-left-top">
+                    <a href="javascript:void(0)" class="active" onclick="act(0)">공지사항</a>
+                    <a href="javascript:void(0)" onclick="act(1)">갤러리</a>
+                </div>
+                <div class="m-left-content">
+                    <ul class="notice content-active">
+                        <li><a href="javascript:void(0)" class="popup">바이오인증을 활용한 「손으로 출금」</a><a></a>2021.05.25</a></li>
+                        <li><a href="#">「대한스타드림」 서비스 신규 오픈!</a><a>2021.05.21</a></li>
+                        <li><a href="#">「연금의 정답! TDF」 퇴직연금 고객 이벤트</a><a>2020.07.05</a></li>
+                        <li><a href="#">「KB모바일인증서 서비스」출시 안내</a><a>2019.06.14</a></li>
+                    </ul>
+                    <div class="gallery">
+                        <img src="images/gallery01.jpg" alt="gallery01">
+                        <img src="images/gallery02.jpg" alt="gallery02">
+                        <img src="images/gallery03.jpg" alt="gallery03">
+                    </div>
+                </div>
+            </div>
+            <div class="banner"></div>
+            <div class="quick"></div>
+        </div>
+        <footer></footer>
+    </div>
+    <div class="popwindow">
+        <h3>바이오인증을 활용한 「손으로 출금」</h3>
+        <p>2021.05.25</p>
+        <p>항상 대한은행을 이용해주시는 고객 여러분께 진심으로 감사드립니다.
+            2019년 8월 1일(목)부터 영업점 창구에서 바이오인증을 활용하여 통장·인감·비밀번호 없이 빈손으로 출금이 가능한 예금지급 서비스가 전국 284개 영업점에서 시범실시 됨을 안내 드립니다.</p>
+        <p>시행일 : 2019. 8. 1(목)</p>
+        <p>시범실시 대상 영업점</p>
+        <button type="button" class="close"> 닫기 </button>
+    </div>
+    <script src="js/custom.js"></script>
+</body>
+</html>
