@@ -12,9 +12,17 @@ $(function(){
         });
     }
 
-    $('m-left-top a.eq(0)').click(function(){
-        
-        
+    $('.not-top').click(function(){
+        $('.not-top').toggleClass('active');
+        $('.gal-top').toggleClass('active');
+        $('.notice').toggleClass('content-active');
+        $('.gallery').toggleClass('content-active');
+    });
+    $('.gal-top').click(function(){
+        $('.not-top').toggleClass('active');
+        $('.gal-top').toggleClass('active');
+        $('.notice').toggleClass('content-active');
+        $('.gallery').toggleClass('content-active');
     });
 
 
@@ -26,19 +34,3 @@ $(function(){
     });
 
 });
-
-
-function act(a){
-    let i = 0;
-    for(i; i < 2; i++){
-        $('a.eq(' + i + '1)').className('');
-        $('.notice').className('notice');
-        $('.gallery').className('gallery');
-    }
-    $('a.eq(' + a + '0)').addClass('active');
-    if(a == 0){
-        $('.notice').addClass('content-active');
-    }else{
-        $('.gallery').addClass('content-active');
-    }
-}
