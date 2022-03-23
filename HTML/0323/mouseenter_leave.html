@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .out{
+            width:300px;
+            height:200px;
+            margin:0 15px;
+            background:yellowgreen;
+            float:left;
+        }
+        .in{
+            width:60%;
+            height:60%;
+            background:yellow;
+            margin:20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="out overout">
+        <p>마우스오버</p>
+        <div class="in overout">
+            <p>마우스이동</p>
+            <p>0</p>                  
+        </div>
+        <p>0</p>
+    </div>
+
+    <div class="out enterleave">
+        <p> 마우스엔터</p>
+        <div class="in enterleave">
+            <p>마우스이동</p>
+            <p>0</p>
+        </div>
+        <p>0</p>
+    </div>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+      $(function(){
+         let i=0, n = 0;
+         $('div.overout').mouseover(function(){
+             $("p:first", this).text("mouse over");
+             $("p:last", this).text(++i);
+         }).mouseout(function(){
+            $("p:first", this).text("mouse out");
+         });
+
+         $('div.enterleave').mouseover(function(){
+             $("p:first", this).text("mouse enter");
+             $("p:last", this).text(++n);
+         }).mouseout(function(){
+            $("p:first", this).text("mouse leave");
+         });
+      });
+    </script>
+</body>
+</html>
