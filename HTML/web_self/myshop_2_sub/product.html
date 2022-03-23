@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- top-nav -->
+    <div class="top-nav">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="top-left">
+                    <a href="#"><i class="fa-regular fa-star"></i> 즐겨찾기</a>
+                    <a href="#"><i class="fa-solid fa-car-on"></i> 바로가기</a>
+                    <a href="#" class="sns"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="sns"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="sns"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="top-right">
+                    <div class="row justify-content-between">
+                        <a href="#">로그인</a>
+                        <a href="#">회원가입<span class="point5 brrr">+5000 P</span></a>
+                        <a href="#">장바구니</a>
+                        <a href="#">관심상품</a>
+                        <span id="myshop"><a href="#"><strong>마이샵</strong> <i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="myshop">
+                                <li><a href="#">주문조회</a></li>
+                                <li><a href="#">배송조회</a></li>
+                                <li><a href="#">내게시물</a></li>
+                            </ul>
+                        </span>
+                        <form>
+                            <fieldset>
+                                <legend>검색</legend>
+                                <input type="text" name="search" id="search">
+                                <button type="button" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /top-nav -->
+    <!-- header -->
+    <header>
+        <div class="header-top">
+            <h1>My Jewerly</h1>
+        </div>
+        <nav>
+            <div class="container global">
+                <ul class="gnb row justify-content-between">
+                    <li class="first" id="all">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </li>
+                    <li>
+                        <a href="#">about us</a>
+                        <ul class="sub2">
+                            <li><a href="#">회사소개</a></li>
+                            <li><a href="#">CEO인사말</a></li>
+                            <li><a href="#">회사연혁</a></li>
+                            <li><a href="#">찾아오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">반지</a>
+                        <ul class="sub2">
+                            <li><a href="#">심플 반지</a></li>
+                            <li><a href="#">패션 반지</a></li>
+                            <li><a href="#">유색 반지</a></li>
+                            <li><a href="#">애끼 반지</a></li>
+                            <li><a href="#">열송이 반지</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">귀걸이</a>
+                        <ul class="sub2">
+                            <li><a href="#">침 귀걸이</a></li>
+                            <li><a href="#">원터치 귀걸이</a></li>
+                            <li><a href="#">롱 귀걸이</a></li>
+                            <li><a href="#">이어참</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">목걸이</a>
+                        <ul class="sub2">
+                            <li><a href="#">심플 목걸이</a></li>
+                            <li><a href="#">패션 목걸이</a></li>
+                            <li><a href="#">유색 목걸이</a></li>
+                            <li><a href="#">롱 목걸이</a></li>
+                            <li><a href="#">팬던트</a></li>
+                            <li><a href="#">체인</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">팔찌/발찌</a>
+                        <ul class="sub2">
+                            <li><a href="#">심플 팔찌</a></li>
+                            <li><a href="#">패션 팔찌</a></li>
+                            <li><a href="#">유색 팔찌</a></li>
+                            <li><a href="#">체인 팔찌</a></li>
+                            <li><a href="#">발찌</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">세트</a>
+                        <ul class="sub2">
+                            <li><a href="#">14K/18K 세트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">review</a>
+                        <ul class="sub2">
+                            <li><a href="#">전체 후기</a></li>
+                            <li><a href="#">당첨자 발표</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="all justify-content-between">
+                    <li>
+                        <h4><a href="#">about us</a></h4>
+                        <ul class="sub">
+                            <li><a href="#">회사소개</a></li>
+                            <li><a href="#">CEO인사말</a></li>
+                            <li><a href="#">회사연혁</a></li>
+                            <li><a href="#">찾아오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><a href="#">반지</a></h4>
+                        <ul class="sub">
+                            <li><a href="#">심플 반지</a></li>
+                            <li><a href="#">패션 반지</a></li>
+                            <li><a href="#">유색 반지</a></li>
+                            <li><a href="#">애끼 반지</a></li>
+                            <li><a href="#">열송이 반지</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><a href="#">귀걸이</a></h4>
+                        <ul class="sub">
+                            <li><a href="#">침 귀걸이</a></li>
+                            <li><a href="#">원터치 귀걸이</a></li>
+                            <li><a href="#">롱 귀걸이</a></li>
+                            <li><a href="#">이어참</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><a href="#">목걸이</a></h4>
+                        <ul class="sub">
+                            <li><a href="#">심플 목걸이</a></li>
+                            <li><a href="#">패션 목걸이</a></li>
+                            <li><a href="#">유색 목걸이</a></li>
+                            <li><a href="#">롱 목걸이</a></li>
+                            <li><a href="#">팬던트</a></li>
+                            <li><a href="#">체인</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><a href="#">팔찌/발찌</a></h4>
+                        <ul class="sub">
+                            <li><a href="#">심플 팔찌</a></li>
+                            <li><a href="#">패션 팔찌</a></li>
+                            <li><a href="#">유색 팔찌</a></li>
+                            <li><a href="#">체인 팔찌</a></li>
+                            <li><a href="#">발찌</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><a href="#">세트</a></h4>
+                        <ul class="sub">
+                            <li><a href="#">14K/18K 세트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><a href="#">review</a></h4>
+                        <ul class="sub">
+                            <li><a href="#">전체 후기</a></li>
+                            <li><a href="#">당첨자 발표</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- /header -->
+    <div class="container">
+        
+    </div>
+
+    <script src="js/custom.js"></script>
+</body>
+</html>
