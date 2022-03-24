@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 동기적으로 출력(= 직렬화)
+        console.log('a');
+        console.log('b');
+        setTimeout(function(){console.log('c')}, 1000); // 비동기 (= 병렬화)
+        console.log('d');
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Array.prototype.filter()
+        // method 1
+        console.log("-------method 1-------");
+        const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+        const result = words.filter(word => word.length > 6);
+
+        console.log(result);
+        // expected output: Array ["exuberant", "destruction", "present"]
+        // method 2
+        console.log("-------method 2-------");
+        const words2 = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+        const result2 = words2.filter(callback);
+
+        function callback(element){
+            console.log(element);
+            return element.length > 6
+        }
+
+        // method 3
+        console.log("-------method 3-------");
+        const words3 = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+        const result3 = words3.filter(function(element){
+            console.log(element);
+            return element.length > 6
+            }
+        );
+
+        /* 리펙토링
+        // 1
+        function callback(word){
+            if(word.length > 6){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        // 2
+        function callback(word){
+            return word.length > 6
+        }
+        // 3
+        const result = wrods.filter(function(word) {return word.length > 6;});
+        // 4
+        const result = words.filter(elemet => element.length > 6);
+        */
+        // callback
+        console.log("------- callback -------");
+        const words5 = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+        function myfilter(str, callback){
+            let result = [];
+            let current;
+            for(let i = 0; i < str.length; i++){
+                current = str[i];
+                if(callback(current)){
+                    result.push(current);
+                }
+            }
+            return result;
+        }
+        let fresult = myfilter(words, element => element.length > 6);
+        console.log(fresult);
+    </script>
+</body>
+</html>

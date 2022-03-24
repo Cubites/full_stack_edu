@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fnc(str){
+            let val = function(str){
+                return '문서' + str;
+            }
+            return val;
+        }
+        // >> 함수가 다른 함수의 값을 리턴 할 수 있음
+
+
+        let val2 = function(str){
+            return '문서' + str;
+        }
+        val2 = function(n){
+            return f;
+        }
+        fnc(val2);
+        // >> 함수가 다른 함수의 입력 값이 될수도 있음
+
+        let val3 = function(y){
+            return y;
+        }
+        function fnc2(arg){
+            arg();
+        }
+        fnc2(val3);
+        // callback 함수 : 다른 함수의 입력 값으로 그 함수에 의해 나중에 호출되는 함수
+    </script>
+</body>
+</html>
