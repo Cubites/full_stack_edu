@@ -58,15 +58,37 @@ window.onload = function(){
         simg.addEventListener('mouseenter', (e) => {
             let index = [].indexOf.call(simgs, e.target);
             bimg_img.src = simg.src;
+            bimg_img.alt = simg.alt;
         })
     })
 
 
     // slide when clicked arrow
-    let arrows = document.querySelectorAll('.bimg>arrow');
-    arrows.forEach((arrow, index) => {
-        arrow.onclick = () => {
-            console.log(arrow);
+    // let arrows = document.getElementsByClassName('arrow');
+    let arrows = document.querySelectorAll('.bimg i');
+    arrows.forEach((arrow) => {
+        arrow.onclick = (e) => {
+            let index = [].indexOf.call(arrows, e.target);
+            // let index = Array.from(arrows).indexOf(e.target);
+            if(index == 0){
+                if(Number(bimg_img.alt) == 1){
+                    bimg_img.src = simgs[2].src;
+                    bimg_img.alt = '003';
+                }else{
+                    let now = Number(bimg_img.alt);
+                    bimg_img.src = simgs[now - 2].src;
+                    bimg_img.alt = '00' + (now - 1);
+                }
+            }else{
+                if(Number(bimg_img.alt) == 3){
+                    bimg_img.src = simgs[0].src;
+                    bimg_img.alt = '001';
+                }else{
+                    let now = Number(bimg_img.alt);
+                    bimg_img.src = simgs[now].src;
+                    bimg_img.alt = '00' + (now + 1);
+                }
+            }
         }
     })
 
@@ -77,7 +99,10 @@ window.onload = function(){
     }
 
     // bimg popup
-    document.addEventListener('mouseenter',)
+    let popclose = document.getElementById("original-image");
+    popclose.onclick = () => {
+        bimgpopup.style.display = "none";
+    }
     
 }
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <input type="file" name="file[]">
+        <br><br>
+        <button onclick="add()">파일추가</button> <button>추가취소</button>
+        
+    </form>
+
+    <script>
+        // 파일 추가를 누르면 파일선택 input이 추가됨
+        // 추가 취소를 누르면 input이 삭제
+        const parent = document.getElementById('form');
+        const child = document.createElement("p");
+        child.innerHTML ='<input type="file" name="file[]">';
+
+        function add(){
+            parent.appendChild(child);
+        }
+    </script>
+</body>
+</html>

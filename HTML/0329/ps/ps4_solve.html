@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function solution(arr, diviser){
+        //     let answer = [];
+        //     let result = arr.filter((v) => {
+        //         if(v % divisor == 0){
+        //             return v;
+        //         }
+        //     });
+        //     if(result.length == 0){
+        //         answer.pish(-1);
+        //     }else{
+        //         answer = result.sort((a, b) => a - b)
+        //     }
+        //     return answer;
+        // }
+
+        // refactorying
+        function solution(arr, divisor){
+            let answer = arr.filter(v => v % divisor == 0);
+            return answer.length == 0 ? [-1] : answer.sort((a,b) => a - b);
+        }
+    </script>
+</body>
+</html>

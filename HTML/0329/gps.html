@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getLocation()">위치정보 받기</button>
+    <p id="geolocation"></p>
+
+    <script>
+        const geo = document.getElementById("geolocation");
+
+        function getLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }else{
+                geo.innerHTML = "당신의 웹브라우저는 위치기반 서비스를 허용하지 않네요.";
+            }
+        }
+
+        function showPosition(position){
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+            let txt = `당신의 현재 위치는 위도 : ${lat}, 경도 : ${lon} 입니다.`;
+            geo.innerHTML = txt;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+아래있는 input의 id값을 night_day2로 변경하고,
+각각의 input의 onclick의 마지막 줄에 
+document.getElementById(night_day).innerHTML = this.value;,
+document.getElementById(night_day2).innerHTML = this.value;를
+추가하여 클릭하지 않은 버튼의 글자도 바뀌게 수정하였습니다.

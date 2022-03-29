@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="week"></div>
+    <script>
+        let week = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+        let nowDay = new Date().getDay();
+        document.getElementById('week').innerHTML = '오늘의 요일 : ' + week[nowDay];
+    </script>
+</body>
+</html>

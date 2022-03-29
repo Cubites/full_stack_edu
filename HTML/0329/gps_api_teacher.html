@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Kakao 지도 시작하기</title>
+</head>
+<body>
+    <button onclick="getLocation()">위치정보 받기</button>
+	<div id="map" style="width:500px;height:400px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5ebd2641f7830f82c8f7768dbb3e5911"></script>
+	<script>
+        const container = document.getElementById("map");
+        function getLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(daumMap);
+            }else{
+                container.innerHTML = "웹브라우저가 위치기반 서비스를 허용하지 않습니다.";
+            }
+        }
+
+        function daumMap(position){
+            let options = {
+                center: new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                level: 4
+            }
+            let map = new kakao.maps.Map(container, options);
+        }
+
+        window.onload = function(){
+            getlocation();
+        }
+	</script>
+</body>
+</html>
