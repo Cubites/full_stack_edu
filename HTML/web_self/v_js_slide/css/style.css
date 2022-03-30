@@ -1,0 +1,20 @@
+.container{
+    width: 650px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h2{
+    text-align: center;
+}
+.slide{
+    width: 600px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+#slides{
+    display: flex;
+    position: relative;
+}

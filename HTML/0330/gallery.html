@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #ededed;
+        }
+        *{box-sizing: border-box;}
+        .text-center{
+            text-align: center;
+        }
+        .demo{
+            margin: 30px auto;
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+            background-color: #fff;
+        }
+        .demo-img{
+            flex: 0 0 25%;
+            max-width: 25%;
+            padding: 15px;
+            height: 210px;
+            overflow-y: hidden;
+
+        }
+        .demo-img img{
+            max-width: 100%;
+            width: 100%;
+            height: 175px;
+            object-fit: cover;
+            object-position: center top;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">SPORTS GALLERY</h1>
+    <div class="demo">
+        <div class="demo-img">
+            <img src="images/s01.jpg" alt="s01">
+        </div>
+        <div class="demo-img">
+            <img src="images/s02.jpg" alt="s02">
+        </div>
+        <div class="demo-img">
+            <img src="images/s03.jpg" alt="s03">
+        </div>
+        <div class="demo-img">
+            <img src="images/s04.jpg" alt="s04">
+        </div>
+        <div class="demo-img">
+            <img src="images/s05.jpg" alt="s05">
+        </div>
+        <div class="demo-img">
+            <img src="images/s06.jpg" alt="s06">
+        </div>
+        <div class="demo-img">
+            <img src="images/s07.jpg" alt="s07">
+        </div>
+        <div class="demo-img">
+            <img src="images/s08.jpg" alt="s08">
+        </div>
+        <div class="demo-img">
+            <img src="images/s09.jpg" alt="s09">
+        </div>
+        <div class="demo-img">
+            <img src="images/s10.jpg" alt="s10">
+        </div>
+        <div class="demo-img">
+            <img src="images/s11.jpg" alt="s11">
+        </div>
+        <div class="demo-img">
+            <img src="images/s12.jpg" alt="s12">
+        </div>
+    </div>
+
+    <h1 class="text-center"> 위 갤러리에 있는 이미지를 아래 clonebox에 복사해 넣으시오. </h1>
+    <div class="demo" id="clonebox">
+
+    </div>
+    <script>
+        /*
+        let demo = document.getElementsByClassName("demo");
+        let imgs = demo[0].getElementsByTagName("img");
+        */
+        let imgs = document.querySelectorAll(".demo img");
+        let clonebox = document.getElementById("clonebox");
+        let cloneimg = "";
+        for(var i = 0; i<imgs.length; i++){
+            cloneimg += `<div class="demo-img"><img src="${imgs[i].src}" alt="${imgs[i].alt}"></div>`;
+        }
+        clonebox.innerHTML = cloneimg;
+    </script>
+</body>
+</html>

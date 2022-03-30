@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form" id="form">
+        <div>
+            <label><input type="checkbox" name="ch01" value="1" checked>인증합니다.</label>
+        </div>
+        <div>
+            <label><input type="checkbox" name="ch02" value="1">인증합니다.</label>
+        </div>
+        <div>
+            <label><input type="checkbox" name="ch03" value="1" checked>인증합니다.</label>
+        </div>
+        <div>
+            <label><input type="checkbox" name="ch04" value="1">인증합니다.</label>
+        </div>
+        <div>
+            <label><input type="checkbox" name="ch05" value="1" checked>인증합니다.</label>
+        </div>
+        <div>
+            <label><input type="checkbox" name="ch06" value="1">인증합니다.</label>
+        </div>
+    </form>
+    <script>
+        'use strict';
+        let str = '';
+        /*
+        let checked = document.querySelectorAll("#form input[type='checkbox']:checked");
+        for(let i = 0; i < checked.length; i++){
+            str += checked[i].name + " ";
+        }
+        */
+        let inputs = document.querySelectorAll("#form input");
+        for(let i = 0; i < inputs.length; i++){
+            if(inputs.item(i).type == "checkbox" && inputs.item(i).checked){
+                str += inputs.item(i).name + " ";
+            }
+        }
+
+        console.log(str);
+    </script>
+</body>
+</html>

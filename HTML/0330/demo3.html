@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Q : 스크립트를 이용해 핑크버튼을 누르면 홀수 라인이 핑크색으로 나머지도 해당색으로 바뀌게 하시오.</h3>
+    <ul id="strips">
+        <li>첫 번째 박스</li>
+        <li>두 번째 박스</li>
+        <li>셋 번째 박스</li>
+        <li>넷 번째 박스</li>
+        <li>다섯 번째 박스</li>
+        <li>여섯 번째 박스</li>
+    </ul>
+    <button id="pink">핑크버튼</button>
+    <button id="blue">파랑버튼</button>
+    <button id="green">녹색버튼</button>
+
+    <script>
+        'use strict';
+        // $(function().ready(function(){}));
+        window.onload = function(){
+            document.getElementById("pink").onclick = pinkLine;
+            document.getElementById("blue").onclick = blueLine;
+            document.getElementById("green").onclick = greenLine;
+        }
+        function pinkLine(){
+            let lis = document.querySelectorAll('li:nth-child(2n+1)');
+            for(let i = 0; i < lis.length; i++){
+                lis[i].setAttribute("style", "background-color: pink");
+            }
+        }
+        function blueLine(){
+            let lis = document.querySelectorAll('li:nth-child(odd)');
+            for(let i = 0; i < lis.length; i++){
+                lis[i].style.backgroundColor = "blue";
+            }
+        }
+        function greenLine(){
+            let lis = document.getElementsByTagName('li');
+            for(let i = 0; i < lis.length; i++){
+                if(i % 2 == 0){
+                    lis[i].setAttribute("style", "background-color: green");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

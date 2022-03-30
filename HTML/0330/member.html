@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="text-center">우리 회원 명단</h1>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>사는 곳</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let mytd = '';
+        fetch('./json/member.json')
+            .then(resolve => resolve.json()) // json 타입으로 가져옴
+            .then(rs => { // object 타입으로 변환
+                for(let r of rs.memberlist){
+                    mytd += `<tr>
+                                <td>${r.name}</td>
+                                <td>${r.age}</td>
+                                <td>${r.city}</td>
+                            </tr>`;
+                }
+                document.getElementById("tbody").innerHTML = mytd;
+            })
+    </script>
+</body>
+</html>
