@@ -1,0 +1,46 @@
+{
+    "weather": [
+        {
+            "01d": "#ade6ff",
+            "02d": "#ade6ff",
+            "03d": "#b3c4cc",
+            "04d": "#b3c4cc",
+            "09d": "#6e7882",
+            "10d": "#6e7882",
+            "11d": "#b3c4cc",
+            "13d": "#d5d8e1",
+            "50d": "#dddfe3",
+            "01n": "#182a56",
+            "02n": "#182a56",
+            "03n": "#0e162a",
+            "04n": "#0e162a",
+            "09n": "#070a15",
+            "10n": "#070a15",
+            "11n": "#070a15",
+            "13n": "#acafb6",
+            "50n": "#808080"
+        }
+    ],
+    "weatherIcon": [
+        {
+            "01d": "<i class='fa-solid fa-sun'></i>",
+            "02d": "<i class='fa-solid fa-clouds-sun'></i>",
+            "03d": "<i class='fa-solid fa-cloud'></i>",
+            "04d": "<i class='fa-solid fa-cloud'></i>",
+            "09d": "<i class='fa-solid fa-cloud-showers-heavy'></i>",
+            "10d": "<i class='fa-solid fa-cloud-sun-rain'></i>",
+            "11d": "<i class='fa-solid fa-bolt'></i>",
+            "13d": "<i class='fa-solid fa-snowflake'></i>",
+            "50d": "<i class='fa-solid fa-smog'></i>",
+            "01n": "<i class='fa-solid fa-sun'></i>",
+            "02n": "<i class='fa-solid fa-clouds-sun'></i>",
+            "03n": "<i class='fa-solid fa-cloud'></i>",
+            "04n": "<i class='fa-solid fa-cloud'></i>",
+            "09n": "<i class='fa-solid fa-cloud-showers-heavy'></i>",
+            "10n": "<i class='fa-solid fa-cloud-sun-rain'></i>",
+            "11n": "<i class='fa-solid fa-bolt'></i>",
+            "13n": "<i class='fa-solid fa-snowflake'></i>",
+            "50n": "<i class='fa-solid fa-smog'></i>"
+        }
+    ]
+}

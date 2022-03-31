@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 650px;
+            height: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2{
+            text-align: center;
+        }
+        .slide{
+            width: 600px;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        #slides{
+            display: flex;
+            position: relative;
+        }
+        .animated{
+            animation: anime 0.4s ease-in-out forwards;
+        }
+
+        @keyframes anime{
+            from{
+                left: 0;
+            }
+            to{
+                left: -600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>슬라이드쇼 갤러리</h2>
+        <div class="slide">
+            <div id="slides" class="animated">
+                <img src="images/1.jpg" alt="1">
+                <img src="images/2.jpg" alt="2">
+                <img src="images/3.jpg" alt="3">
+            </div>
+        </div>
+    </div>
+    <script>
+        'use strict';
+        const slides = document.getElementById("slides");
+        /*
+            1. #slides animated 클래스 추가 (애니메이션 발생)
+            2. 애니메이션이 끝날 때까지 대기
+            3. 애니메이션이 끝나면 첫번째 이미지를 잘라 마지막에 붙임
+            4. animated 클래스를 지움
+            5. 숙제
+        */
+    </script>
+</body>
+</html>
