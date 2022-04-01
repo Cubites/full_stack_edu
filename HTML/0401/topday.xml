@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<catalog>
+    <cd>
+        <title>TOMBOY</title>
+        <artist>(여자)아이들</artist>
+        <album>I NEVER DIE</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>Feel My Rhythm</title>
+        <artist>Red Velvet (레드벨벳)</artist>
+        <album>'The ReVe Festival 2022 - Feel My Rhythm'</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>GANADARA (Feat. 아이유)</title>
+        <artist>박재범</artist>
+        <album>GANADARA</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>INVU</title>
+        <artist>태연 (TAEYEON)</artist>
+        <album>INVU - The 3rd Album</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>RUN2U</title>
+        <artist>STAYC(스테이씨)</artist>
+        <album>YOUNG-LUV.COM</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>취중고백</title>
+        <artist>김민석(멜로망스)</artist>
+        <album>취중고백</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>ELEVEN</title>
+        <artist>IVE(아이브)</artist>
+        <album>ELEVEN</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>신호등</title>
+        <artist>이무진</artist>
+        <album>신호등</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>회전목마 (Feat. Zion.T, 원슈타인) (Prod. Slom)</title>
+        <artist>sokodomo</artist>
+        <album>쇼미더머니 10 Episode 2</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>SMILEY (Feat. BIBI)</title>
+        <artist>YENA(최예나)</artist>
+        <album>ˣ‿ˣ (SMiLEY)</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+</catalog>

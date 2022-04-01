@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<catalog>
+    <cd>
+        <title>Starlight</title>
+        <artist>태일 (TAEIL)</artist>
+        <album>스물다섯 스물하나 OST Part 1</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>Step Back</title>
+        <artist>GOT the beat</artist>
+        <album>Step Back</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>리무진 (Feat. MINO) (Prod. GRAY)</title>
+        <artist>BE'O(비오)</artist>
+        <album>쇼미더머니 10 Episode 3</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>라일락</title>
+        <artist>아이유(IU)</artist>
+        <album>IU 5th Album 'LILAC'</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>Weekend</title>
+        <artist>태연 (TAEYEON)</artist>
+        <album>Weekend</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>어떻게 이별까지 사랑하겠어, 널 사랑하는 거지</title>
+        <artist>AKMU(악뮤)</artist>
+        <album>항해</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>Bad Habits</title>
+        <artist>Ed Sheeran</artist>
+        <album>=</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>버퍼링 (Glitch Mode)</title>
+        <artist>NCT DREAM</artist>
+        <album>Glitch Mode - The 2nd Album</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>Dreams Come True</title>
+        <artist>aespa</artist>
+        <album>Dreams Come True - SM STATION</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>어제처럼</title>
+        <artist>폴킴</artist>
+        <album>어제처럼</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+</catalog>

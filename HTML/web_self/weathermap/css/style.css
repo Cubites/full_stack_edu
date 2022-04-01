@@ -7,12 +7,9 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
-iframe{
-    width: 340px;
-    height: 570px;
-}
 .container{
-    max-width: 430px;
+    max-width: 350px;
+    overflow-x: hidden;
 }
 /* top */
 .top{
@@ -36,6 +33,7 @@ a{
 /* previous weather */
 #preweather{
     display: flex;
+    position: relative;
     margin-top: 60px;
     width: 100%;
     height: 30%;
@@ -50,6 +48,27 @@ a{
     text-align: center;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
     border-radius: 10px;
+    position: relative;
+}
+.precontents:hover #sidebtn{
+    display: block;
+}
+#slidebtn{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+}
+#slidebtn span{
+    display: block;
+    height: 100%;
+    font-size: 30px;
+    line-height: 120px;
+}
+#weatherSlide{
+    display: flex;
 }
 .day{
     margin: 0;

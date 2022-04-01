@@ -74,7 +74,8 @@ window.onload = () => {
         let month = time.getMonth();
         let day = time.getDate();
         let today = parseInt(new Date(year, month, day).getTime() / 1000);
-        for(let i = 0; i < 3; i++){
+        console.log(year, month, time);
+        for(let i = 0; i < 5; i++){
             document.getElementsByClassName("day")[i].innerHTML = `${month + 1}월 ${day - 1 - i}일`;
             preWeather(lat, lon, today - (86400 * i), i);
         }

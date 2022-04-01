@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<catalog>
+    <cd>
+        <title>STAY</title>
+        <artist>The Kid LAROI, Justin Bieber</artist>
+        <album>STAY</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>사랑인가 봐</title>
+        <artist>멜로망스(Melomance)</artist>
+        <album>사랑인가 봐 (사내맞선 OST 스페셜 트랙)</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>듣고 싶을까</title>
+        <artist>MSG워너비(M.O.M)</artist>
+        <album>듣고 싶을까</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>strawberry moon</title>
+        <artist>아이유(IU)</artist>
+        <album>strawberry moon</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>드라마</title>
+        <artist>아이유(IU)</artist>
+        <album>조각집</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>사랑은 늘 도망가</title>
+        <artist>임영웅</artist>
+        <album>신사와 아가씨 OST Part 2</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>존재만으로</title>
+        <artist>원슈타인</artist>
+        <album>스물다섯 스물하나 OST Part 4</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>너의 모든 순간</title>
+        <artist>성시경</artist>
+        <album>별에서 온 그대 OST Part 7</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>Next Level</title>
+        <artist>aespa</artist>
+        <album>Next Level</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>눈이 오잖아(Feat.헤이즈)</title>
+        <artist>이무진</artist>
+        <album>눈이 오잖아(Feat.헤이즈)</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+</catalog>

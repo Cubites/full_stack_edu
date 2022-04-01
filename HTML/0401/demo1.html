@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2 id="demo">AJAX 연습</h2>
+        <button type="button" onclick="loadDoc()">제목을 바꿉니다.</button>
+    </div>
+    <script>
+        // request = 요청 , response = 받는 것
+        /* 
+            1. XMLHTTPRequest의 객체를 생성
+            2. 콜백 함수 정의
+            3. XMLHTTPRequest의 객체 열기
+            4. 서버에 요청 보내기
+
+            statu number: 200번대(성공), 400번대(파일없음) 500번대(런타임에러)
+        */
+       function loadDoc(){
+            const xhttp = new XMLHttpRequest(); //XMLHttpRequest 객체 생성
+            xhttp.onreadystatechange = function(){ // 콜백함수 정의(응답이 준비되면 실행할 코드)
+                document.getElementById("demo").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "ajax_txt.txt", true); // 요청 보내기 async(비동기) = true
+            xhttp.send(); // 객체 메서드 open(), send()를 사용할 수 있음
+       }
+    </script>
+</body>
+</html>
