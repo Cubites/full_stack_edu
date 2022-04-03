@@ -29,55 +29,55 @@ function weatherColor(d){
             document.getElementsByTagName('body')[0].style.backgroundColor = color;
         })
 }
+let weekKR = ['일요일', '월요일', '화요일', '수요일', '목요일','금요일', '토요일'];
 
 function date(){
-    let weekKR = ['일요일', '월요일', '화요일', '수요일', '목요일','금요일', '토요일'];
     let date = new Date();
-    let sec = date.getSeconds();
+    let todaySec = parseInt(date.getTime() / 1000);
     let min = date.getMinutes();
     let hour = date.getHours();
     let day = date.getDate();
     let week = date.getDay();
     let month = date.getMonth() + 1;
-    let dayOutput = `${month}월 ${day}일 ${weekKR[week]} ${hour}:${min}`;
-    document.getElementById("day").innerHTML = dayOutput;
+    document.getElementById("day").innerHTML = `${month}월 ${day}일 ${weekKR[week]} ${hour}:${min}`;
 }
 
-function preWeather(localLat, localLon, time, index){
-    const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${localLat}&lon=${localLon}&dt=${time}&appid=b1f992fd26b2991a5912c0e5bcbafba6`
-    fetch(url)
-        .then(rs => rs.json())
-        .then(data => {
-            preWeatherInner(data, index);
-        })
+function preWeather(){
+    navigator.geolocation.getCurrentPosition((pos) => {
+        const url = "https://api.openweathermap.org/data/2.5/forecast";
+        let mydata = {
+            lat: pos.coords.latitude,
+            lon: pos.coords.longitude,
+            appid: "b1f992fd26b2991a5912c0e5bcbafba6"
+        }
+        
+        let params = Object.keys(mydata).map(key => key + "=" + mydata[key]).join("&");
+        fetch(`${url}?${params}`)
+            .then(rs => rs.json())
+            .then(data => {
+                let preday = document.getElementsByClassName("day");
+                for(let i = 0; i < 3; i++){
+                    let predayValue = new Date(data.list[i].dt * 1000);
+                    const month = predayValue.getMonth() + 1;
+                    const day = predayValue.getDate();
+                    const hour = predayValue.getHours();
+                    preday[i].innerHTML = `${month}월 ${day}일 ${hour}시`;
+                    preWeatherInner(data, i);
+                }
+            })
+    });
 }
-function preWeatherInner(d, index){
-    let preTemp = d.current.temp;
-    let preIcon = d.current.weather[0].icon;
+function preWeatherInner(d, index){ 
+    let preTemp = d.list[index].main.temp;
+    let preIcon = d.list[index].weather[0].icon;
     let jsonIcon = '../json/db.json';
     document.getElementsByClassName("temp")[index].innerHTML = (preTemp - 273.15).toFixed(1) + '&deg;';
-    fetch(jsonIcon)
-        .then(rs => rs.json())
-        .then(data => {
-            document.getElementsByClassName("weatherIcon")[index].innerHTML = data.weatherIcon[0][preIcon];
-        })
+    let iconLink = "http://openweathermap.org/img/w/";
+    document.getElementsByClassName("weatherIcon")[index].src = iconLink + preIcon + ".png";
 }
 
 window.onload = () => {
     myWeather('goyang-si');
     date();
-    navigator.geolocation.getCurrentPosition((pos) => {
-        let lat = pos.coords.latitude;
-        let lon = pos.coords.longitude;
-        let time = new Date();
-        let year = time.getFullYear();
-        let month = time.getMonth();
-        let day = time.getDate();
-        let today = parseInt(new Date(year, month, day).getTime() / 1000);
-        console.log(year, month, time);
-        for(let i = 0; i < 5; i++){
-            document.getElementsByClassName("day")[i].innerHTML = `${month + 1}월 ${day - 1 - i}일`;
-            preWeather(lat, lon, today - (86400 * i), i);
-        }
-    });
+    preWeather();
 };
