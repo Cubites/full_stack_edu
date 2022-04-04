@@ -45,17 +45,23 @@ function date(){
 function preWeather(){
     navigator.geolocation.getCurrentPosition((pos) => {
         const url = "https://api.openweathermap.org/data/2.5/forecast";
-        let mydata = {
+        let mydata = [
+        {
             lat: pos.coords.latitude,
             lon: pos.coords.longitude,
             appid: "b1f992fd26b2991a5912c0e5bcbafba6"
+        },{
+            q: "goyang-si",
+            appid: "b1f992fd26b2991a5912c0e5bcbafba6"
         }
+        ]
         
-        let params = Object.keys(mydata).map(key => key + "=" + mydata[key]).join("&");
+        let params = Object.keys(mydata[0]).map(key => key + "=" + mydata[0][key]).join("&");
         fetch(`${url}?${params}`)
             .then(rs => rs.json())
             .then(data => {
                 let preday = document.getElementsByClassName("day");
+                console.log(data);
                 for(let i = 0; i < 3; i++){
                     let predayValue = new Date(data.list[i].dt * 1000);
                     const month = predayValue.getMonth() + 1;
@@ -80,4 +86,15 @@ window.onload = () => {
     myWeather('goyang-si');
     date();
     preWeather();
+
+    document.getElementById("openSearch").onclick(() => {
+        // document.getElementById("searchWindow").animate(
+        //     {
+        //         left: 100%
+        //     },
+        //     {
+
+        //     }
+        // )
+    })
 };

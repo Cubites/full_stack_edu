@@ -84,3 +84,35 @@ a{
 .precontents .temp{
     margin: 0;
 }
+
+
+/* searchBox */
+#searchWindow{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(123, 164, 218);
+}
+#searchWindow>div{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 80%;
+    border-radius: 15px;
+    background-color: #fff;
+    overflow: hidden;
+}
+#searchLocation{
+    display: block;
+    width: 80%;
+    border: none;
+}
+.material-icons.search{
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+}

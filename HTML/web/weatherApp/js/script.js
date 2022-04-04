@@ -65,18 +65,22 @@ function getWeather(lat, lon, city){
             console.log("도시명", rs.city.name);
             let nowTime = new Date(rs.list[0].dt*1000);
             console.log(nowTime);
-            console.log("시간", new Date().getTime());
-            console.log("아이콘", rs.list[0].weather[0].icon);
-            console.log("현재온도", rs.list[0].main.temp);
-            console.log("최저온도", rs.list[0].main.temp_max);
-            console.log("최고온도", rs.list[0].main.temp_min);
-            console.log("설명", rs.list[0].weather[0].description);
-            console.log("해뜨는 시각", rs.city.sunrise);
-            console.log("해지는 시각", rs.city.sunset);
-            console.log("바람", rs.list[0].wind.speed);
-            console.log("습도", rs.list[0].main.humidity);
-            console.log("구름", rs.list[0].clouds.all);
-            console.log("체감온도", rs.list[0].main.feels_like);
+            document.getElementsByClassName("ntime")[0].innerHTML = `${nowTime.getMonth() +1}월 ${nowTime.getDate()}일 ${nowTime.getHours()}시 ${nowTime.getMinutes()}분`;
+            console.log(rs.list[0].weather[0].icon);
+            document.getElementById("nowtemp").innerHTML = `${rs.list[0].main.temp.toFixed(1)}&deg;`;
+            document.getElementById("minmaxtemp").innerHTML = `${rs.list[0].main.temp_max}&deg;/ ${rs.list[0].main.temp_min}&deg;`;
+            document.getElementById("desc").innerHTML = rs.list[0].weather[0].description;
+            let sunriseTime = new Date(rs.city.sunrise*1000);
+            let sunsetTime = new Date(rs.city.sunset*1000);
+
+            let sunrise = `${sunriseTime.getHours()} : ${sunriseTime.getMinutes()}`;
+            let sunset = `${sunsetTime.getHours()} : ${sunsetTime.getMinutes()}`
+            document.getElementById("sunrise").innerHTML = sunrise;
+            document.getElementById("sunset").innerHTML = sunset;
+            document.getElementById("wind").innerHTML = `${rs.list[0].wind.speed.toFixed(1)}m/s`;
+            document.getElementById("humidity").innerHTML = rs.list[0].main.humidity;
+            document.getElementById("cloud").innerHTML = rs.list[0].clouds.all;
+            document.getElementById("feelslike").innerHTML = rs.list[0].main.feels_like;
         })
 }
 

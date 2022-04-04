@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script defer src="modal.js"></script>
+</head>
+<body>
+
+<h2 class="text-center">Modal Login</h2>
+
+<div class="text-center">
+     <button onclick="openModal();" style="width:auto;">Login</button>
+</div>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="closeModal()" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container" id="id02">
+      <label for="uname"><b>아이디</b></label>
+      <input type="text" placeholder="아이디" name="uname" required>
+
+      <label for="psw"><b>비밀번호</b></label>
+      <input type="password" placeholder="비밀번호" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> 아이디 기억
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="closeModal()" class="cancelbtn">Cancel</button>
+      <span class="psw"><a href="#">비밀번호 찾기</a></span>
+    </div>
+  </form>
+</div>
+
+
+</body>
+</html>

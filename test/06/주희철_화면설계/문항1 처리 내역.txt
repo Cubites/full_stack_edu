@@ -1,0 +1,5 @@
+문제 1. login 버튼을 눌러도 로그인 화면이 나오지 않음
+처리 : modal.js 파일의 12번째 줄에 'id02'를 'id01'로 수정
+
+문제 2. 로그인 화면 우측 상단의 x 표시를 클릭했는데 모달 화면이 닫히지 않음
+처리 : modal.js 파일의 16번째 줄에 document.getElementById('id01').style.display='none'; 코드를 추가

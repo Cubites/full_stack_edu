@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slidecontainer{
+            height: 300px;
+            width: 1200px;
+            position: relative;
+            margin: auto;
+        }
+        img{
+            display: none;
+        }
+
+        .fade{
+            animation: fade 1.5s;
+        }
+
+        @keyframes fade{
+            from{opacity: .2;}
+            to{opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div class="slidecontainer">
+        <img src="images/slide01.jpg" class="fade" alt="01">
+        <img src="images/slide02.jpg" class="fade" alt="02">
+        <img src="images/slide03.jpg" class="fade" alt="03">
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlide();
+        function showSlide(){
+            let i; 
+            let slideImg = document.getElementsByTagName('img');
+            for(i = 0; i < slideImg.length; i++){
+                slideImg[i].style.display = 'none';
+            }
+            console.log(i);
+            slideImg[slideIndex].style.display = 'block';
+            slideIndex = (slideIndex + 1) % 3;
+            setTimeout(showSlide, 3000);
+        }
+    </script>
+</body>
+</html>

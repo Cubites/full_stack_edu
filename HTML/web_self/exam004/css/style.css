@@ -1,0 +1,199 @@
+*{box-sizing: border-box;}
+body{
+    background-color: #fff;
+    color: #222328;
+}
+.container{
+    display: flex;
+    position: relative;
+    width: 1000px;
+    height: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ddd;
+}
+header{
+    width: 20%;
+    height: 100%;
+    background-color: #777;
+}
+.main{
+    width: 80%;
+    height: 100%;
+    background-color: #999;
+}
+a{
+    text-decoration: none;
+    color: #222328;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.dnone{
+    display: none;
+}
+
+/* header */
+header a{
+    display: block;
+    margin-top: 20px;
+}
+/** nav **/
+nav{
+    margin-top: 50px;
+}
+nav a{
+    display: block;
+    width: 100%;
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+nav a:hover{
+    background-color: #7cc1ee;
+    font-weight: bold;
+    color: #094974
+}
+nav div{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #222328;
+    position: relative;
+}
+nav>div:not(:first-child){
+    border-top: none;
+}
+nav>div:hover ul{
+    animation-name: anim;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+nav div>a{
+    font-size: 20px;
+}
+nav div>ul{
+    height: 0;
+    overflow: hidden;
+}
+
+/** slide **/
+.slide img{
+    display: block;
+    position: absolute;
+}
+
+/** section **/
+section{
+    display: flex;
+    margin-top: 350px;
+    height: 200px;
+}
+section>div{
+    height: 100%;
+    border: 1px solid #094974;
+}
+/*** first ***/
+.first{
+    width: 300px;
+    padding: 10px;
+    position: relative;
+}
+section .tab{
+    display: flex;
+    position: relative;
+}
+.tab a{
+    display: block;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #222328;
+    border-bottom: none;
+    background-color: #ddd;
+    position: relative;
+    top: 1px;
+}
+.tab a:last-child{
+    border-left: none;
+}
+.contents{
+    border: 1px solid #222328;
+    background-color: #fff;
+    width: 100%;
+    height: 80%;
+}
+.contents .notice ul{
+    padding: 10px;
+}
+.contents .notice ul li{
+    font-size: 12px;
+    line-height: 30px;
+}
+.tab .activeTab{
+    background-color: #fff;
+}
+.gallery{
+    display: flex;
+    padding-top: 40px;
+}
+.gallery img{
+    display: block;
+    width: 30%;
+    margin-left: 7px;
+}
+
+/*** second ***/
+.second{
+    width: 250px;
+}
+
+/*** third ***/
+.third{
+    width: 250px;
+}
+
+
+/* popup */
+.popup{
+    position: fixed;
+    width: 500px;
+    height: 400px;
+    top: calc(50% - 250px);
+    left: calc(50% - 200px);
+    background-color: #eee;
+    z-index: 100;
+    display: none;
+}
+
+
+
+.fadeIn{
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.fadeOut{
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes anim{
+    from{height: 0}
+    to{height: 120px}
+}
+
+@keyframes fadeIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes fadeOut{
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
