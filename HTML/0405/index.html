@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 900px;
+            margin: 30px auto;
+        }
+        .tab{
+            overflow:hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab button{
+            float: left;
+            border: none;
+            cursor: pointer;
+            padding: 15px 16px;
+            transition: all .3s;
+        }
+        .tab button:hover, button.active{
+            background: #ddd;
+        }
+        .tabcontent{
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-top: none;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tab">
+            <button class="tablinks active" onclick="opContent(event, 'a')" id="open">a 열기</button>
+            <button class="tablinks" onclick="opContent(event, 'b')">b 열기</button>
+            <button class="tablinks" onclick="opContent(event, 'c')">c 열기</button>
+        </div>
+        <div id="a" class="tabcontent">
+            <h1>a 입니다.</h1>
+            <p>a 라니깐요. 진짜 a예요</p>
+        </div>
+        <div id="b" class="tabcontent">
+            <h1>b 입니다.</h1>
+            <p>b 라니깐요. 진짜 b예요</p>
+        </div>
+        <div id="c" class="tabcontent">
+            <h1>c 입니다.</h1>
+            <p>c 라니깐요. 진짜 c예요</p>
+        </div>
+    </div>
+
+    <script>
+        function opContent(e, uid){
+            let i;
+            const tabcontent = document.getElementsByClassName('tabcontent');
+            const tablink = document.getElementsByClassName('tablinks');
+            for(i = 0; i < tabcontent.length; i++){
+                tabcontent[i].style.display = 'none';
+            }
+            for(i = 0; i < tablink.length; i++){
+                // tablink[i].className = tablink[i].className.replace(" active", "");
+                tablink[i].classList.remove("active");
+            }
+            document.getElementById(uid).style.display = 'block';
+            console.log(e);
+            e.currentTarget.classList.add("active");
+        }
+
+        document.getElementById("open").click();
+    </script>
+</body>
+</html>

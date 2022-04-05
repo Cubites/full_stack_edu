@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const func = function(){
+            console.log('first');
+            return new Promise((res) => {
+                res('second');
+            });
+        }
+        const execute = func();
+        console.log('third');
+        setTimeout(() => {
+            console.log('fourth');
+        }, 0);
+        execute.then((msg) => console.log(msg));
+    </script>
+</body>
+</html>
