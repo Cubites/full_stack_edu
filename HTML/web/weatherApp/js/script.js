@@ -24,7 +24,7 @@ function getWeather(lat, lon, city){
     const url = "https://api.openweathermap.org/data/2.5/forecast";
     const apikey = "b1f992fd26b2991a5912c0e5bcbafba6";
     let mydata;
-    console.log(city);
+    // console.log(city);
     if(city == ''){
         mydata = {
             lat: lat,
@@ -43,7 +43,7 @@ function getWeather(lat, lon, city){
     }
     // key=value&key
     let params = Object.keys(mydata).map(key => key + '=' + mydata[key]).join('&');
-    console.log(params);
+    // console.log(params);
     // fetch(url, {
     //     method: 'post',
     //     cache: 'none',
@@ -55,33 +55,59 @@ function getWeather(lat, lon, city){
     fetch(`${url}?${params}`)
         .then(reson => reson.json())
         .then(rs => {
-            console.log(rs);
+            // console.log(rs);
             /*
             1.도시명 2.시간 3.아이콘 4.현재온도
             5.최저온도, 최고온도 6.설명
             7. 해뜨는 시각 8.해지는 시각 9.바람
             10.습도 11.구름 12.체감온도
             */
-            console.log("도시명", rs.city.name);
+            // console.log("도시명", rs.city.name);
             let nowTime = new Date(rs.list[0].dt*1000);
-            console.log(nowTime);
+            // console.log(nowTime);
             document.getElementsByClassName("ntime")[0].innerHTML = `${nowTime.getMonth() +1}월 ${nowTime.getDate()}일 ${nowTime.getHours()}시 ${nowTime.getMinutes()}분`;
-            console.log(rs.list[0].weather[0].icon);
+            // console.log(rs.list[0].weather[0].icon);
             document.getElementById("nowtemp").innerHTML = `${rs.list[0].main.temp.toFixed(1)}&deg;`;
-            document.getElementById("minmaxtemp").innerHTML = `${rs.list[0].main.temp_max}&deg;/ ${rs.list[0].main.temp_min}&deg;`;
+            document.getElementById("minmaxtemp").innerHTML = `${rs.list[0].main.temp_max.toFixed(1)}&deg;/ ${rs.list[0].main.temp_min.toFixed(1)}&deg;`;
             document.getElementById("desc").innerHTML = rs.list[0].weather[0].description;
+
             let sunriseTime = new Date(rs.city.sunrise*1000);
             let sunsetTime = new Date(rs.city.sunset*1000);
-
             let sunrise = `${sunriseTime.getHours()} : ${sunriseTime.getMinutes()}`;
             let sunset = `${sunsetTime.getHours()} : ${sunsetTime.getMinutes()}`
             document.getElementById("sunrise").innerHTML = sunrise;
             document.getElementById("sunset").innerHTML = sunset;
+
             document.getElementById("wind").innerHTML = `${rs.list[0].wind.speed.toFixed(1)}m/s`;
             document.getElementById("humidity").innerHTML = rs.list[0].main.humidity;
             document.getElementById("cloud").innerHTML = rs.list[0].clouds.all;
-            document.getElementById("feelslike").innerHTML = rs.list[0].main.feels_like;
+            document.getElementById("feelslike").innerHTML = rs.list[0].main.feels_like.toFixed(1) + "&deg;";
+            let html = "";
+            for(let i in rs.list){
+                let dateTime = new Date(rs.list[i].dt*1000);
+                let dayHours = formatAMPM(dateTime.getHours());
+                let dayDate = `${nowTime.getMonth() +1}월 ${nowTime.getDate()}일 ${dayHours}시`;
+                let day_temp = `${rs.list[i].main.temp_max}&deg;/ ${rs.list[i].main.temp_min}&deg;`;
+                let day_desc = rs.list[i].weather[0].description;
+                html += `
+                <li>
+                    <div class="dayWeather">
+                        <p class="daydate">${dayDate}</p>
+                        <img src="images/${rs.list[i].weather[0].icon}.svg" alt="01d">
+                        <p class="daytemp">${day_temp}</p>
+                        <p class="daydesc">${day_desc}</p>
+                    </div>
+                </li>
+                `;
+            }
+            console.log(html);
+            document.getElementById('swipper').innerHTML = html;
         })
+}
+
+function formatAMPM(hours){
+    let ampm = hours > 12 ? hours - 12 : hours;
+    return hours >= 12 ? `PM ${ampm}` : `AM ${ampm}`;
 }
 
 

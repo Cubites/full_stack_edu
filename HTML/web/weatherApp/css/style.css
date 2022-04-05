@@ -87,3 +87,38 @@ span.material-icons{
     font-size: 20px;
     line-height: 20px;
 }
+
+/** dayweather **/
+#wrapper{
+    overflow: hidden;
+    height: 200px;
+}
+#swipper{
+    flex-wrap: nowrap;
+    position: relative;
+}
+#swipper li{
+    padding: 10px 15px;
+}
+.dayWeather{
+    width: 120px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0 rgba(246, 239, 35, 0.15), 
+                0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+.daydate{
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.dayWeather img{
+    height: 60px;
+}
+.daytemp{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
