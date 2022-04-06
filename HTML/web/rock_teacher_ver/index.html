@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보 게임</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>가위바위보 게임</h1>
+        <ul class="mem">
+            <li>
+                <div id="me">
+                     <p class="mname">나</p>
+                     <img src="images/paper.png" id="mimg" alt="보"> 
+                </div>
+            </li>
+            <li>
+                <div id="com">
+                    <p class="mname">컴퓨터</p>
+                    <img src="images/rock.png" id="dimg" alt="바위">
+                </div>
+            </li>
+        </ul>
+
+        <table id="table">
+             <caption id="tk">가위바위보 게임을 한 판 합시다!</caption>
+             <thead>
+             <tr>
+                 <th>총회수</th>
+                 <th>승리</th>
+                 <th>패배</th>
+             </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="ct"></td>
+                <td id="vt"></td>
+                <td id="lt"></td>  
+            </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"><strong id="vper"></strong></td>
+                </tr>
+            </tfoot>
+        </table>
+        <p id="result"></p>
+        <div class="btnbox">
+            <button class="myButton" id="s" onclick="rps(1)">가위</button>
+            <button class="myButton" id="r" onclick="rps(2)">바위</button>
+            <button class="myButton" id="p" onclick="rps(3)">보</button>
+        </div>
+        <div id="reload" class="reload"></div>
+    </div>
+    <script src="js/custom.js"></script>
+</body>
+</html>

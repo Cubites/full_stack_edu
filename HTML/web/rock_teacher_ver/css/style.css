@@ -1,0 +1,104 @@
+*{box-sizing: border-box;}
+html,body{
+    height:100%;
+    background-color: #ededed;
+}
+body{
+    margin: 0;
+    font: 1em sans-serif;
+}
+.container{
+    width: 600px;
+    height:100%;
+    max-width:100%;
+    padding: 50px 20px;
+}
+h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+ul.mem{
+    list-style: none;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+ul.mem li{
+    width:50%;
+    padding-left:15px;
+    padding-right:15px;
+}
+.mname{
+    font-size:18px;
+    text-align: center;
+    font-weight: bold;
+}
+ul.mem li:last-child img{
+    transform: rotateY(180deg);
+}
+ul.mem img{
+    max-width:100%;
+}
+table#table{
+    width:100%;
+    border-collapse: collapse;
+    margin-bottom:30px;
+}
+table,th,td{
+    border:1px solid #333;
+}
+th, td{
+    padding:5px;
+    text-align:center;
+    background:#fff;
+    height: 40px;
+}
+th{
+    background:#ccc;
+}
+#tk{
+    font-size:22px;
+    padding:25px;
+}
+.btnbox{
+    margin-top:15px;
+    margin-left:auto;
+    margin-right: auto;
+    width:100%;
+    padding:20px;
+    border:1px solid #999;
+    border-radius:15px;
+    box-shadow:0 0 15px 0 rgba(0,0,0,0.14);
+    text-align:center;
+}
+.myButton{
+    padding:8px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    width:30%;
+    box-shadow:0 10px 15px -7px #276873;
+    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    border-radius:8px;
+    cursor:pointer;
+    color:#fff;
+    text-shadow: 0px 1px 0px #3d768a;
+}
+.reload{
+    padding:25px;
+}
+.reload button{
+    padding:8px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    width:100%;
+    box-shadow:0 10px 15px -7px #276873;
+    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    border-radius:8px;
+    cursor:pointer;
+    color:#fff;
+    text-shadow: 0px 1px 0px #3d768a;
+}
