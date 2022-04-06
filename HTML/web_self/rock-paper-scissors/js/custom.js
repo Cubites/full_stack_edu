@@ -1,10 +1,10 @@
 'use strict';
-let button = document.querySelectorAll('div.buttons button');
-let img = document.querySelectorAll('div.buttons img');
-let result = document.querySelectorAll('div.main img');
-let resultT = document.getElementById('result');
+const button = document.querySelectorAll('div.buttons button');
+const img = document.querySelectorAll('div.buttons img');
+const result = document.querySelectorAll('div.main img');
+const resultT = document.getElementById('result');
 let hands = ["rock", "paper", "scissors"];
-let totalResult = document.querySelectorAll('.totalResult tr td');
+const totalResult = document.querySelectorAll('.totalResult tr td');
 
 
 img.forEach((button) => {
@@ -51,11 +51,12 @@ document.getElementById("reset").addEventListener('touchend', () => {
 function resultText(user, com){
     let userIndex = hands.indexOf(user);
     let comIndex = hands.indexOf(com);
-    if(userIndex > comIndex || (userIndex == 0 && comIndex == 2)){
+    let vsCal = userIndex - comIndex;
+    if(vsCal == -2 || vsCal == 1){
         resultT.innerHTML = "유저 승!";
         resultT.style.background = "skyblue";
         totalResult[0].innerHTML = Number(totalResult[0].innerHTML) + 1;
-    }else if(comIndex > userIndex || (userIndex == 2 && comIndex == 0)){
+    }else if(vsCal == -1 || vsCal == 2){
         resultT.innerHTML = "유저 패...";
         resultT.style.background = "firebrick";
         totalResult[1].innerHTML = Number(totalResult[1].innerHTML) + 1;
