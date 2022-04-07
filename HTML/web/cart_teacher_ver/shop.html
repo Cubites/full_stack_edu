@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/grid.css">
+    <style>
+        .container{
+            max-width:1200px;
+            margin:auto;
+            position: relative;
+            border:1px solid #ddd;
+            padding:30px;
+        } 
+        .shop-img>img{
+            width:100%;
+            height:300px;
+            object-fit:cover;
+        }
+        .shop-card{
+            margin:30px 0;
+        }
+        .shop-subject{
+            text-align:center;
+        }
+        .shop-subject button{
+            padding:5px;
+            width:100%;
+        }
+        .cart{
+            position:fixed;
+            top:50px;
+            right:0;
+            z-index:1;
+            width:100px;
+            padding:10px;
+            border:1px solid #ddd;
+            border-right:none;
+            font-size:12px;
+        }
+        .shop-cart-card{
+            padding:10px;
+            background:#ddd;
+            margin-bottom:15px;
+            position:relative;
+        }
+        .shop-cart-card p, .shop-cart-card h3{
+            margin:0;
+        }
+        .cart .shop-img>img{
+            width:100%;
+            height:80px;
+            object-fit:cover;
+        }
+        .close{
+            position:absolute;
+            top:0px;
+            right:5px;
+            line-height:1;
+            display:inline-block;
+            cursor:pointer;
+        }
+        .close:after{
+            display:inline-block;
+            content: "\00d7";
+            font-size:25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="shop" class="row">
+            <!-- loop -->
+            
+            <!-- /loop -->
+        </div>
+    </div>
+    <div class="cart">
+        <div class="shop-cart-card">
+            <div class="shop-img">
+                <img src="images/t01.jpg" alt="t01">
+            </div>
+            <div class="shop-subject">
+                <h3>상품1</h3>
+                <p>300,000원</p>
+            </div>
+            <span class="close"></span>
+        </div>
+    </div>
+    <script src="js/shop.js"></script>
+</body>
+</html>

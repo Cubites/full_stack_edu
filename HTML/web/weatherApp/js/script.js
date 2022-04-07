@@ -55,14 +55,6 @@ function getWeather(lat, lon, city){
     fetch(`${url}?${params}`)
         .then(reson => reson.json())
         .then(rs => {
-            // console.log(rs);
-            /*
-            1.도시명 2.시간 3.아이콘 4.현재온도
-            5.최저온도, 최고온도 6.설명
-            7. 해뜨는 시각 8.해지는 시각 9.바람
-            10.습도 11.구름 12.체감온도
-            */
-            // console.log("도시명", rs.city.name);
             let nowTime = new Date(rs.list[0].dt*1000);
             // console.log(nowTime);
             document.getElementsByClassName("ntime")[0].innerHTML = `${nowTime.getMonth() +1}월 ${nowTime.getDate()}일 ${nowTime.getHours()}시 ${nowTime.getMinutes()}분`;
@@ -91,7 +83,7 @@ function getWeather(lat, lon, city){
                 let day_desc = rs.list[i].weather[0].description;
                 html += `
                 <li>
-                    <div class="dayWeather">
+                    <div class="dayWeather swiper-slide">
                         <p class="daydate">${dayDate}</p>
                         <img src="images/${rs.list[i].weather[0].icon}.svg" alt="01d">
                         <p class="daytemp">${day_temp}</p>
@@ -100,7 +92,6 @@ function getWeather(lat, lon, city){
                 </li>
                 `;
             }
-            console.log(html);
             document.getElementById('swipper').innerHTML = html;
         })
 }

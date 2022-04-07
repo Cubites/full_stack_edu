@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        .box-center{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .container{
+            display: flex;
+            width: 1000px;
+            height: 800px;
+        }
+        .products{
+            width: 600px;
+        }
+        .product4{
+            display: flex;
+            justify-content: center;
+        }
+        .product{
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .cartList{
+            width: 400px;
+            height: 100%;
+            border: 1px solid #333;
+        }
+        .cartProduct{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            width: 90%;
+            height: 80px;
+            line-height: 60px;
+        }
+        .cartProduct h5, .cartProduct p{
+            margin: 0;
+            padding: 0;
+        }
+        .cartProduct button{
+            width: 100px;
+            height: 30px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container box-center">
+        <div class="products">
+            <div class="product4">
+                <div class="product">
+                    <h3>상품 1</h3>
+                    <p>3000</p>
+                    <button onclick="addCart(1)">장바구니 추가</button>
+                </div>
+                <div class="product">
+                    <h3>상품 2</h3>
+                    <p>5000</p>
+                    <button onclick="addCart(2)">장바구니 추가</button>
+                </div>
+                <div class="product">
+                    <h3>상품 3</h3>
+                    <p>13000</p>
+                    <button onclick="addCart(3)">장바구니 추가</button>
+                </div>
+                <div class="product">
+                    <h3>상품 4</h3>
+                    <p>7000</p>
+                    <button onclick="addCart(4)">장바구니 추가</button>
+                </div>
+            </div>
+            <div class="product4">
+                <div class="product">
+                    <h3>상품 5</h3>
+                    <p>9000</p>
+                    <button onclick="addCart(5)">장바구니 추가</button>
+                </div>
+                <div class="product">
+                    <h3>상품 6</h3>
+                    <p>25000</p>
+                    <button onclick="addCart(6)">장바구니 추가</button>
+                </div>
+                <div class="product">
+                    <h3>상품 7</h3>
+                    <p>40000</p>
+                    <button onclick="addCart(7)">장바구니 추가</button>
+                </div>
+                <div class="product">
+                    <h3>상품 8</h3>
+                    <p>130000</p>
+                    <button onclick="addCart(8)">장바구니 추가</button>
+                </div>
+            </div>
+        </div>
+        <div class="cartList">
+            <div class="cartProduct box-center">
+                <h5>상품이름</h3>
+                <p>상품가격</p>
+                <button onclick="delCart(event)">장바구니 삭제</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const product = document.querySelectorAll("div.product h3");
+        const price = document.querySelectorAll("div.product p");
+        const cart = document.querySelectorAll("div.cartList")[0];
+
+        function addCart(n){
+            let pname = product[n-1].innerHTML;
+            let pvalue = price[n-1].innerHTML;
+            document.cookie = `${pname}=${pvalue};expire=5000;path=/`;
+            let name_price = getCookie(pname);
+            cart.innerHTML += `
+            <div class="cartProduct box-center">
+                <h5>${name_price[0]}</h3>
+                <p>${name_price[1]}</p>
+                <button onclick="delCart(event)">장바구니 삭제</button>
+            </div>`;
+        }
+
+        function delCart(e){
+            let cproduct = document.querySelectorAll("div.cartList .cartProduct");
+            let delbtn = document.querySelectorAll("div.cartList button");
+            console.log(cart.innerHTML);
+            console.log(cproduct[Array.from(delbtn).indexOf(e.target)]);
+            cart.innerHTML.replace(cproduct[Array.from(delbtn).indexOf(e.target)], '');
+        }
+
+        // 쿠키를 저장
+        function setCookie(uname, uvalue, exday){
+            const d = new Date();
+            d.setTime(d.getTime() + (exday*24*60*60*1000));
+            let expires = "expire=" + d.toUTCString();
+            document.cookie = uname + "=" + uvalue + ";" + expires + ";path=/";
+            let html = "";
+
+        }
+
+        // 저장된 쿠키를 가져옴
+        function getCookie(uname){
+            let name = uname + "=";
+            let dCookie = decodeURIComponent(document.cookie); // 특수 문자 처리
+            let ca = dCookie.split(";"); // ;를 구분해서 ca배열로 분리
+            for(let i = 0; i < ca.length; i++){
+                let c = ca[i];
+                while(c.charAt(0) == " "){
+                    c = c.substring(1);
+                }
+                if(c.indexOf(name) == 0){
+                    return [c.substring(0, name.length-1), c.substring(name.length, c.length)];
+                }
+            }
+            return "";
+        }
+    </script>
+</body>
+</html>

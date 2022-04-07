@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="delCookie(document.cookie.name)"> 쿠키 삭제 </button><br>
+    <script>
+        // 특수 값(공백)은 인코딩 처리해야 함
+        let name = "my name";
+        let value = "James Stuete";
+        document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+        document.write(document.cookie, "<br>");
+        document.write(decodeURIComponent(document.cookie));
+
+        function delCookie(name){
+            setCookie(name, "", {
+                'max-age' : -1 
+            })
+        }
+    </script>
+</body>
+</html>

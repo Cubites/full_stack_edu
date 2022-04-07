@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>윈도우 객체 모델</h1>
+    <p id="bom"></p>
+    <p id="screen"></p>
+    <button class="btn" onclick="windowOpen()"> 새창 열기 </button>
+    <script>
+        let w = `이 객체의 내부 윈도우 너비는 ${window.innerWidth}px 입니다.`;
+        let h = `이 객체의 내부 윈도우 높이는 ${window.innerHeight}px 입니다.`;
+        document.getElementById('bom').innerHTML = w + ", " + h;
+
+        let sw = `이 객체의 내부 윈도우 너비는 ${screen.width}px 입니다.`;
+        let sh = `이 객체의 내부 윈도우 너비는 ${screen.height}px 입니다.`;
+        console.log(screen.availWidth);
+        console.log(screen.height);
+        document.getElementById('screen').innerHTML = sw + ", " + sh;
+
+        function windowOpen(){
+            let win = window.open(
+                'test2.html',
+                '_blank',
+                'width=500, height=400, toolbar=yes, scrollbars=no, resizable=no, top=100, left=300');
+            /* 옵션값
+                width, height, location(주소이력창 유무), menubar(메뉴바 유무), 
+                resizable(수동 창 크기고절 가능 유무 [IE에서만 동작]), status(상태 표시줄 유무), toolbar(툴바 유무),
+                left(가로 좌표값 [숫자만]), top(세로 좌표값), scrollbars(스크롤바 유무),
+                fullscreen(풀스크린) ==> yes, no || 1, 0 으로 입력 가능
+            */
+        }
+        // if(screen.colorDepth <= 8){
+        //     document.body.style.background = "red";
+        // }else{
+        //     document.body.style.background = "tomato";
+        // }
+    </script>
+</body>
+</html>

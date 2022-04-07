@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이 컴퓨터의 스크린 정보</h1>
+    <div id="info"></div>
+    <a href="https://naver.com">네이버로 이동</a>
+    <button onclick="history.back()"> 이전 </button> <!-- back() == go(-1) -->
+    <button onclick="history.forward()"> 다음 </button> <!-- forward() == go(1) -->
+
+    <br>
+    <button onclick="setTimeout(func, 3000)"> 팝업창 실행 </button>
+    <script>
+        if(document.cookie){
+            alert(document.cookie);
+        }
+        let txt = "";
+        txt += `<p>width: ${screen.width}</p>`;
+        txt += `<p>height: ${screen.height}</p>`;
+        txt += `<p>작업표시줄을 제외한 너비: ${screen.availWidth}</p>`;
+        txt += `<p>작업표시줄을 제외한 높이: ${screen.availHeight}</p>`;
+        txt += `<p>컬러비트수: ${screen.colorDepth}</p>`;
+        txt += `<p>픽셀비트수: ${screen.pixelDepth}</p>`;
+
+        txt += `현재 페이지의 URL: ${location.href}<br>`
+        txt += `웹 호스트의 도메인 이름: ${location.hostname}<br>`
+        txt += `현재 페이지의 경로와 파일 이름: ${location.pathname}<br>`
+        txt += `웹페이지의 포로토콜 (http, https): ${location.protocol}<br>`
+
+        document.getElementById("info").innerHTML = txt;
+        console.log(history);
+        console.log(navigator);
+        /*
+        if(/Mobi|Android/i.test(navigator.userAgent)){
+            // 모바일일 경우 접속
+        }
+        */
+
+        function func(){
+            alert("실행되었습니다.");
+        }
+
+        document.cookie = "username=James";
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 쿠키를 저장
+        function setCookie(uname, uvalue, exday){
+            const d = new Date();
+            d.setTime(d.getTime() + (exday*24*60*60*1000));
+            let expires = "expire=" + d.toUTCString();
+            document.cookie = uname + "=" + uvalue + ";" + expires + ";path=/";
+        }
+
+        // 저장된 쿠키를 가져옴
+        function getCookie(uname){
+            let name = uname + "=";
+            let dCookie = decodeURIComponent(document.cookie); // 특수 문자 처리
+            let ca = dCookie.split(";"); // ;를 구분해서 ca배열로 분리
+            for(let i = 0; i < ca.length; i++){
+                let c = ca[i];
+                while(c.charAt(0) == " "){
+                    c = c.substring(1);
+                }
+                if(c.indexOf(name) == 0){
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+    </script>
+</body>
+</html>
