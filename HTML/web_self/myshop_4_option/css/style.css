@@ -488,41 +488,78 @@ del{
     font-size: 9px;
     line-height: 11px;
     color: red;
-    width: 10px;
+    width: 11px;
     text-align: center;
     display: inline-block;
     margin-right: 5px;
 }
-.total-inner{
-    padding: 10px 5px;
-    border-top: 1px solid #333;
+
+#cart{
+    flex-direction: column;
+}
+#cart>div{
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
 }
-.total-inner span{
+#cart .infoCartGoods p{
+    font-size: 13px;
+    line-height: 20px;
+    margin: 5px 0;
+}
+#cart .infoCartGoods p:last-child{
     background: #c193cc;
     color: #fff;
-    font-size: 12px;
-    margin: 2px 0 0;
+    border-radius: 5px;
+}
+#cart .quantity{
+    display: flex;
+    width: 50px;
+    height: 30px;
+    border: 1px solid #333;
+    margin-top: 10px;
+}
+#cart .quantity p{
+    display: block;
+    width: 70%;
+}
+#cart .quantity .updownbtn{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.upbtn, .downbtn{
+    width: 100%;
+    height: 50%;
+    font-size: 10px;
+    border-left: 1px solid #333;
+    text-align: center;
+    cursor: pointer;
+}
+.upbtn{
+    border-bottom: 1px solid #333;
+}
+
+#cart .select-price p{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+}
+#cart .select-price div{
+    font-size: 13px;
+}
+#cart .select-price div span{
     display: inline-block;
-    padding: 3px 7px;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    color: #fff;
+    font-weight: 700;
+    background: #c193cc;
     border-radius: 3px;
 }
-.prbox{
-    font-size: 20px;
-    text-align: right;
-}
-.point{
-    font-size: 12px;
-}
-.prbox span{
-    background: #c193cc;
-    color: #fff;
-    padding: 2px 4px;
-    line-height: 1;
-    font-size: 10px;
-}
+
 
 
 
