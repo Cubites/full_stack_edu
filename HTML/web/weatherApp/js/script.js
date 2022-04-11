@@ -3,6 +3,7 @@
 let myLat, myLng;
 const search = document.getElementsByClassName("search")[0];
 const searchBox = document.getElementsByClassName("searchBox")[0];
+
 search.addEventListener("click", function(){
     searchBox.classList.add("active");
     document.getElementById("search").focus();
@@ -78,13 +79,14 @@ function getWeather(lat, lon, city){
             for(let i in rs.list){
                 let dateTime = new Date(rs.list[i].dt*1000);
                 let dayHours = formatAMPM(dateTime.getHours());
-                let dayDate = `${nowTime.getMonth() +1}월 ${nowTime.getDate()}일 ${dayHours}시`;
-                let day_temp = `${rs.list[i].main.temp_max}&deg;/ ${rs.list[i].main.temp_min}&deg;`;
+                let dayDate = `${nowTime.getMonth() +1}월 ${nowTime.getDate()}일`;
+                let day_temp = `${rs.list[i].main.temp_max.toFixed(0)}&deg;/ ${rs.list[i].main.temp_min.toFixed(0)}&deg;`;
                 let day_desc = rs.list[i].weather[0].description;
                 html += `
                 <li>
                     <div class="dayWeather swiper-slide">
                         <p class="daydate">${dayDate}</p>
+                        <p class="ampmtime">${dayHours}시</p>
                         <img src="images/${rs.list[i].weather[0].icon}.svg" alt="01d">
                         <p class="daytemp">${day_temp}</p>
                         <p class="daydesc">${day_desc}</p>
@@ -92,7 +94,7 @@ function getWeather(lat, lon, city){
                 </li>
                 `;
             }
-            document.getElementById('swipper').innerHTML = html;
+            document.getElementById('swiper').innerHTML = html;
         })
 }
 
@@ -101,93 +103,40 @@ function formatAMPM(hours){
     return hours >= 12 ? `PM ${ampm}` : `AM ${ampm}`;
 }
 
+const wrapper = document.getElementById("wrapper");
+const swiper = document.getElementById("swiper");
+let len_s = swiper.children.length * swiper.children[0].offsetWidth;
+let wid_s = swiper.offsetWidth;
+let max_move = wid_s - len_s; // swiper의 넓이
 
-function wicon(icon){
-    let wcs;
-    let bk = false;
-    let viewIcon = new Array();
-    switch(icon){
-        case "01d":
-            wcs = "wi-day-sunny";
-            break;
-        case "02d":
-            wcs = "wi-day-cloudy";
-            break;
-        case "03d":
-            wcs = "wi-cloud";
-            break;
-        case "04d":
-            wcs = "wi-cloudy";
-            break;
-        case "09d":
-            wcs = "wi-showers";
-            break;
-        case "10d":
-            wcs = "wi-rain";
-            break;
-        case "11d":
-            wcs = "wi-thunderstorm";
-            break;
-        case "13d":
-            wcs = "wi-snowflake-cold";
-            break;
-        case "50d":
-            wcs = "wi-fog";
-            break;
-        case "01d":
-            wcs = "wi-day-sunny";
-            break;
-        case "02d":
-            wcs = "wi-day-cloudy";
-            break;
-        case "03d":
-            wcs = "wi-cloud";
-            break;
-        case "04d":
-            wcs = "wi-cloudy";
-            break;
-        case "09d":
-            wcs = "wi-showers";
-            break;
-        case "10d":
-            wcs = "wi-rain";
-            break;
-        case "11d":
-            wcs = "wi-thunderstorm";
-            break;
-        case "13d":
-            wcs = "wi-snowflake-cold";
-            break;
-        case "50d":
-            wcs = "wi-fog";
-            break;
-        
-        case "01n":
-            wcs = "wi-day-sunny";
-            break;
-        case "02n":
-            wcs = "wi-day-cloudy";
-            break;
-        case "03n":
-            wcs = "wi-cloud";
-            break;
-        case "04n":
-            wcs = "wi-cloudy";
-            break;
-        case "09n":
-            wcs = "wi-showers";
-            break;
-        case "10n":
-            wcs = "wi-rain";
-            break;
-        case "11n":
-            wcs = "wi-thunderstorm";
-            break;
-        case "13n":
-            wcs = "wi-snowflake-cold";
-            break;
-        case "50n":
-            wcs = "wi-fog";
-            break;
+let ul = 0; //ul태그 위치 
+let now = 0; //정지했을 때의 위치 
+let prev = 0; //이동 방향
+let left_s = 0;
+wrapper.addEventListener('touchmove', startSlider, false);
+wrapper.addEventListener('touchend', endSlider, false);
+
+
+function startSlider(e){  
+    prev = e.touches[0].clientX;
+    left_s = swiper.getBoundingClientRect().left;
+    if(prev > now) {
+        ul += 5;
+    }else{
+        ul -= 5;
     }
+    moveSlider();
+    now = prev;
+}
+function endSlider(){
+    if(left_s > 0) {
+        swiper.style.transform = `translateX(0px)`;
+        ul = 0;
+    }else if(left_s < max_move){
+        swiper.style.transform = `translateX(${max_move}px)`;
+        ul = max_move;
+    }
+}
+function moveSlider() {
+    swiper.style.transform = `translateX(${ul}px)`;
 }

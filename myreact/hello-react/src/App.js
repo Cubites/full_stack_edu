@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Alert } from 'bootstrap-4-react';
 import Header from './comp/Header';
 import Aside from './comp/Aside';
 import Section from './comp/Section';
@@ -40,6 +41,7 @@ class App extends Component{ // 클래스형
     }
     return (
       <div className="App">
+        <Alert primary>Primary alert</Alert>
         <Header title={this.state.header.toptitle} />
         {/* <Header title="우리나라 검색 사이트" desc="우리나라 사이트 목록 입니다." /> */}
         <Aside data={this.state.contents} />

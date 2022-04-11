@@ -93,11 +93,11 @@ span.material-icons{
     overflow: hidden;
     height: 200px;
 }
-#swipper{
+#swiper{
     flex-wrap: nowrap;
     position: relative;
 }
-#swipper li{
+#swiper li{
     padding: 10px 15px;
 }
 .dayWeather{
@@ -112,6 +112,10 @@ span.material-icons{
                 0 0 15px 0 rgba(0, 0, 0, 0.2);
 }
 .daydate{
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.ampmtime{
     font-weight: 700;
     margin-bottom: 10px;
 }

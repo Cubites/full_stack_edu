@@ -1,13 +1,13 @@
 'use strict';
 const wrapper = document.getElementById("wrapper");
-const swipper = document.getElementById("swipper");
-const content = document.querySelector("#swipper li");
+const swiper = document.getElementById("swiper");
+const content = document.querySelector("#swiper li");
 
 // 자바스크립트 모바일 이벤트 touchmove, touchend
 let left_wrap = wrapper.getBoundingClientRect().left;
 let hei = content.offsetWidth;
 console.log(hei);
-let len = swipper.children.length;
+let len = swiper.children.length;
 let ul_wid = hei * len;
 let per = hei / (window.innerHeight / 20);
 window.addEventListener('resize', () => {
@@ -27,18 +27,16 @@ function startSlider(e){
     // console.log(e.changedTouches[0]);
     pos.prev = e.changedTouches[0].clientX - left_wrap;
     if(pos.prev > pos.now){
-        // 오른쪽으로 움직임
-        pos.ul += per;
+        pos.ul += per; // 오른쪽으로 움직임
     }else{
-        // 왼쪽으로 움직임
-        pos.ul -= per;
+        pos.ul -= per; // 왼쪽으로 움직임
     }
     moveSlider();
     pos.now = pos.prev;
 }
 
 function moveSlider(){
-    swipper.style.transform = `translateX(${pos.ul}px`;
+    swiper.style.transform = `translateX(${pos.ul}px`;
 }
 
 function adSlider(){
