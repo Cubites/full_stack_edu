@@ -8,8 +8,15 @@ export default function Home() {
     <>
       <Header />
       <div className="container home">
-        <Posts></Posts>
-        <Sidebar></Sidebar>
+          <div className="post">
+            <Posts></Posts>
+            <Posts></Posts>
+            <Posts></Posts>
+            <Posts></Posts>
+            <Posts></Posts>
+            <Posts></Posts>
+          </div>
+          <Sidebar></Sidebar>
       </div>
     </>
   )

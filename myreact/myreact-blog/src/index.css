@@ -6,3 +6,6 @@ body {
   width: 1300px;
   margin: 0 auto;
 }
+img{
+  max-width: 100%;
+}

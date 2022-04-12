@@ -20,7 +20,7 @@
         <h1 class="city-title">
             💒 GOYANG-SI
         </h1>
-        <p class="ntime text-center">0000년 00월 00일 00시</p>
+        <p id="ntime" class="text-center">0000년 00월 00일 00시</p>
         <div class="row col-9 margin-auto">
             <div class="col-6" id="iconbox">
                 <img src="images/01d.svg" alt="01d">
@@ -60,128 +60,10 @@
                         <p class="daydesc">좋은 날씨</p>
                     </div>
                 </li>
-                <li>
-                    <div class="dayWeather">
-                        <p class="daydate">00일 02시 00분</p>
-                        <img src="images/01d.svg" alt="01d">
-                        <p class="daytemp">23&deg;/12&deg;</p>
-                        <p class="daydesc">좋은 날씨</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="dayWeather">
-                        <p class="daydate">00일 03시 00분</p>
-                        <img src="images/01d.svg" alt="01d">
-                        <p class="daytemp">23&deg;/12&deg;</p>
-                        <p class="daydesc">좋은 날씨</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="dayWeather">
-                        <p class="daydate">00일 04시 00분</p>
-                        <img src="images/01d.svg" alt="01d">
-                        <p class="daytemp">23&deg;/12&deg;</p>
-                        <p class="daydesc">좋은 날씨</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="dayWeather">
-                        <p class="daydate">00일 05시 00분</p>
-                        <img src="images/01d.svg" alt="01d">
-                        <p class="daytemp">23&deg;/12&deg;</p>
-                        <p class="daydesc">좋은 날씨</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="dayWeather">
-                        <p class="daydate">00일 06시 00분</p>
-                        <img src="images/01d.svg" alt="01d">
-                        <p class="daytemp">23&deg;/12&deg;</p>
-                        <p class="daydesc">좋은 날씨</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="dayWeather">
-                        <p class="daydate">00일 07시 00분</p>
-                        <img src="images/01d.svg" alt="01d">
-                        <p class="daytemp">23&deg;/12&deg;</p>
-                        <p class="daydesc">좋은 날씨</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="dayWeather">
-                        <p class="daydate">00일 08시 00분</p>
-                        <img src="images/01d.svg" alt="01d">
-                        <p class="daytemp">23&deg;/12&deg;</p>
-                        <p class="daydesc">좋은 날씨</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="dayWeather">
-                        <p class="daydate">00일 09시 00분</p>
-                        <img src="images/01d.svg" alt="01d">
-                        <p class="daytemp">23&deg;/12&deg;</p>
-                        <p class="daydesc">좋은 날씨</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="dayWeather">
-                        <p class="daydate">00일 10시 00분</p>
-                        <img src="images/01d.svg" alt="01d">
-                        <p class="daytemp">23&deg;/12&deg;</p>
-                        <p class="daydesc">좋은 날씨</p>
-                    </div>
-                </li>
                 <!-- loop -->
             </ul>
         </div>
     </div>
-
-    <script>
-        const wrapper = document.getElementById("wrapper");
-        const swiper = document.getElementById("swiper");
-        // let left_w = wrapper.getBoundingClientRect().left;  //전체페이지에서 wrapper의 왼쪽 위치
-        // let hei_w = wrapper.offsetHeight; //wrapper 의 높이  200px
-        // let wei_w = wrapper.offsetWidth; //wrapper의 넓이 
-        let len_s = swiper.children.length * swiper.children[0].offsetWidth;
-        let wid_s = swiper.offsetWidth;
-        let max_move = wid_s - len_s;
-
-        //swiper의 넓이
-        let ul = 0; //ul태그 위치 
-        let now = 0; //정지했을 때의 위치 
-        let prev = 0; //이동 방향
-        let left_s = 0;
-        wrapper.addEventListener('touchmove', startSlider, false);
-        wrapper.addEventListener('touchend', endSlider, false);
-
-
-        function startSlider(e){  
-            prev = e.touches[0].clientX;
-            left_s = swiper.getBoundingClientRect().left;
-            if(prev > now) {
-                ul += 5;
-            }else{
-                ul -= 5;
-            }
-            moveSlider();
-            now = prev;
-
-        }
-        function endSlider(){
-            if(left_s > 0) {
-                swiper.style.transform = `translateX(0px)`;
-                ul = 0;
-            }else if(left_s < max_move){
-                swiper.style.transform = `translateX(${max_move}px)`;
-                ul = max_move;
-            }
-        }
-        function moveSlider() {
-            swiper.style.transform = `translateX(${ul}px)`;
-        }
-        
-    </script>
     <script src="js/script.js"></script>
     <!-- <script src="js/slide.js"></script> -->
 </body>
