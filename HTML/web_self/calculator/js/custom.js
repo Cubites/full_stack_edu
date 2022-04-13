@@ -133,7 +133,7 @@ function inputsign3(s){
         sign = "";
         seq.innerHTML = '';
     }else if(s == '←'){
-        let changeNum = check.slice(0, check.length - 1);
+        let changeNum = String(check).slice(0, String(check).length - 1);
         result.innerHTML = (changeNum == "") ? 0 : changeNum;
     }else{
         num = cal4(num, sign, check);
