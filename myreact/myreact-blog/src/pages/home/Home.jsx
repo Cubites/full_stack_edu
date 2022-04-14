@@ -1,7 +1,7 @@
 import './home.css';
-import Header from '../header/Header';
-import Posts from '../posts/Posts';
-import Sidebar from '../sidebar/Sidebar';
+import Header from '../../comp/header/Header';
+import Posts from '../../comp/posts/Posts';
+import Sidebar from '../../comp/sidebar/Sidebar';
 
 export default function Home() {
   return (

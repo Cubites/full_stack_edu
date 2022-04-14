@@ -18,10 +18,12 @@ body{
     width: 100%;
     position: relative;
 }
-.navin{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.nav-bg .row{
+    padding-top: 8px;
+    padding-bottom: 15px;
+}
+.logo{
+    width: 80%;
 }
 .topnavbox{
     display: flex;
@@ -121,6 +123,8 @@ div.lnb{
     left: 0;
     top: 123px;
     background: #333;
+    display: none;
+    z-index: 10;
 }
 .lnb ul{
     list-style: none;
@@ -149,9 +153,122 @@ div.lnb{
 .lng a:last-child{
     margin-bottom: 40px;
 }
+.navin{
+    display: none;
+    /* position: absolute; */
+}
+.mobile{
+    display: block;
+}
+.mobile .fadeblack,
+.mobile .xclose{
+    position: fixed;
+    left: 100%;
+}
+.btn-box{
+    display: flex;
+    justify-content: flex-end;
+}
+a>.material-icons{
+    color: #333;
+}
+a:hover>.material-icons{
+    color: #000;
+}
+.material-icons.menu{
+    cursor: pointer;
+}
+.fadeblack{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+}
+.mobile-nav-box{
+    background: #000;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    margin-left: 30%;
+    position: relative;
+    list-style-type: none;
+}
+.mobile-nav-box li{
+    border-bottom: 1px solid #333;
+    padding: 20px;
+}
+.mobile-nav-box li.grayblack{
+    background: #333;
+    border-bottom: 1px solid #000;
+
+}
+.mobileSearchForm{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.mobile-nav-box li a{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+.mobile-nav-box li a{
+    text-decoration: none;
+}
+.mobile-nav-box li a:hover span{
+    text-decoration: underline;
+}
+.mobile .material-icons{
+    font-size: 40px;
+    margin-right: 15px;
+}
+a.xclose{
+    position: absolute;
+    top: 30px;
+    left: 80px;
+    z-index: 150;
+}
+a.xclose span.material-icons{
+    font-size: 50px;
+    color: #fff;
+    transition: transform 1s;
+}
+a.xclose:hover span.material-icons{
+    transform: rotate(180deg);
+}
+ul.mobile-lnb{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin: 15px -20px -20px;
+    background: #222;
+    display: none;
+}
+ul.mobile-lnb li{
+    padding-left: 40px;
+}
 
 @media screen and (min-width: 780px){
     .navin{
         width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .mobile{
+        display: none;
+    }
+    .nav-bg .row{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .logo{
+        width: 100%;
     }
 }

@@ -107,7 +107,7 @@ a.search-btn span.material-icons{
     background: #333;
 }
 .gnb>li>a:hover{
-    color: #14a86b;
+    color: #539900;
 }
 .gnb>li>a{
     display: inline-block;
@@ -118,6 +118,7 @@ div.lnb{
     position: absolute;
     width: 100%;
     padding: 20px 0;
+    padding-bottom: 0;
     left: 0;
     top: 123px;
     background: #333;
@@ -135,9 +136,10 @@ div.lnb{
 .lnb li{
     width: 20%;
 }
-.gnb>li:hover .lnb{
+/* .gnb>li:hover>.lnb{
     display: flex;
-}
+    flex-direction: column;
+} */
 .gnb li .lnb a{
     display: block;
     color: #fff;
@@ -153,11 +155,32 @@ div.lnb{
     line-height: 1.2;
     text-align: left;
 }
-.lng a:last-child{
+.lnb a:last-child{
     margin-bottom: 40px;
 }
 .lnb ul li a:not(:first-of-type){
     color: #999;
+}
+.bottomsubnav{
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    background-image: url(../images/gnb_sub_txbg.jpg);
+}
+.bottomsubnav li{
+    width: 30%;
+}
+.lnb .bottomsubnav .container a{
+    color: #999;
+    font-weight: bold;
+}
+.bottomsubnav p{
+    color: #539900;
+    font-size: 13px;
+    text-align: left;
+}
+.bottomsubnav .container{
+    margin-bottom: 10px;
 }
 
 @media screen and (min-width: 780px){
