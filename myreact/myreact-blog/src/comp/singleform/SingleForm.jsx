@@ -9,12 +9,12 @@ export default function SingleForm() {
     EditorState.createEmpty()
   );
   useEffect(() => {
-    console.log(editorState);
+    // console.log(editorState);
   }, [editorState])
   return (
     <div className="sform">
       <img src="images/post01.jpg" alt="bannerImg" />
-      <h1 className="postTitle">Posting</h1>
+      <h1 className="singlePostTitle">Posting</h1>
       <form className="writeForm">
         <div className="writeFormGroup">
           <label htmlFor="fileInput">

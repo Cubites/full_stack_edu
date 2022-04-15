@@ -1,0 +1,54 @@
+.contact{
+    display: flex;
+    margin-top: 10%;
+}
+.contactBox{
+    flex: 6;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contactMain{
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    width: 450px;
+    align-items: flex-end;
+}
+.contactMain>div{
+    margin: 10px;
+}
+.contactMain>div input{
+    border-radius: 10px;
+}
+.contactMain .contactEmail{
+    height: 50px;
+    width: 300px;
+}
+.contactMain .contactMessage{
+    height: 300px;
+    width: 300px;
+
+}
+.contactMain label{
+    margin-right: 20px;
+}
+.contactBox button{
+    margin: 10px;
+    padding: 15px 40px;
+    width: 150px;
+    font-size: 30px;
+    color: #fff;
+    border: none;
+    background-color: rgb(86, 163, 163);
+    border-radius: 10px;
+    margin-left: 20px;
+}
+.contactBox button:hover{
+    background-color: rgb(57, 112, 112);
+
+}

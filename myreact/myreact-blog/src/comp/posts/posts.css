@@ -31,6 +31,10 @@
     margin-top: 15px;
     cursor: pointer;
 }
+.postTitle a{
+    text-decoration: none;
+    color: #333;
+}
 .postDate{
     align-self: flex-end;;
     margin-right: 10px;

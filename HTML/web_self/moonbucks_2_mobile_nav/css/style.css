@@ -158,6 +158,7 @@ div.lnb{
 }
 .mobile{
     display: block;
+    position: relative;
 }
 .btn-box{
     display: flex;
@@ -172,14 +173,23 @@ a:hover>.material-icons{
 .material-icons.menu{
     cursor: pointer;
 }
-.fadeblack{
+.mobile-nav{
     position: fixed;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+.fadeblack{
+    position: absolute;
     z-index: 100;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
     top: 0;
-    left: 0;
+    left: 100%;
 }
 .mobile-nav-box{
     background: #000;
@@ -197,7 +207,6 @@ a:hover>.material-icons{
 .mobile-nav-box li.grayblack{
     background: #333;
     border-bottom: 1px solid #000;
-
 }
 .mobileSearchForm{
     padding-top: 20px;

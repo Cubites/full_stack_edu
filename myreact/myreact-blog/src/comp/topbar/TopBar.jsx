@@ -1,7 +1,8 @@
 import './topbar.css';
-// import me from './images/me.jpg';
+import { Link } from 'react-router-dom';
 
 export default function TopBar() {
+    const user = false;
   return (
     <div className="top">
         <div className='container topInn'>
@@ -12,13 +13,28 @@ export default function TopBar() {
                 <i className="topIcon fa-brands fa-instagram-square"></i>
             </div>
             <div className="topCenter">
-                <ul className="topList">
-                    <li className="topListItem"><a href="#">about</a></li>
-                    <li className="topListItem"><a href="#">list</a></li>
-                    <li className="topListItem"><a href="#">contact</a></li>
-                    <li className="topListItem"><a href="#">write</a></li>
-                    <li className="topListItem"><a href="#">login</a></li>
-                </ul>
+                {
+                    user ? (
+                        <ul className="topList">
+                            <li className="topListItem"><Link to="/" className="homeLink">list</Link></li>
+                            <li className="topListItem"><Link to="/about">about</Link></li>
+                            <li className="topListItem"><Link to="/contact">contact</Link></li>
+                            <li className="topListItem"><Link to="/write">write</Link></li>
+                            <li className="topListItem"><a href="#">Logout</a></li>
+                            {/* <li className="topListItem"><a href="#">login</a></li> */}
+                        </ul>
+                    ) : (
+                        <ul className="topList">
+                            <li className="topListItem"><Link to="/" className="homeLink">list</Link></li>
+                            <li className="topListItem"><Link to="/about">about</Link></li>
+                            <li className="topListItem"><Link to="/contact">contact</Link></li>
+                            <li className="topListItem"><Link to="/Write">write</Link></li>
+                            <li className="topListItem"><Link to="/Login">LOGIN</Link></li>
+                            <li className="topListItem"><Link to="/Settings">회원가입</Link></li>
+                            
+                        </ul>
+                    )
+                }
             </div>
             <div className="topRight">
                 <img src="images/me.jpg" alt="홍길동" className="topImg" />

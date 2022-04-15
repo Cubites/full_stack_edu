@@ -12,3 +12,4 @@ yarn add react-draft-wysiwyg draft-js react react-dom
 1. PowerShell을 관리자 권한으로 실행
 2. set-ExecutionPolicy Unrestricted
  > 되돌리는 법 : set-ExecutionPolicy restricted
+ > 보안정책 확인방법 : get-ExecutionPolicy

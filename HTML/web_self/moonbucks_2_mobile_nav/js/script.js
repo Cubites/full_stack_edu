@@ -16,4 +16,18 @@ $(function(){
         }
         $(this).find('.mobile-lnb').slideToggle();
     })
+
+    $('.menu').click(function(){
+        $('.mobile-nav').css("display", "block");
+        $('.fadeblack').animate({
+            left: 0
+        }, 1000);
+    })
+    $('.xclose').click(() => {
+        $('.fadeblack').animate({
+            left: '100%'
+        }, 1000, () => {
+            $('.mobile-nav').css("display", "none");
+        });
+    })
 })

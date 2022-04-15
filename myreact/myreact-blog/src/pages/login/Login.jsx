@@ -1,5 +1,6 @@
 import './login.css';
 import Sidebar from '../../comp/sidebar/Sidebar';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   return (
@@ -19,7 +20,9 @@ export default function Login() {
                 <div className="loginBtnbox">
                     <button className="loginSubmit">로그인</button>
                     <br />
-                    <button className="loginRegisterButton">회원가입</button>
+                    <button className="loginRegisterButton">
+                      <Link to="/Settings">회원가입</Link>
+                    </button>
                 </div>
             </form>
         </div>

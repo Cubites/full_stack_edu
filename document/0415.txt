@@ -1,0 +1,58 @@
+* SPA (Single Page Application)
+- 페이지이동 없이 상단 링크만 변화함 (component만 변화)
+- React를 이용한 예 : facebook
+- React Router Dom 으로 적용 가능
+
+
+* React Router Dom 사용법
+- https://v5.reactrouter.com/web/guides/quick-start
+- yarn add react-router-dom 로 설치
+
+<v5 에서 v6로 넘어오면서 사용방법이 변함>
+react-router-dom이 버전 6으로 업그레이드 되면서 
+Switch를 더이상 지원하지 않게 되었다. 
+Switch => Routes 로 바뀜
+Component => element로 바뀜
+
+이전 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+export default function App() {
+  return (
+    <Router>
+        <Switch>
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+v6 이후 
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="users/*" element={<Users />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}

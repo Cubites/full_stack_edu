@@ -16,16 +16,50 @@ $(function(){
         }
         $(this).find('.mobile-lnb').slideToggle();
     })
-    // $('.menu').style.transition = 'transform 1s' 
-    // $('.xclose')
+
     $('.menu').click(function(){
-        $('.fadeblack').animate({left: 0}, 1000);
-        $('.xclose').animate({left:0}, 1000);
-    });
+        $('.wrapper').css({
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%'
+        }).animate({
+            left: '-70%'
+        }, 500)
+
+        $('.fadeblack').css({
+            display: 'block',
+            top: 0,
+            left: '100%'
+        }).animate({
+            left: 0
+        }, 500);
+    })
 
     $('.xclose').click(function(){
-        $('.fadeblack').animate({left: '100%'}, 1000);
-        $('.xclose').animate({left:'100%'}, 1000);
+        $('.wrapper').animate({
+            left: 0
+        }, 500, function(){
+            $('.wrapper').css('position', 'relative')
+        })
 
+        $('.fadeblack').animate({
+            left: '100%'
+        }, 500, function(){
+            $('.fadeblack').css('display', 'none');
+        })
     })
+
+    // // $('.menu').style.transition = 'transform 1s' 
+    // // $('.xclose')
+    // $('.menu').click(function(){
+    //     $('.fadeblack').animate({left: 0}, 1000);
+    //     $('.xclose').animate({left:0}, 1000);
+    // });
+
+    // $('.xclose').click(function(){
+    //     $('.fadeblack').animate({left: '100%'}, 1000);
+    //     $('.xclose').animate({left:'100%'}, 1000);
+
+    // })
 })

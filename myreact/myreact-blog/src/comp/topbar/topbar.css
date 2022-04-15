@@ -6,6 +6,10 @@
     top: 0;
     z-index: 1000;
 }
+.topListItem a.homeLink{
+    font-weight: 400;
+    color: rgb(170, 9, 9);
+}
 .topInn{
     display: flex;
     align-items: center;
