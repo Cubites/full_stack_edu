@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <div className="contact">
         <div className='contactBox'>
-            {/* div.contactBox */}
+            <h2>CONTACT</h2>
             <div className="contactMain">
                 <div className="contactBoxEmail">
                     <label>Email</label>
@@ -18,7 +18,9 @@ export default function Contact() {
             </div>
             <button className='contactSend'> Send </button>
         </div>
-        {/* <Sidebar /> */}
+        <div className="sidebarInContact">
+            <Sidebar />
+        </div>
     </div>
   )
 }

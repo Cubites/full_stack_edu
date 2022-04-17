@@ -1,6 +1,7 @@
 .contact{
     display: flex;
-    margin-top: 10%;
+    max-width: 1500px;
+    margin: 10% auto;
 }
 .contactBox{
     flex: 6;
@@ -11,6 +12,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.contactBox h2{
+    width: 200px;
+    text-align: center;
+    border-top: 3px double #333;
+    border-bottom: 3px double #333;
+    margin-bottom: 40px;
+}
+.sidebarInContact{
+    max-width: 500px;
 }
 .contactMain{
     display: flex;
