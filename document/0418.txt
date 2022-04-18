@@ -17,7 +17,12 @@
 * jsx 문법
 - arrow function : function test() => ( )  << 중괄호가 아닌 괄호를 씀
 
-* git
+* vscode git
 - git 설치 후 vscode 추천 확장 프로그램 : GitLens — Git supercharged , Git History
 - git 터미널 열고 명령어
-	> git config 
+	> git config --global user.name "git 아이디"
+	> git config --global user.email "git에 등록한 이메일 주소"
+
+* Arrow function 사용시 에러가 나는 경우
+- arrow function은 scope를 window로 잡음
+	> 때문에 this를 사용하면 생각한 위치가 아니라 window 기준으로 this가 적용되어 에러가 날 수 있음
