@@ -1,0 +1,25 @@
+bootstrap 5 가 급하게 나옴
+- 이유 : 이전까지 bootstrap은 css & jquery(js) 기반이었음
+	> react, vue, angularJS 등이 jquery가 느리다 판단, 바닐라 js 기반으로 만들어짐
+	> 때문에 5가 급하게 나오게 됨 (지금은 bootstrap의 css만 가져다 쓰는 경우가 많음) 
+
+bootstrap 4 >> 5 차이
+margin-left & right : ml mr >> ms me (start, end)
+
+* react에서의 기본 정책
+- 변수는 부모가 전부 관리함
+
+* props는 변경할 수 없는 고정된 값
+* state는 변경할 수 있는 값
+	> constructor(생성자)로 만들면 변경이 가능
+
+* jsx에서는 onclick(X) , onClick(O)
+
+* getter, setter
+- setter {
+    error
+    setting
+  }
+
+* css
+- animation-play-state : pause, start (애니메이션 정지, 시작)

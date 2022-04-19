@@ -18,7 +18,7 @@ export default class Test extends Component {
         <ul>
             {
                 this.props.arrValue.map((data) => (
-                    // key 값이 없으면 에러 발생, html 코드에는 출력되지 않음
+                    // key 값이 없으면 에러 발생, key 값은 html 코드에는 출력되지 않음
                     <li key={data.id}>{data.name} / {data.age} / {data.job} / {data.city}</li>
                 ))
             }

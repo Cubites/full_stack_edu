@@ -73,17 +73,72 @@ $(function(){
         arrows: false
     });
 
+    $('.imgSliderClass').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 3,
+                autoplay: true,
+                autoplayspeed: 2000
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1,
+                autoplay: true,
+                autoplayspeed: 2000
+                }
+            }
+        ]
+    });
+    $(".summer-bg").hover(() => {
+        $(".l-r").animate({
+            left: 0,
+            opacity: 1
+        }, {
+            duration: 1500,
+            easing: "swing"
+        });
+        $(".r-l").animate({
+            right: 0,
+            opacity: 1
+        }, {
+            duration: 1500,
+            easing: "swing"
+        });
+    });
 
-    // // $('.menu').style.transition = 'transform 1s' 
-    // // $('.xclose')
-    // $('.menu').click(function(){
-    //     $('.fadeblack').animate({left: 0}, 1000);
-    //     $('.xclose').animate({left:0}, 1000);
-    // });
+    /** reserve **/
+    $('.reserve').hover(() => {
+        $('.fadeIn').animate({
+            opacity: 1
+        }, 1000);
+    });
 
-    // $('.xclose').click(function(){
-    //     $('.fadeblack').animate({left: '100%'}, 1000);
-    //     $('.xclose').animate({left:'100%'}, 1000);
-
-    // })
+    setInterval(mySlider, 3000);
 })
+
+function mySlider(){
+    let wi = $('.imgSlideIn>div>img').innerWidth();
+    console.log(wi);
+    $(".imgSlideIn").animate({
+        left: "-834px"
+    }, 500, function(){
+        $('.imgSlideIn div').removeClass('opacity-1');
+        $('.imgSlideIn div:eq(0)').clone().appendTo('.imgSlideIn');
+        $('.imgSlideIn div:eq(0)').remove();
+        $('.imgSlideIn div:eq(1)').addClass('opacity-1');
+        $('.imgSlideIn').css('left', '0');
+    })
+}
