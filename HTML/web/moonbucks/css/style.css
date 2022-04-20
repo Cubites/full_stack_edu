@@ -5,6 +5,7 @@ body{
     margin:0;
     padding:0;
 }
+a, a:hover{text-decoration: none;}
 .bg-black{
     background-color:#000;
 }
@@ -401,6 +402,58 @@ a.imgs{
 .imgSlideIn>div.opacity-1{
     opacity: 1;
 }
+.page{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.page li{
+    width: 10px;
+    height: 10px;
+    background: #999;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.page li.act{
+    background: #000;
+}
+.prev, .next{
+    position: absolute;
+    top: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #999;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    color: #999;
+    font-size: 30px;
+    transition: all .3s;
+    z-index: 11;
+}
+.prev:hover, .next:hover{
+    background-color: rgba(255, 255, 255, .8);
+    border-color: #333;
+    color: #333;
+}
+.prev{
+    left: calc(50% - 550px);
+}
+.next{
+    right: calc(50% - 550px);
+}
+
+/** section **/
 
 /*** summer-bg ***/
 .summer-bg{
@@ -447,12 +500,13 @@ a.imgs{
 .bean-text-box button{
     margin-top: 35px;
 }
-
-/*** reserve ***/
+/*** indonesia ***/
 .reserve{
+    background: url(../images/reserve_2022_indonesia_visual_bg.jpg) center top;
+    background-size: cover;
+    overflow: hidden;
     height: 400px;
     position: relative;
-    background-color: #dbc0c4;
 }
 .resBack{
     position: relative;
@@ -486,10 +540,18 @@ a.imgs{
 
 /** favorite **/
 .favorite{
-    background: transparent;
+    background: url(../images//fav_prod_bg_new.jpg) center fixed no-repeat;
+    background-size: auto 1005;
+    height: 800px;
+    padding: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 .ftext{
     width: 300px;
+    color: #fff;
+    text-align: right;
 }
 .favorite .ftitle h1{
     font-size: 70px;
@@ -502,6 +564,67 @@ a.imgs{
 .favorite .ftitle p{
     font-size: 30px;
     font-weight: bold;
+}
+.favorite img{
+    height: 450px;
+}
+
+/*** magazine ***/
+.magazine{
+    background: url(../images/reserve_bg_pc.png) no-repeat 50% 100%;
+    background-size: auto 353px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+/*** graybox ***/
+.graybox{
+    background: url(../images/store_bg.jpg);
+    background-size: 100% auto;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+/** footer **/
+footer{
+    padding: 35px;
+    background-color: #333;
+}
+footer h4{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.foot-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.foot-list a{
+    font-size: 14px;
+    color: #fefefe;
+}
+
+.footer-nav li:not(:last-child){
+    border-right: 1px solid #eee;
+    height: 13px;
+    position: relative;
+}
+.footer-nav a{
+    font-size: 13px;
+    color: #fff;
+    line-height: 13px;
+    padding: 0 10px;
+    position: relative;
+    top: -6px;
+}
+footer p{
+    color: #eee;
+    font-size: 14px;
 }
 
 
