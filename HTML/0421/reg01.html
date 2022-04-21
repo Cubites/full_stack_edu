@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="reg02.html" onsubmit="return numvalidate()">
+        <label>전화번호</label>
+        <input type="text" id="tel" placeholder="전화번호 입력" />
+        <br>
+        <button type="submit">전화번호 검증</button>
+    </form>
+    <script>
+        'use strict';
+        let re = /(\d{10,11})|(\d{2,3}[- .]\d{3,4}[- .]\d{4})/gm;
+        function numvalidate(){
+            let tel = document.getElementById('tel');
+            if(!check(re, tel)){
+                return false;
+            }
+            alert('감사합니다. 조만간 연락하겠습니다.');
+        }
+
+        function check(re, tel){
+            if(re.test(tel.value)){
+                return true;
+            }
+            alert("입력하신 문자는 전화번호가 아닙니다.");
+            tel.value = "";
+            tel.focus();
+        }
+
+        // const button = document.getElementsByTagName("button")[0];
+        // const input = document.getElementsByTagName("input")[0];
+        // button.addEventListener("click", function(){
+        //     const check = /\d{2,3}([- .]?\d{3,4}){2}/;
+        //     let result = check.exec(input.value);
+        //     alert((result != Null)? "올바른 전화번호입니다" : "잘못된 전화번호입니다.");
+        // })
+    </script>
+</body>
+</html>

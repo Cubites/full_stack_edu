@@ -1,0 +1,3 @@
+* 정규표현식
+- 정식 표현식 : const a = net RegExp('표현식')
+- 일반적인 방법 : const a = /표현식/flag

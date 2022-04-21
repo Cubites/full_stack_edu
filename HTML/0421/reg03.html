@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUTUBE</title>
+    <style>
+        *{box-sizing: border-box;}
+        .container{
+            width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+        ul{
+            list-style-type: none;
+            width: 560px;
+            padding: 0;
+            margin: 50px auto;
+            border: 1px solid #999;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        li:not(:last-child){
+            border-bottom: 1px solid #999;
+        }
+        ul a{
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <iframe width="560" height="315" id="youtube" src="https://www.youtube.com/embed/HGOBQPFzWKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <ul>
+            <li><a href="https://www.youtube.com/embed/G-fJJ-OHLDw" onclick="ychange(event, 0)">애플은 왜 인텔 대신 ARM을 선택했나?</a></li>
+            <li><a href="https://www.youtube.com/embed/LUCpzIZJ4YA" onclick="ychange(event, 1)">1분 파이썬 - (8) 불리안</a></li>
+            <li><a href="https://www.youtube.com/embed/LaWOR3Cnk4c" onclick="ychange(event, 2)">23만 원어치 고오급 디저트</a></li>
+            <li><a href="https://www.youtube.com/embed/Us8yUf-8dGw" onclick="ychange(event, 3)">알아두멸 쓸데있는 가짜 트러플 구별볍</a></li>
+            <li><a href="https://www.youtube.com/embed/3irmukCK24I" onclick="ychange(event, 4)">4000만명이 시청한 아코디언 삼겹살 레시피</a></li>
+        </ul>
+    </div>
+    <script>
+        const regExp = /^.*((youtu.be\/)(v\/)(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+
+        function yidParser(url){
+            let match = url.match(regExp);
+            return (match&&match[7].length==11)? match[7] : false;
+        }
+
+        function ychange(e, i){
+            e.preventDefault();
+            let links = document.getElementsByTagName("a")[i].href;
+            const m = yidParser(links);
+            if(m){
+                document.getElementById('youtube').src = `https://www.youtube.com/embed/${m}`; //?autoplay=1&mute=1
+            }
+        }
+    </script>
+</body>
+</html>

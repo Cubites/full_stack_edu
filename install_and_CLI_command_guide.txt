@@ -41,7 +41,12 @@
 	> 보안 에러 발생 시
 		- PowerShell을 관리자 권한으로 실행 > set-ExecutionPolicy Unrestricted (restricted가 default)
 		- get-ExecutionPolicy : 현재 보안 정책 확인
+* react 라이브러리
+- npm install --save styled-components : styled-components
+- MUI
+	- npm install @mui/material @emotion/react @emotion/styled : 설치
+	- npm : npm install @mui/icons-material // yarn : yarn add @mui/icons-material
 
 
 * vscode 플러그인
-- ES7+ React/Redux/React-Native snippets : react 자동완성(예: rfc, rcc 등)
+- ES7+ React/Redux/React-Native snippets : react 자동완성(예: rfc, rcc, rafce 등)

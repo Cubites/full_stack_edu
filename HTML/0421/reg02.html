@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/HGOBQPFzWKo" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe> -->
+
+    <form action="reg02.html" onsubmit="return numvalidate()">
+        <label>이메일</label>
+        <input type="text" id="tel" placeholder="이메일 입력" />
+        <br>
+        <button type="submit">이메일 검증</button>
+    </form>
+    <script>
+        'use strict';
+        let re = /[a-zA-Z0-9-+_.]+@[a-zA-Z0-9]+\.[a-zA-Z]/gm;
+        function numvalidate(){
+            let tel = document.getElementById('tel');
+            if(!check(re, tel)){
+                return false;
+            }
+            alert('감사합니다. 조만간 연락하겠습니다.');
+        }
+
+        function check(re, tel){
+            if(re.test(tel.value)){
+                return true;
+            }
+            alert("잘못된 이메일 입니다.");
+            tel.value = "";
+            tel.focus();
+        }
+    </script>
+</body>
+</html>
