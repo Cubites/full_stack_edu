@@ -1,0 +1,15 @@
+21년 react 변경 사항 > react native => mobile app => native
+21년 react hook => setState => class
+
+* react에서 반복문을 돌릴때 key 관련에러
+- 태그 안에 "key=값" 속성을 넣음
+
+* props는 변경할 수 없음
+- 때문에 class에서는 setState를 사용했음
+- js6에서 setState와 같은 기능인 useState가 추가됨 
+
+* useState => [셋팅 값, 값을 수정하는 함수]
+> 예 : const [num, setNum] = useState(15);
+	> num = 15 , setNum = num값을 수정하는 함수
+	> setNum(20); 실행
+	> num 값 = 20

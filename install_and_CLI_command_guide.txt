@@ -50,3 +50,30 @@
 
 * vscode 플러그인
 - ES7+ React/Redux/React-Native snippets : react 자동완성(예: rfc, rcc, rafce 등)
+
+* npm install 에러 시
+PS D:\JHC\full_stack_edu\myreact\ecm> npm install
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR!
+npm ERR! While resolving: ecm@0.1.0
+npm ERR! Found: react@18.0.0
+npm ERR! node_modules/react
+npm ERR!   react@"^18.0.0" from the root project
+npm ERR!
+npm ERR! Could not resolve dependency:
+npm ERR! peer react@"^16.8.0 || ^17.0.0" from @material-ui/core@4.12.4
+npm ERR! node_modules/@material-ui/core
+npm ERR!   peer @material-ui/core@"^4.0.0" from @material-ui/icons@4.11.3
+npm ERR!   node_modules/@material-ui/icons
+npm ERR!     @material-ui/icons@"^4.11.3" from the root project
+npm ERR!
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force, or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR!
+npm ERR! See C:\Users\i7C-51\AppData\Local\npm-cache\eresolve-report.txt for a full report.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\i7C-51\AppData\Local\npm-cache\_logs\2022-04-24T23_56_23_334Z-debug-0.log
+>> yarn install을 해본다

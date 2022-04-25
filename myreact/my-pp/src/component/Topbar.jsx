@@ -1,44 +1,44 @@
 import './topbar.css'
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export default class Topbar extends Component {
-  render() {
-    return (
-      <div className='topbar'>
-        <h1><Link to="./Main">Main</Link></h1>
-        <div className="gnb">
-          <h2>Python</h2>
-          <ul className="lnb">
-            <li><Link to="./Post" contents={this.props.contents[0]}>영한 번역기</Link></li>
-            <li><Link to="./Post" contents={this.props.contents[1]}>.exe 계산기</Link></li>
-            <li><Link to="./Post" contents={this.props.contents[2]}>django로 만든 TodoList</Link></li>
-          </ul>
-        </div>
-        <div className="gnb">
-          <h2>HTML, Css</h2>
-          <ul className="lnb">
-            <li><Link to="./Post">Position</Link></li>
-            <li><Link to="./Post">Display</Link></li>
-            <li><Link to="./Post">Animation</Link></li>
-            <li><Link to="./Post">Pseudo-classes</Link></li>
-          </ul>
-        </div>
-        <div className="gnb">
-          <h2>Javascript</h2>
-          <ul className="lnb">
-            <li><Link to="./Post">Node</Link></li>
-            <li><Link to="./Post">NodeList</Link></li>
-            <li><Link to="./Post">Scope</Link></li>
-          </ul>
-        </div>
-        <div className="gnb">
-          <h2>ETC</h2>
-          <ul className="lnb">
-            <li><Link to="./Post">알고리즘 문제</Link></li>
-          </ul>
-        </div>
+const Topbar = () => {
+  return (
+    <div className='topbar'>
+      <h1><a href="/">Main</a></h1>
+      <div className="gnb">
+        <h2>Python</h2>
+        <ul className="lnb">
+          <li><a href="/">영한 번역기</a></li>
+          <li><a href="/">.exe 계산기</a></li>
+          <li><a href="/">django로 만든 TodoList</a></li>
+        </ul>
       </div>
-    )
-  }
+      <div className="gnb">
+        <h2>HTML, Css</h2>
+        <ul className="lnb">
+          <li><a href="/">Position</a></li>
+          <li><a href="/">Display</a></li>
+          <li><a href="/">Animation</a></li>
+          <li><a href="/">Pseudo-classes</a></li>
+        </ul>
+      </div>
+      <div className="gnb">
+        <h2>Javascript</h2>
+        <ul className="lnb">
+          <li><a href="/">Node</a></li>
+          <li><a href="/">NodeList</a></li>
+          <li><a href="/">Scope</a></li>
+        </ul>
+      </div>
+      <div className="gnb">
+        <h2>ETC</h2>
+        <ul className="lnb">
+          <li><a href="/">알고리즘 문제</a></li>
+        </ul>
+      </div>
+    </div>
+  )
 }
+
+export default Topbar
