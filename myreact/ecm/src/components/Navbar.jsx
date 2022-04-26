@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Badge from '@mui/material/Badge'
 // import Search from '@mui/icons-material/Search'
 // import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import { Search, ShoppingCartOutlined, 
         LoginOutlined, AppRegistrationOutlined,
-        MenuOutlined } from '@mui/icons-material'
+        MenuOutlined, Close } from '@mui/icons-material'
 import NavList from './NavList'
+import Category from './Category'
+import navigation from '../data/data'
 
 const Container = styled.div`
   width: 100%;
@@ -133,14 +135,18 @@ const NavRight = styled.div`
 `
 
 const Navbar = () => {
-  const navigation = [
-    {id: 1, title: '신상품', alink: 'new'},
-    {id: 2, title: '베스트', alink: 'best'},
-    {id: 3, title: '스테디셀러', alink: 'steadyseller'},
-    {id: 4, title: '당일발송', alink: 'sdayshipping'},
-    {id: 5, title: '이벤트', alink: 'event'},
-    {id: 6, title: '고객센터', alink: 'service'},
-  ];
+  const [showCategory, setShowCategory] = useState(false);
+  let burger;
+
+  const resetCategory = () => {
+    setShowCategory(!showCategory);
+  }
+
+  if(showCategory){
+    burger = <Close style={{cursor: 'Pointer', fontSize: '40px'}} onClick={resetCategory} />;
+  }else{
+    burger = <MenuOutlined style={{cursor: 'Pointer', fontSize: '40px'}} onClick={resetCategory} />;
+  }
   return (
     <>
       <Container>
@@ -173,11 +179,14 @@ const Navbar = () => {
         </Wrapper>
       </Container>
 
-      <Container style={{borderBottom: "5px solid #ededed"}}>
+      <Container style={{borderBottom: "5px solid #ededed", position: "relative"}}>
         <Wrapper>
-          <NavLeft><MenuOutlined style={{cursor: 'Pointer', fontSize: '40px'}} /></NavLeft>
+          <NavLeft>
+            {burger}
+          </NavLeft>
           <NavCenter>
             <NavList navigation={navigation} />
+            { showCategory && <Category category={navigation} /> }
           </NavCenter>
           <NavRight>
             <MenuItem2>회원가입</MenuItem2>

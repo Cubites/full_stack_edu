@@ -1,0 +1,17 @@
+/* section */
+section{
+    width: 80%;
+    margin: 5%;
+}
+section .top{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+}
+section .infoElse{
+    display: flex;
+}
+section .infoElse p{
+    margin-right: 50px;
+}
+/* /section */
