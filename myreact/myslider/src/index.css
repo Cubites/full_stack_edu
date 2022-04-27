@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slide-container{
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  overflow: hidden;
+}
+.prev, .next{
+  position: absolute;
+  top: 290px;
+}
+.prev{left: 30px;}
+.next{right: 30px;}
+article{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+article.activeSlide{
+  opacity: 1;
+  transform: translateX(0);
+}
+article.lastSlide{
+  transform: translateX(-100%);
+}
+article.nextSlide{
+  transform: translateX(100%);
+}

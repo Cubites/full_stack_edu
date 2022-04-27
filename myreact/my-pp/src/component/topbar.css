@@ -10,12 +10,16 @@
     padding-bottom: 20px;
     border-bottom: 1px solid #ddd;
 }
+.topbar .gnb{
+    margin: 10px 0;
+}
 .topbar h2{
     margin: 0;
     padding: 10px 0;
+    cursor: pointer;
 }
 .topbar h2:hover,
-.topbar a:hover{
+.topbar .lnb a:hover{
     background: #ddd;
     color: #333;
 }

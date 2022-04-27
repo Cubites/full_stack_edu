@@ -8,6 +8,7 @@ import { Search, ShoppingCartOutlined,
         MenuOutlined, Close } from '@mui/icons-material'
 import NavList from './NavList'
 import Category from './Category'
+import Slider from './Slider'
 import navigation from '../data/data'
 
 const Container = styled.div`
@@ -194,6 +195,10 @@ const Navbar = () => {
             <MenuItem2>고객센터</MenuItem2>
           </NavRight>
         </Wrapper>
+      </Container>
+
+      <Container>
+        <Slider />
       </Container>
     </>
   )

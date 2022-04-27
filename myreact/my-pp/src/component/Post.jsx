@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import './post.css';
+import React, { Component } from 'react'
+import './post.css'
+import navlist from '../data/data'
 
-const Post = () => {
+const Post = (props) => {
+  let postlist_index = props.plindex - 1;
+  let post_index = props.pindex - 1;
   return (
     <div className='post'>
       <div className='home'>
-        <div className="headLink">
-          <i className="fa-solid fa-house-chimney"></i>
-        </div>
         <div className="postBox">
-          <div className="title">{this.props.contents.title}</div>
-          <div className="content">{this.props.contents.text}</div>
+          <h1>{navlist[postlist_index].contents[post_index].name}</h1>
+          <div className="content">{navlist[postlist_index].contents[post_index].text}</div>
         </div>
       </div>
     </div>

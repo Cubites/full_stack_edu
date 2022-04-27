@@ -52,3 +52,23 @@ ul.category>li>ul a{
 ul.category>li>ul a:hover{
   background: #fff;
 }
+
+article{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+article.activeSlide{
+  opacity: 1;
+  transform: translateX(0);
+}
+article.lastSlide{
+  transform: translateX(-100%);
+}
+article.nextSlide{
+  transform: translateX(100%);
+}
