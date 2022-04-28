@@ -55,11 +55,13 @@ const navigation = [
         ]
     },
     {
-        slide : [
-            {id: 1, image: 'images/slide01.jpg', title: '슬라이드01', desc: '슬라이드01입니다.'},
-            {id: 2, image: 'images/slide02.jpg', title: '슬라이드02', desc: '슬라이드02입니다.'},
-            {id: 3, image: 'images/slide03.jpg', title: '슬라이드03', desc: '슬라이드03입니다.'},
-            {id: 4, image: 'images/slide04.jpg', title: '슬라이드04', desc: '슬라이드04입니다.'}
+        mainSlide : [
+            {id: 1, image: 'images/001.jpg', title: '슬라이드01', desc: '슬라이드01입니다.', bgColor: '#8fb3df', fontColor: '#fff', imgClass: 'left'},
+            {id: 2, image: 'images/002.jpg', title: '슬라이드02', desc: '슬라이드02입니다.', bgColor: '#e7ded6', fontColor: '#333', imgClass: 'right'},
+            {id: 3, image: 'images/003.jpg', title: '슬라이드03', desc: '슬라이드03입니다.', bgColor: '#f2e4df', fontColor: '#fff', imgClass: 'right'},
+            {id: 4, image: 'images/004.jpg', title: '슬라이드04', desc: '슬라이드04입니다.', bgColor: '#f8f8f8', fontColor: '#d34444', imgClass: 'center'},
+            {id: 5, image: 'images/005.jpg', title: '슬라이드05', desc: '슬라이드05입니다.', bgColor: '#eadbbe', fontColor: '#333', imgClass: 'center'},
+            {id: 6, image: 'images/006.jpg', title: '슬라이드06', desc: '슬라이드06입니다.', bgColor: '#5f4c22', fontColor: '#f0ece9', imgClass: 'right'}
         ]
     }
 ];

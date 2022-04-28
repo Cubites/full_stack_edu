@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/* @content @inlcude된 후 선택자 내부의 내용을 @content에 출력 */
+body {
+  color: #333;
+  background-color: #eee;
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+  border: 1px solid #333;
+}
+
+.container article {
+  float: left;
+  width: 60%;
+  border: 1px solid #333;
+}
+
+.container article .box, .container article .result-box {
+  border: 1px solid #333;
+  padding: 10px;
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+}
+
+.container article .result-box {
+  border: 1px solid red;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.box2 {
+  border-width: 2px;
+  border-color: green;
+  border-style: dashed;
+  width: 200px;
+  height: 200px;
+}
+
+aside {
+  float: right;
+  background: #333;
+  color: #eee;
+  width: 31.25%;
+}
+
+button {
+  background: #2ecc71;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 5px 0px #25a25a;
+          box-shadow: 0px 5px 0px #25a25a;
+  border: 0;
+  color: white;
+  font-size: 17px;
+  padding: 10px 30px;
+  outline: 0;
+}
+
+button:hover {
+  background-color: #25a25a;
+  -webkit-box-shadow: 0px 5px 0px #1b7943;
+          box-shadow: 0px 5px 0px #1b7943;
+}
+
+button:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-top: 5px;
+}
+/*# sourceMappingURL=style.css.map */

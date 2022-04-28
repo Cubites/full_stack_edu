@@ -46,6 +46,7 @@
 - MUI
 	- npm install @mui/material @emotion/react @emotion/styled : 설치
 	- npm : npm install @mui/icons-material // yarn : yarn add @mui/icons-material
+- 관련 사이트: https://styled-icons.dev/ , https://github.com/styled-icons/styled-icons
 
 
 * vscode 플러그인
@@ -77,3 +78,15 @@ npm ERR! See C:\Users\i7C-51\AppData\Local\npm-cache\eresolve-report.txt for a f
 npm ERR! A complete log of this run can be found in:
 npm ERR!     C:\Users\i7C-51\AppData\Local\npm-cache\_logs\2022-04-24T23_56_23_334Z-debug-0.log
 >> yarn install을 해본다
+
+*scss
+- 사용하려면 css로 변환해주는 라이브러리 필요 (node-sass, ruby sass 등)
+- npm install -g node-sass
+- node-sass style.scss -o >> 컴파일 한 현재 디렉토리에 저장
+- node-sass style.scss -w -o >> 파일에 변화가 있을 경우 자동으로 리컴파일
+- vscode 확장프로그램: Live Sass Compiler, Sass Lint (deprecated), Beautify css/sass/scss/less
+	> scss 파일 작성 후 .css로 link해준 뒤 하단의 Watch scss 버튼 클릭
+
+* slick slider
+- https://github.com/akiran/react-slick
+- https://kenwheeler.github.io/slick/

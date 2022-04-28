@@ -1,0 +1,77 @@
+$dark-color: #333;
+$light-color: #eee;
+$buttonColor: #2ecc71;
+$buttonDark : darken($buttonColor, 10%);
+$buttonDarker : darken($buttonDark, 10%);
+@mixin borders ($color, $width, $style) {
+    border-width: $width;
+    border-color: $color;
+    border-style: $style;
+}
+@mixin media($queryString) {
+    @media #{$queryString} {
+        @content;
+    }
+}
+// /* #{} 특정 문자를 따로 처리하지 않고 그대로 출력 */
+/* @content @inlcude된 후 선택자 내부의 내용을 @content에 출력 */
+
+body{
+    color: $dark-color;
+    background-color: $light-color;
+}
+.container{
+    width: 1200px;
+    margin: auto;
+    border: 1px solid $dark-color;
+
+    article{
+        float: left;
+        width: 600px / 1000px * 100%;
+        border: 1px solid $dark-color;
+
+        .box{
+            border: 1px solid #333;
+            padding: 10px;
+            display: inline-block;
+            width: 400px;
+            height: 400px;
+        }
+        .result-box{
+            @extend .box;
+            border: 1px solid red;
+        }
+    }
+    @include media("(max-width: 600px)"){
+        width: 100%;
+    }
+}
+.box2{
+    @include borders(green, 2px, dashed);
+    width: 200px;
+    height: 200px;
+}
+aside{
+    float: right;
+    background: $dark-color;
+    color: $light-color;
+    width: 300px / 960px * 100%;
+}
+button{
+    background: $buttonColor;
+    border-radius: 4px;
+    box-shadow: 0px 5px 0px $buttonDark;
+    border: 0;
+    color: white;
+    font-size: 17px;
+    padding: 10px 30px;
+    outline: 0;
+    &:hover{
+        background-color: $buttonDark;
+        box-shadow: 0px 5px 0px $buttonDarker;
+    }
+    &:active{
+        box-shadow: none;
+        margin-top: 5px;
+    }
+}
