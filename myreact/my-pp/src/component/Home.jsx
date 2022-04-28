@@ -5,6 +5,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home">
+        <h5><i className="fa-solid fa-house-chimney"></i><i className="fa-solid fa-angle-right"></i></h5>
         <div className="homeBox">
           <h1>About</h1>
           <div>

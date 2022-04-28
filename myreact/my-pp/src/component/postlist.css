@@ -2,9 +2,9 @@
     flex: 8;
 }
 .postlist .main{
-    width: 100%;
-    margin: 4%;
-    padding-right: 10%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .postlist .main h1{
     text-align: center;
@@ -15,7 +15,7 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin: 5%;
+    margin: 5% 2%;
 }
 .postCollect>div{
     width: 300px;
@@ -28,8 +28,7 @@
     padding: 2%;
     cursor: pointer;
     background-color: #eee;
-    margin-left: 10px;
-    margin-bottom: 20px;
+    margin: 0 3% 20px;
 }
 .postCollect>div:hover{
     border-color: #333;

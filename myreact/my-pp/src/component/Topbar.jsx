@@ -1,6 +1,7 @@
 import './topbar.css'
 import React from 'react'
 import navlist from '../data/data'
+import {Link} from 'react-router-dom'
 
 const Topbar = (props) => {
   let nlist = [];
@@ -10,13 +11,13 @@ const Topbar = (props) => {
     for(let j in navlist[i].contents){
       snlist.push(
         <li key={navlist[i].contents[j].id}>
-          <a href="/" onClick={(e) => {
+          <a href={"/" + navlist[i].title + '/' + navlist[i].contents[j].name} onClick={(e) => {
             e.preventDefault();
             props.setShowHome(false);
             props.setShowPostlist(false);
             props.setShowPost(true);
-            props.setPostlistIndex(Number(i)+1);
-            props.setPostIndex(Number(j)+1);}}>
+            props.setPostlistIndex(Number(i));
+            props.setPostIndex(Number(j));}}>
             {navlist[i].contents[j].name}
           </a>
         </li>
@@ -29,7 +30,7 @@ const Topbar = (props) => {
             props.setShowHome(false);
             props.setShowPostlist(true);
             props.setShowPost(false);
-            props.setPostlistIndex(Number(i)+1)}}>{navlist[i].title}</h2>
+            props.setPostlistIndex(Number(i))}}>{navlist[i].title}</h2>
         <ul className="lnb">
           {snlist}
         </ul>
