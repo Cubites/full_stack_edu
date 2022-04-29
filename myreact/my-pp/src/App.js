@@ -19,14 +19,23 @@ function App() {
               setShowPost={(_switch) => {setShowPost(_switch);}}
               setPostlistIndex={(_switch) => {setPostlistIndex(_switch);}}
               setPostIndex={(_switch) => {setPostIndex(_switch);}} />
-      {showHome && <Home />}
+      {showHome && <Home setShowHome={(_switch) => {setShowHome(_switch);}}
+              setShowPostlist={(_switch) => {setShowPostlist(_switch);}}
+              setShowPost={(_switch) => {setShowPost(_switch);}}
+              setPostlistIndex={(_switch) => {setPostlistIndex(_switch);}}
+              setPostIndex={(_switch) => {setPostIndex(_switch);}} />}
       {showPostlist && <Postlist index={postlistIndex} 
               setShowHome={(_switch) => {setShowHome(_switch);}}
               setShowPostlist={(_switch) => {setShowPostlist(_switch);}}
               setShowPost={(_switch) => {setShowPost(_switch);}} 
               setPostlistIndex={(_switch) => {setPostlistIndex(_switch);}}     
               setPostIndex={(_switch) => {setPostIndex(_switch);}} />}
-      {showPost && <Post plindex={postlistIndex} pindex={postIndex}/>}
+      {showPost && <Post plindex={postlistIndex} pindex={postIndex}              
+              setShowHome={(_switch) => {setShowHome(_switch);}}
+              setShowPostlist={(_switch) => {setShowPostlist(_switch);}}
+              setShowPost={(_switch) => {setShowPost(_switch);}} 
+              setPostlistIndex={(_switch) => {setPostlistIndex(_switch);}}     
+              setPostIndex={(_switch) => {setPostIndex(_switch);}} />}
     </div>
   );
 }

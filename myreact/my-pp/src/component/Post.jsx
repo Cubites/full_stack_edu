@@ -8,9 +8,19 @@ const Post = (props) => {
   return (
     <div className='post'>
       <h5>
-        <i className="fa-solid fa-house-chimney"></i>
+        <i className="fa-solid fa-house-chimney"
+          onClick={() => {
+            props.setShowHome(true);
+            props.setShowPostlist(false);
+            props.setShowPost(false);}}></i>
         <i className="fa-solid fa-angle-right"></i>
-        <i>{navlist[postlist_index].title}</i>
+        <i onClick={() => {
+          props.setShowHome(false);
+          props.setShowPostlist(true);
+          props.setShowPost(false);
+          props.setPostlistIndex(postlist_index);}}>
+          {navlist[postlist_index].title}
+        </i>
         <i className="fa-solid fa-angle-right"></i>
         <i>{navlist[postlist_index].contents[post_index].name}</i>
       </h5>

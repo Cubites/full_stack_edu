@@ -5,6 +5,7 @@ html, body{
 i{
   display: inline-block;
   margin-left: 10px;
+  cursor: pointer;
 }
 h5{
   width: 80%;

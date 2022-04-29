@@ -21,7 +21,11 @@ const Postlist = (props) => {
   return (
     <div className='postlist'>
       <h5>
-        <i className="fa-solid fa-house-chimney"></i>
+        <i className="fa-solid fa-house-chimney" 
+          onClick={() => {
+            props.setShowHome(true);
+            props.setShowPostlist(false);
+            props.setShowPost(false);}}></i>
         <i className="fa-solid fa-angle-right"></i>
         <i>{navlist[nav_index].title}</i>
         <i className="fa-solid fa-angle-right"></i>
