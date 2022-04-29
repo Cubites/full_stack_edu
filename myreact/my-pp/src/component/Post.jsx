@@ -1,6 +1,7 @@
 import React from 'react'
 import './post.css'
 import navlist from '../data/data'
+import {Link} from 'react-router-dom'
 
 const Post = (props) => {
   let postlist_index = props.plindex;
@@ -8,19 +9,14 @@ const Post = (props) => {
   return (
     <div className='post'>
       <h5>
-        <i className="fa-solid fa-house-chimney"
-          onClick={() => {
-            props.setShowHome(true);
-            props.setShowPostlist(false);
-            props.setShowPost(false);}}></i>
+        <Link to="/">{<i className="fa-solid fa-house-chimney"></i>}</Link>
         <i className="fa-solid fa-angle-right"></i>
-        <i onClick={() => {
-          props.setShowHome(false);
-          props.setShowPostlist(true);
-          props.setShowPost(false);
-          props.setPostlistIndex(postlist_index);}}>
-          {navlist[postlist_index].title}
-        </i>
+        <Link to={"/" + navlist[postlist_index].title + "/"}>
+          <i onClick={() => {
+            props.setPostlistIndex(postlist_index);}}>
+            {navlist[postlist_index].title}
+          </i>
+        </Link>
         <i className="fa-solid fa-angle-right"></i>
         <i>{navlist[postlist_index].contents[post_index].name}</i>
       </h5>

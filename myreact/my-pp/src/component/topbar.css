@@ -13,12 +13,15 @@
 .topbar .gnb{
     margin: 10px 0;
 }
-.topbar h2{
+.topbar .gnb>a{
     margin: 0;
     padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
     cursor: pointer;
 }
-.topbar h2:hover,
+.topbar .gnb>a:hover,
 .topbar .lnb a:hover{
     background: #ddd;
     color: #333;

@@ -88,5 +88,9 @@ npm ERR!     C:\Users\i7C-51\AppData\Local\npm-cache\_logs\2022-04-24T23_56_23_3
 	> scss 파일 작성 후 .css로 link해준 뒤 하단의 Watch scss 버튼 클릭
 
 * slick slider
+- yarn add react-slick
 - https://github.com/akiran/react-slick
 - https://kenwheeler.github.io/slick/
+
+* axios (fetch와 같은 기능을 하는 것)
+- yarn add axios

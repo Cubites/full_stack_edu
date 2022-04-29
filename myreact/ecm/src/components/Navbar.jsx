@@ -197,7 +197,6 @@ const Navbar = () => {
           </NavRight>
         </Wrapper>
       </Container>
-      <Slide />
       {/* <Container>
         <Slider />
       </Container> */}

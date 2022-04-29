@@ -170,3 +170,6 @@ article.nextSlide{
   height: 390px;
   object-fit: cover;
 }
+.card-img img{
+  max-width: 100%;
+}
