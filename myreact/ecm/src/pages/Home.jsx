@@ -12,8 +12,7 @@ const Home = () => {
       <h1 className="shopT-Title">BEST</h1>
       <div className="carousel container">        
         <Best />
-      </div>   
-      <h1 className="shopT-Title">OUTER</h1>
+      </div>
       <Outer />
     </div>
   )

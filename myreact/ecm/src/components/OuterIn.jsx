@@ -29,7 +29,7 @@ const Card = styled.div`
 const OuterIn = ({ outers, loading }) => {
 
   function commas(num){
-    return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+    return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
 
   return (
@@ -49,7 +49,7 @@ const OuterIn = ({ outers, loading }) => {
               <h3 className="card-title">{outer.title}</h3>
               <p className="card-desc">{outer.desc}</p>
               <div className="card-footer">
-                <p className="or-price">{commas(outer.price)} 원</p>
+                <p className="or-price"><del>{commas(outer.price)} 원</del></p>
                 <p className="sale-price">{commas(outer.price * outer.sale / 10)} 원 ({outer.sale/10})</p>
               </div>
             </Li>

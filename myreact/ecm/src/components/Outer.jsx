@@ -19,6 +19,9 @@ const Outer = () => {
   // console.log(outers);
   return (
     <>
+      <h1 className="shopT-Title">
+        OUTER
+      </h1>
       <OuterIn outers={outers} loading={loading} />
     </>
   )
