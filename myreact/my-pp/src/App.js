@@ -3,7 +3,7 @@ import Topbar from './component/Topbar';
 import Home from './component/Home';
 import Postlist from './component/Postlist';
 import Post from './component/Post';
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import navlist from './data/data'
 
@@ -12,29 +12,29 @@ function App() {
   // const [showPostlist, setShowPostlist] = useState(false);
   // const [showPost, setShowPost] = useState(false);
   // data 변경을 위한 index값들
-  const [postlistIndex, setPostlistIndex] = useState(0);
-  const [postIndex, setPostIndex] = useState(0);
+  const maxPLIndex = navlist.length;
+  let postlist = [];
+  let posts = [];
+  for(let i = 0; i < maxPLIndex; i++){
+    postlist.push(
+      <Route path={"/" + navlist[i].link + "/"} element={<Postlist index={i} />} />
+    )
+    const maxPIndex = navlist[i].contents.length;
+    for(let j = 0; j < maxPIndex; j++){
+      posts.push(
+        <Route path={"/" + navlist[i].link + "/" + navlist[i].contents[j].link} 
+          element={<Post plindex={i} pindex={j} />} />
+      )
+    }
+  }
   return (
     <BrowserRouter>
       <div className="App">
-        <Topbar
-          setPostlistIndex={(_switch) => {setPostlistIndex(_switch);}}
-          setPostIndex={(_switch) => {setPostIndex(_switch);}} />
+        <Topbar />
         <Routes>
-          <Route path={"/"} 
-            element={<Home 
-              setPostlistIndex={(_switch) => {setPostlistIndex(_switch);}}
-              setPostIndex={(_switch) => {setPostIndex(_switch);}} />} />
-          <Route path={"/" + navlist[postlistIndex].title + "/"} 
-            element={<Postlist 
-              index={postlistIndex}
-              setPostlistIndex={(_switch) => {setPostlistIndex(_switch);}}
-              setPostIndex={(_switch) => {setPostIndex(_switch);}} />} />
-          <Route path={"/" + navlist[postlistIndex].title + "/" + navlist[postlistIndex].contents[postIndex].link} 
-            element={<Post 
-              plindex={postlistIndex} pindex={postIndex}
-              setPostlistIndex={(_switch) => {setPostlistIndex(_switch);}}     
-              setPostIndex={(_switch) => {setPostIndex(_switch);}} />} />
+          <Route path={"/"} element={<Home />} />
+          {postlist}
+          {posts}
         </Routes>
       </div>
     </BrowserRouter>

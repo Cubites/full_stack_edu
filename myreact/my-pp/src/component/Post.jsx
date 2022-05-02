@@ -11,11 +11,8 @@ const Post = (props) => {
       <h5>
         <Link to="/">{<i className="fa-solid fa-house-chimney"></i>}</Link>
         <i className="fa-solid fa-angle-right"></i>
-        <Link to={"/" + navlist[postlist_index].title + "/"}>
-          <i onClick={() => {
-            props.setPostlistIndex(postlist_index);}}>
-            {navlist[postlist_index].title}
-          </i>
+        <Link to={"/" + navlist[postlist_index].link + "/"}>
+          <i>{navlist[postlist_index].title}</i>
         </Link>
         <i className="fa-solid fa-angle-right"></i>
         <i>{navlist[postlist_index].contents[post_index].name}</i>

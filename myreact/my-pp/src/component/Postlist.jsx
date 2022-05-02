@@ -4,13 +4,12 @@ import navlist from '../data/data'
 import {Link} from 'react-router-dom'
 
 const Postlist = (props) => {
+  console.log(props.index);
   let posts = [];
   let nav_index = props.index;
   for(let i in navlist[nav_index].contents){
     posts.push(
-      <Link to={"/" + navlist[nav_index].title + "/" + navlist[nav_index].contents[i].link} key={navlist[nav_index].contents[i].id} onClick={() => {
-        props.setPostlistIndex(nav_index);
-        props.setPostIndex(Number(i));}}>
+      <Link to={"/" + navlist[nav_index].link + "/" + navlist[nav_index].contents[i].link} key={navlist[nav_index].contents[i].id}>
         <div className="title">{navlist[nav_index].contents[i].name}</div>
         <div className="content">{navlist[nav_index].contents[i].text}</div>
       </Link>
