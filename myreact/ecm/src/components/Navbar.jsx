@@ -9,7 +9,7 @@ import { Search, ShoppingCartOutlined,
 import NavList from './NavList'
 import Category from './Category'
 // import Slider from './Slider'
-import Slide from './Slide'
+// import Slide from './Slide'
 import navigation from '../data/data'
 
 const Container = styled.div`

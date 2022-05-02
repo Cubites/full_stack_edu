@@ -4,14 +4,14 @@
     new event sale price
 */
 let mytext = [];
-for(let i = 0; i < 152; i++){
+for(let i = 0; i < 168; i++){
     let img;
     if(i < 9){
-        img = 'ot00' + (i + 1) + '.jpg';
+        img = 'bt00' + (i + 1) + '.jpg';
     }else if(i >= 9 && i < 99){
-        img = 'ot0' + (i + 1) + '.jpg';
+        img = 'bt0' + (i + 1) + '.jpg';
     }else{
-        img = 'ot' + (i + 1) + '.jpg';
+        img = 'bt' + (i + 1) + '.jpg';
     }
     let tr = Math.floor(Math.random()*2);
     let tr2 = Math.floor(Math.random()*2);
@@ -20,10 +20,10 @@ for(let i = 0; i < 152; i++){
     if(tr3 == 0){tr4 = tr3 + 1} else {tr4 = tr3};
     let tr5 = 10000 * tr4 + 100000;
     mytext += `{ "id": ${i + 1},
-            "pdid": "${"ot-" + (i + 1)}", 
+            "pdid": "${"bt-" + (i + 1)}", 
             "image": "${img}", 
-            "title": "아우터 ${i+1}번 상품", 
-            "desc": "정말 좋고 아름다운 아우터입니다.", 
+            "title": "하의 ${i+1}번 상품", 
+            "desc": "정말 좋고 아름다운 하의입니다.", 
             "new": ${tr}, 
             "event": ${tr2}, 
             "sale": ${tr3}, 

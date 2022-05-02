@@ -1,10 +1,12 @@
 import React from 'react';
 import Home from './pages/Home';
+import MainList from './pages/MainList';
 
 const App = () => {
   return (
     <>
-      <Home />
+      {/* <Home /> */}
+      <MainList />
     </>
   )
 }

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import {ArrowIosBackOutline, ArrowIosForwardOutline} from '@styled-icons/evaicons-outline'
 import SlideIn from './SlideIn'
-import data from '../data/data'
+import data from '../../data/data'
 
 const Container = styled.div`
   width: 100%;

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Slide from 'react-slick'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import data from '../data/best'
+import data from '../../data/best'
 import styled from 'styled-components'
 
 const CardWrapper = styled.div`
