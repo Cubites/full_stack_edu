@@ -181,3 +181,20 @@ article.nextSlide{
 p.or-price{
   color: #999;
 }
+
+/** list **/
+.col5{
+  flex: 0 0 20%;
+  max-width: 18%;
+  height: 350px;
+}
+.col4{
+  flex: 0 0 25%;
+  max-width: 25%;
+  height: 400px;
+}
+.col3{
+  flex: 0 0 30%;
+  max-width: 30%;
+  height: 500px;
+}

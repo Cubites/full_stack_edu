@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import ListIn from './ListIn'
+import Pagination from '../pagination/Pagination'
 
 const Container = styled.div`
   width: 1300px;
@@ -48,76 +49,93 @@ const SelectBox = styled.div`
 `
 
 const List = () => {
+  const [lists, setLists] = useState([]);
+  const [limit, setLimit] = useState(20);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    fetch('./json/dress.json')
+      .then((res) => res.json())
+      .then((data) => setLists(data));
+  },[]);
+
   return (
     <Container>
       <Titlebox>
         <h1>DRESS</h1>
       </Titlebox>
       <SortBar>
-        <a href="#" title="5개씩 보기">
+        <a href="javascript:void(0)" title="5개씩 보기" onClick={() => setLimit(20)}>
           <table className="box5sort">
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
           </table>
+          
         </a>
-        <a href="#" title="4개씩 보기">
+        <a href="javascript:void(0)" title="4개씩 보기" onClick={() => setLimit(16)}>
           <table className="box4sort">
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>       
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
           </table>
         </a>
-        <a href="#" title="3개씩 보기">
+        <a href="javascript:void(0)" title="3개씩 보기" onClick={() => setLimit(12)}>
           <table className="box3sort">
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
           </table>
         </a>
         <a href="#">
@@ -135,7 +153,8 @@ const List = () => {
           </select>
         </SelectBox>
       </SortBar>
-      <ListIn />
+      <ListIn lists={lists} total={lists.length} page={Number(page)} limit={Number(limit)}/>
+      <Pagination total={lists.length} page={Number(page)} setPage={setPage} limit={Number(limit)} />
     </Container>
   )
 }

@@ -94,3 +94,12 @@ npm ERR!     C:\Users\i7C-51\AppData\Local\npm-cache\_logs\2022-04-24T23_56_23_3
 
 * axios (fetch와 같은 기능을 하는 것)
 - yarn add axios
+
+* MySQL
+- mysql.com > download > MySQL Community (GPL) Downloads > MySQL Community Server
+	> Windows (x86, 64-bit), ZIP Archive Debug Binaries & Test Suite
+	> Windows (x86, 32 & 64-bit), MySQL Installer MSI
+	>> https://dev.mysql.com/downloads/mysql/
+- mysql 포트 3306 > MySQL Root Password
+- 포트 3306이 이미 있는경우 : 실행 > resmon.exe > 수신 대기 목록에서 포트번호가 3306 인 작업의 PID 값 기억
+	> cmd 창을 관리자 권한으로 실행 > taskkill /F /PID 기억한 번호 입력
