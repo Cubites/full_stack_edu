@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import TopIn from './TopIn'
 
@@ -16,11 +17,10 @@ const Top = () => {
     }
     fetchData();
   }, [])
-  // console.log(top);
   return (
     <>
       <h1 className="shopT-Title">
-        TOP
+        <Link to="/top/top">TOP</Link>
       </h1>
       <TopIn top={top} loading={loading} />
     </>

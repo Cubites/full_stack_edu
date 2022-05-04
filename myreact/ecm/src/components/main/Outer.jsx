@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import OuterIn from './OuterIn'
 
@@ -20,7 +21,7 @@ const Outer = () => {
   return (
     <>
       <h1 className="shopT-Title">
-        OUTER
+        <Link to="/outer/outer">OUTER</Link>
       </h1>
       <OuterIn outers={outers} loading={loading} />
     </>

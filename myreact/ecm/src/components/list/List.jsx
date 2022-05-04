@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
+import { Link, useParams } from 'react-router-dom'
 import ListIn from './ListIn'
 import Pagination from '../pagination/Pagination'
 
@@ -53,19 +54,21 @@ const List = () => {
   const [limit, setLimit] = useState(20);
   const [page, setPage] = useState(1);
 
+  const param = useParams();
+  const title = param.page;
   useEffect(() => {
-    fetch('./json/dress.json')
+    fetch("/json/" + title + ".json")
       .then((res) => res.json())
       .then((data) => setLists(data));
-  },[]);
+  },[title]);
 
   return (
     <Container>
       <Titlebox>
-        <h1>DRESS</h1>
+        <h1 style={{textTransform: 'uppercase'}}>{title}</h1>
       </Titlebox>
       <SortBar>
-        <a href="javascript:void(0)" title="5개씩 보기" onClick={() => setLimit(20)}>
+        <a href="#" title="5개씩 보기" onClick={(e) => {e.preventDefault();setLimit(20);}}>
           <table className="box5sort">
             <tbody>
               <tr>
@@ -93,7 +96,7 @@ const List = () => {
           </table>
           
         </a>
-        <a href="javascript:void(0)" title="4개씩 보기" onClick={() => setLimit(16)}>
+        <a href="#" title="4개씩 보기" onClick={(e) => {e.preventDefault();setLimit(16);}}>
           <table className="box4sort">
             <tbody>
               <tr>
@@ -117,7 +120,7 @@ const List = () => {
             </tbody>
           </table>
         </a>
-        <a href="javascript:void(0)" title="3개씩 보기" onClick={() => setLimit(12)}>
+        <a href="#" title="3개씩 보기" onClick={(e) => {e.preventDefault();setLimit(12);}}>
           <table className="box3sort">
             <tbody>
               <tr>

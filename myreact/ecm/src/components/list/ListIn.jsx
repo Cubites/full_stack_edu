@@ -18,15 +18,31 @@ const Goods = styled.a`
   }
 `
 const GoodsImage = styled.img`
-  height: 80%;
+  height: 65%;
 `
 const GoodsTitle = styled.p`
   margin: 0;
   margin: 3px 0;
 `
+const GoodsInfo = styled.p`
+  margin: 1px 0;
+`
+const AddInfoList = styled.div`
+  display: flex;
+  justify-content: center;
+`
+const AddInfo = styled.span`
+  display: block;
+  font-size: 12px;
+  color: #fff;
+  margin: 0 1px;
+`
 
 const ListIn = ({lists, total, page, limit}) => {
   const offset = (page - 1) * limit;
+  function commas(num){
+    return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  }
   return (
     <GoodsList>
       {
@@ -34,7 +50,16 @@ const ListIn = ({lists, total, page, limit}) => {
           <Goods href="#" className={"col" + (limit / 4)} key={data.id}>
             <GoodsImage src={"/pdimages/" + data.image} alt="" />
             <GoodsTitle>{data.title}</GoodsTitle>
-            <p style={{fontSize : "12px"}}>{data.desc}</p>
+            <GoodsInfo style={{fontSize : "12px"}}>{data.desc}</GoodsInfo>
+            <GoodsInfo style={{fontSize : "12px"}}>
+              {Number(data.sale) === 0 ? commas(data.price) + "원" : <del>{commas(data.price)} 원</del>}
+            </GoodsInfo>
+            { Number(data.sale) === 0 ? null : <GoodsInfo style={{fontSize : "12px"}}>{commas(data.price * (1 - data.sale/10))} 원</GoodsInfo> }
+            <AddInfoList>
+              { (data.new) ? <AddInfo className='new'>New</AddInfo> : null }
+              { (data.event) ? <AddInfo className='event'>EVENT</AddInfo> : null }
+              { (data.sale) ? <AddInfo className='sale'>&darr;{data.sale * 10 + "%"} SALE</AddInfo> : null }
+            </AddInfoList>
           </Goods>
         ))
       }

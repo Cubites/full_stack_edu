@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import Badge from '@mui/material/Badge'
-// import Search from '@mui/icons-material/Search'
-// import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import { Search, ShoppingCartOutlined, 
         LoginOutlined, AppRegistrationOutlined,
         MenuOutlined, Close } from '@mui/icons-material'
@@ -22,7 +21,7 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  algin-items: center;
+  align-items: center;
   justify-content: space-between;
 `
 const Left = styled.div`
@@ -37,14 +36,14 @@ const Center = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-left: 15px
+  padding-left: 15px;
   padding-right: 15px;
 `
 const Right = styled.div`
   flex: 0 0 20%;
   max-width: 20%;
   display: flex;
-  algin-items: center;
+  align-items: center;
   justify-content: flex-end;
 `
 const SearchContainer = styled.div`
@@ -155,7 +154,7 @@ const Navbar = () => {
         <Wrapper style={{padding: '15px 0'}}>
             <Left>
               <Logo />
-              <LogoText>My SHOP</LogoText>
+              <LogoText><Link to="/">My SHOP</Link></LogoText>
             </Left>
             <Center>
               <SearchContainer>
@@ -188,7 +187,7 @@ const Navbar = () => {
           </NavLeft>
           <NavCenter>
             <NavList navigation={navigation} />
-            { showCategory && <Category category={navigation} /> }
+            { showCategory && <Category category={navigation} setShowCategory={resetCategory} /> }
           </NavCenter>
           <NavRight>
             <MenuItem2>회원가입</MenuItem2>

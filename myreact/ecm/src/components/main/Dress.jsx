@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import DressIn from './DressIn'
 
@@ -16,11 +17,10 @@ const Dress = () => {
     }
     fetchData();
   }, [])
-  // console.log(dress);
   return (
     <>
       <h1 className="shopT-Title">
-        DRESS
+        <Link to="/dress/dress">DRESS</Link>
       </h1>
       <DressIn dress={dress} loading={loading} />
     </>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Foot = styled.div`
@@ -25,7 +26,7 @@ const Footer = () => {
     <Foot>
       <Wrapper>
         <ColSub>
-          <a href="/"><img src="images/logo.png" alt="myshop" style={{width: '50px'}} /></a>
+          <Link to="/"><img src="/images/logo.png" alt="myshop" style={{width: '50px'}} /></Link>
         </ColSub>
         <ColSub>
           <p>주소: 경기도 김포시 장기동 장기로 111</p>

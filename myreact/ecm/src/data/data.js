@@ -16,21 +16,21 @@ const navigation = [
                 {title: '점퍼/야상', alink: 'outer/jup'},
                 {title: '조끼', alink: 'outer/jak'}
             ]},
-            {id: 2, title: '상의', alink: 'tshirt', subarray: [
-                {title: '티셔츠', alink: 'outer/jak'},
-                {title: '블라우스', alink: 'outer/jup'},
-                {title: '니트', alink: 'outer/jak'}
+            {id: 2, title: '상의', alink: 'top', subarray: [
+                {title: '티셔츠', alink: 'top/jak'},
+                {title: '블라우스', alink: 'top/jup'},
+                {title: '니트', alink: 'top/jak'}
             ]},
-            {id: 3, title: '원피스', alink: 'onepiece', subarray: [
-                {title: '루피', alink: 'outer/jak'},
-                {title: '조로', alink: 'outer/jup'},
-                {title: '상디', alink: 'outer/jak'}
+            {id: 3, title: '원피스', alink: 'dress', subarray: [
+                {title: '루피', alink: 'dress/jak'},
+                {title: '조로', alink: 'dress/jup'},
+                {title: '상디', alink: 'dress/jak'}
             ]},
-            {id: 4, title: '하의', alink: 'under', subarray: [
-                {title: '바지', alink: 'outer/jak'},
-                {title: '레깅스', alink: 'outer/jup'},
-                {title: '스커트', alink: 'outer/jak'},
-                {title: '트레이닝복', alink: 'outer/jak'}
+            {id: 4, title: '하의', alink: 'bottom', subarray: [
+                {title: '바지', alink: 'bottom/jak'},
+                {title: '레깅스', alink: 'bottom/jup'},
+                {title: '스커트', alink: 'bottom/jak'},
+                {title: '트레이닝복', alink: 'bottom/jak'}
             ]},
             {id: 5, title: '시즌', alink: 'season', subarray: [
                 {title: '수영복', alink: 'outer/jak'},

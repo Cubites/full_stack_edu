@@ -198,3 +198,19 @@ p.or-price{
   max-width: 30%;
   height: 500px;
 }
+
+.new{
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: darkgoldenrod;
+}
+.event{
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: darkcyan;
+}
+.sale{
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: plum;
+}
