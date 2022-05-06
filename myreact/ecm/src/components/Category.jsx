@@ -24,21 +24,28 @@ const Wrapper = styled.div`
 `
 
 const Category = (props) => {
-  const subNav = props.category[1].category.map((s) => (
-    <li><Link to={'/' + s.alink + '/' + s.alink} key={s.id} onClick={props.setShowCategory}>{s.title}</Link>
-      {
-        s.subarray && <ul>
-          {
-            s.subarray.map((n) => {
-              return (
-                <li><a href={'/' + n.alink + '/'} key={n.id}>{n.title}</a></li>
-              )
-            })
-          }
-        </ul>
-      }
-    </li>
-  ))
+  const subNav = props.category[1].category.map((s) => {
+    let numbering = 0;
+    return (
+      <li key={s.id}>
+        <Link to={'/' + s.alink + '/' + s.alink} key={'main' + s.id} onClick={props.setShowCategory}>{s.title}</Link>
+        {
+          s.subarray && <ul key={'subul' + s.id}>
+            {
+              s.subarray.map((n) => {
+                numbering++;
+                return (
+                  <li key={numbering}>
+                    <a href={'/' + n.alink + '/'} key={'sub' + numbering}>{n.title}</a>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        }
+      </li>
+    )
+  })
   return (
     <CatContainer>
       <Wrapper>

@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import ListIn from './ListIn'
 import Pagination from '../pagination/Pagination'
+import axios from 'axios'
 
 const Container = styled.div`
   width: 1300px;
@@ -53,13 +54,21 @@ const List = () => {
   const [lists, setLists] = useState([]);
   const [limit, setLimit] = useState(20);
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const offset = (page - 1) * limit;
 
-  const param = useParams();
-  const title = param.page;
+  // parameter
+  const params = useParams();
+  const title = params.page;
+
   useEffect(() => {
-    fetch("/json/" + title + ".json")
-      .then((res) => res.json())
-      .then((data) => setLists(data));
+    async function fetchData() {
+      setLoading(true);
+      const response = await axios.get(`../json/${title}.json`);
+      setLists(response.data);
+      setLoading(false);
+    }
+    fetchData();
   },[title]);
 
   return (
@@ -156,7 +165,8 @@ const List = () => {
           </select>
         </SelectBox>
       </SortBar>
-      <ListIn lists={lists} total={lists.length} page={Number(page)} limit={Number(limit)}/>
+      <p>총 {lists.length}개의 상품이 있습니다.</p>
+      <ListIn lists={lists} offset={offset} limit={Number(limit)} title={title} />
       <Pagination total={lists.length} page={Number(page)} setPage={setPage} limit={Number(limit)} />
     </Container>
   )

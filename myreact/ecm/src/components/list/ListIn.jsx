@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const GoodsList = styled.div`
   max-width: 1300px;
@@ -7,14 +8,14 @@ const GoodsList = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-`
-const Goods = styled.a`
-  display: block;
-  text-align: center;
-  margin: 10px 0;
-  padding: 10px 0;
-  &:hover{
-    border: 1px solid #333;
+  >a.GoodsBox{
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px 0;
+    &:hover{
+      border: 1px solid #333;
+    }
   }
 `
 const GoodsImage = styled.img`
@@ -38,16 +39,15 @@ const AddInfo = styled.span`
   margin: 0 1px;
 `
 
-const ListIn = ({lists, total, page, limit}) => {
-  const offset = (page - 1) * limit;
+const ListIn = ({lists, offset, limit, title}) => {
   function commas(num){
     return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
   return (
-    <GoodsList>
+    <GoodsList className="ListInBox">
       {
         lists.slice(offset, offset + limit).map((data) => (
-          <Goods href="#" className={"col" + (limit / 4)} key={data.id}>
+          <Link to={"/detail/" + title + "-" + data.id} className={"col" + (limit / 4) + " GoodsBox"} key={data.id}>
             <GoodsImage src={"/pdimages/" + data.image} alt="" />
             <GoodsTitle>{data.title}</GoodsTitle>
             <GoodsInfo style={{fontSize : "12px"}}>{data.desc}</GoodsInfo>
@@ -60,7 +60,7 @@ const ListIn = ({lists, total, page, limit}) => {
               { (data.event) ? <AddInfo className='event'>EVENT</AddInfo> : null }
               { (data.sale) ? <AddInfo className='sale'>&darr;{data.sale * 10 + "%"} SALE</AddInfo> : null }
             </AddInfoList>
-          </Goods>
+          </Link>
         ))
       }
     </GoodsList>
