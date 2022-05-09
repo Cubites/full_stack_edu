@@ -1,0 +1,20 @@
+< react hook >
+* useReducer - useState의 확장버전
+- useReducer, Dispatch, Reducer, Action
+	- Dispatch 가 Reducer에게 Action을 요청
+	- Reducer 는 state에 기록함
+- Dispatch ( Action ) ====> Reducer( State, Action ) ==> update State
+
+< SQL >
+- JOIN : 서로 다른 테이블을 합치는 연산
+	- INNER JOIN (교집합) / LEFT JOIN / RIGHT JOIN / FULL JOIN (합집합; mysql에는 없음)
+- ALIAS : 쿼리 결과 컬럼명을 다른 이름으로 대체하여 표시
+- VIEW : 쿼리 결과를 임시테이블에 저장하고 사용
+- SELECT INTO - 쿼리 결과를 새 테이블로 만듬 (임시저장 하는 VIEW 와 다름)
+- INSERT INTO SELECT - 쿼리 결과를 기존 테이블에 추가
+	- select 한 구문과 insert하는 테이불의 구조가 동일하여 함
+- SQL에서 조건문 ( if / switch )
+	- CASE WHEN 조건값 THEN ....
+		WHEN 조건값2 THEN ....
+		ELSE ...
+	  END

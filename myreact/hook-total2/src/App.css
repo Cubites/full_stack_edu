@@ -1,0 +1,43 @@
+body{
+  text-align: center;
+}
+.btn-group{
+  padding: 5px 15px;
+  background: #fff;
+  font-size: 20px;
+  color: #000;
+  margin: 5px;
+  border-radius: 5px;
+}
+.btn-group button:hover{
+  background: #ededed;
+  cursor: point;
+}
+.view-group{
+  display: flex;
+  justify-content: center;
+}
+.view-group>div{
+  padding: 10px;
+}
+.view-group p{
+  font-weight: 800;
+}
+.view-group input{
+  padding: 5px;
+  font-size: 20px;
+}
+.boxbox{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.myBox{
+  margin: 20px;
+  border: 1px solid #333;
+}
+.myCircle{
+  margin: 20px;
+  border: 1px solid #333;
+  border-radius: 50%;
+}
