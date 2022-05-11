@@ -80,3 +80,11 @@
 	> cmd 창을 관리자 권한으로 실행 > taskkill /F /PID 기억한 번호 입력
 
 * Redux
+- createStore에 생기는 줄
+	> @reduxjs/toolkit 에 있는 configureStore를 사용하라고 뜨는 표시
+	> redux 사이트에서 굳이 쓰라는 언급이 없음, 그냥 createStore 써도 될듯
+
+* React fontawsome
+- yarn add @fortawesome/fontawesome-svg-core
+- yarn add @fortawesome/free-solid-svg-icons
+- yarn add @fortawesome/react-fontawesome
