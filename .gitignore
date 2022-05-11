@@ -1,4 +1,7 @@
 # ignore all .vscode files
 .vscode
 .git
+
+# private ignore files & forders
 /test/09/mypp
+/test

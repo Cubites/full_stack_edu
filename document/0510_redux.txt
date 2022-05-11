@@ -1,0 +1,30 @@
+- React(페이스북) -> 사용 예: 구글, youtube, 넷플릭스, 뉴욕타임즈 
+
+< Redux >
+- React(페이스북), Vue, AngularJS(구글), VanillaJS 에 사용
+- React에서는 React-redux를 통해 사용
+
+- npm init -y : package.json 파일 생성
+- npm install redux
+- npm install redux-logger
+
+< SQL >
+- 검색 (LIKE) : 검색어의 일부만으로 데이터 조회
+	- 정확한 키워드를 모를 때 일부만으로 데이터를 검색
+	- 와일드 카드 
+		- %수 > "수"로 끝나는 단어 검색
+		- _수 > 1개의 글자가 앞에 오는 경우 검색
+	- LIKE 검색은 DBMS 부감이 큼, 따라서 LIKE에 OR절 같은 것을 중복 사용하는 건 지양
+	- SELECT 컬럼명 FROM 테이블명 WHERE 컬럼명 LIKE 검색어(보통 앞뒤에 %를 붙임)
+- NULL 값
+	: 컬럼에 값이 없음을 의미, 컬럼이 NULL을 허용해야 사용 가능
+	- is NULL : NULL값을 가지고 있는 컬럼 검색 <=> is not NULL
+- NULL 함수
+	: 숫자 컬럼을 연산해야할 때 NULL을 처리해주는 함수
+	- NULL 값이 나오면 다른 값(0)으로 대체해서 계산 처리
+	- IFNULL / COALESCE(MySQL) / ISNULL (SQL Server) / NVL (Oracle)
+	- 집합함수(sum())의 경우에는 null 처리가 내장되어 있음
+- 집합함수 (GROUP BY / HAVING)
+	- 집합함수와 같이 사용해 그룹별 연산을 적용
+	- 예 : select countrycode, count(countrycode) from city group by countrycode;
+		> countrycode가 같은 것들의 갯수가 출력됨
