@@ -57,7 +57,7 @@
 
 *scss
 - 사용하려면 css로 변환해주는 라이브러리 필요 (node-sass, ruby sass 등)
-- npm install -g node-sass
+- npm install -g node-sass // yarn add node-sass
 - node-sass style.scss -o >> 컴파일 한 현재 디렉토리에 저장
 - node-sass style.scss -w -o >> 파일에 변화가 있을 경우 자동으로 리컴파일
 - vscode 확장프로그램: Live Sass Compiler, Sass Lint (deprecated), Beautify css/sass/scss/less
@@ -88,3 +88,7 @@
 - yarn add @fortawesome/fontawesome-svg-core
 - yarn add @fortawesome/free-solid-svg-icons
 - yarn add @fortawesome/react-fontawesome
+- yarn add @fortawesome/free-brands-svg-icons // brands 아이콘
+
+* Daum 우편번호 API
+- yarn add react-daum-postcode

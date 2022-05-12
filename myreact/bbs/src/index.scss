@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+html, body{
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+a, a:link{
+  color: #333;
+  text-decoration: none;
+}
+a:hover{
+  color: #666;
+  text-decoration: underline;
+}
+.left{
+  height: 100%;
+  border-right: 1px solid #999;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 30px;
+}
+.contents{
+  width: 1200px;
+  margin-left: 330px;
+}
+.float-right{
+  float: right;
+}
+.btn-block{
+  display: block;
+}
+.card-body div{
+  margin-top: 5px;
+}
+a.btn-faceboox{
+  background-color: #405D9D;
+  border-color: #405D9D;
+  color: #fff;
+  &:hover{
+    background-color: #1c356b;
+    border-color: #405D9D;
+    color: #fff;
+  }
+}
+a.btn-twitter{
+  background-color: #42AEEC;
+  border-color: #42AEEC;
+  color: #fff;
+  &:hover{
+    background-color: #0f71aa;
+    border-color: #42AEEC;
+    color: #fff;
+  }
+}
+/** 회원가입 **/
+.RWrapper{
+  width: 800px;
+  max-width: 100%;
+  margin: 50px auto;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #efefef;
+  padding: 30px 50px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+}
+#popupDom{
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  .popupDomIn {
+    padding: 50px;
+    background: #fff;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.20);
+  }
+}
+
+@import "styles/mixin";
+@include mobile {
+  .left{
+    height: auto;
+    border: none;
+    border-bottom: 1px solid #999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    display: flex;
+  }
+}
+@include tablet {
+
+}
+@include desktop {
+
+}
