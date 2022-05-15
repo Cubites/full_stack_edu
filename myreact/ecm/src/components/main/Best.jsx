@@ -18,8 +18,8 @@ const Card = styled.div`
   width: 100%;
   height: 390px;
   border-radius: 15px;
-  overflow: hidden:
-  corsor: pointer;
+  overflow: hidden;
+  cursor: pointer;
   position: relative;
 `
 const CardImg = styled.div`
