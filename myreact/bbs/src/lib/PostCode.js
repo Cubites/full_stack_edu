@@ -1,7 +1,8 @@
 import React from 'react';
 import DaumPostcode from 'react-daum-postcode'
 
-const PopupCode = ({ closePop }) => {
+// const PostCode = (props) => {
+const PostCode = ({closePop, setAddr, setZip}) => {
     const handlePostCode = (data) => {
         let fullAddress = data.address;
         let extraAddress = '';
@@ -18,12 +19,16 @@ const PopupCode = ({ closePop }) => {
         console.log(data);
         console.log(fullAddress);
         console.log(data.zonecode);
+        setAddr(fullAddress);
+        setZip(data.zonecode);
         closePop();
     }
     return (
         <>
-            <PostCode onComplete={handlePostCode} />
-            <button type='button' onClick={() => {onClose()}} />
+            <DaumPostcode onComplete={handlePostCode} />
+            <button type='button' onClick={() => closePop()}> 닫기 </button>
         </>
     )
 }
+
+export default PostCode;

@@ -33,6 +33,7 @@
 * react 관련 명령어
 - npx create-react-app 프로젝트명 : 새 프로젝트 생성
 - npm install react-bootstrap bootstrap : react-bootstrap 설치
+- yarn add reactstrap react-bootstrap bootstrap : reactstrap, react-bootstrap, bootstrap 설치
 - react-draft-wysiwyg (Draft.js)
 	> npm install react-draft-wysiwyg draft-js react react-dom : react-draft-wysiwyg 설치 명령어
 - npm install -g yarn : nodejs 패키지의 또 다른 다운용 라이브러리인 yarn 설치 명령어
