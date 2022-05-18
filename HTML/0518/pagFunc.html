@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getPaging(rListScale, rPageScale, rTotal, rStart, rPagingUrl){
+            let rReturn = "<ul class='paging'>";
+            let rPage, rPP, rNP, rPreStart, rLn, rVk, rNstart, rLast, rLink = "";
+            if(rTotal > rListScale){
+                rPage = Math.floor(rStart/(rListScale * rPageScale));
+                rReturn += "<li>";
+                rPP = rStart - rListScale;
+                rNP = rStart + rListScale;
+
+                // 처음으로 이동
+                if(rPP >= 0) rReturn = `<a href="${rPagingUrl}&Start=0">처음</a>`;
+                if(rStart + 1 > rListScale * rPageScale){
+                    rPreStart = rListScale * (rPage * rPageScale - 1);
+                    rReturn += `<a href="${rPagingUrl}&rStart=${rPreStart}">이전</a>`;
+                }
+                // LOOP
+                for(i = 0; i < rPageScale; i++){
+                    rLn = (rPage * rPageScale + i) * rListScale;
+                    rVk = rPage * rPageScale + i + 1;
+                    if(rLn < rTotal){
+                        if(rLn != rStart){
+                            rLink += `<a href="${rPagingUrl}&rStart=${rLn}"></a>`;
+                        }else{
+                            rLink += `<span style="color: #ff8600;">${rVk}</span>`;
+                        }
+                    }
+                }
+            }
+            if(rTotal > ((rPage + 1) * rListScale * rPageScale)){
+                rNstart = (rPage + 1) * rListScale * rPageScale;
+                rReturn += `<a href="${rPagingUrl}*rStart=${rNstart}">다음</a>`;
+            }
+            // 마지막
+            if(rNP < rTotal){
+                rLast = (Math.floor(rTotal / rListScale)) * rListScale;
+                rReturn += `<a href="${rPagingUrl}&rStart=${rLast}">마지막</a>`;
+            }
+            return rReturn;
+        }
+        document.write(getPaging(10, 10, 101, 90, './list.html'));
+    </script>
+</body>
+</html>

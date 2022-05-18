@@ -6,8 +6,8 @@ import ReactStrapNavbox from './ReactStrapNavbar'
 import ReactStrapPagenation from './ReactStrapPagenation'
 
 const ReactStrapLayout = () => {
-  const [pageNum, setPageNum] = useState(1);
-  const [pageMax, setPageMax] = useState(20);
+  const [pageNum, setPageNum] = useState(0);
+  const [pageMax, setPageMax] = useState(30);
   return (
     <Container>
       <Row>
