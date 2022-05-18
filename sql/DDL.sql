@@ -8,12 +8,9 @@ create table BusinessCard(
     primary key(id)
 );
 insert into businesscard (name, address)
-	values (1, 'Bob', 'Gimpo 102-1111'),
-		   (2, 'Bob2', 'Gimpo1 102-1111'),
-           (3, 'Bob3', 'Gimpo2 102-1111'),
-           (4, 'Bob4', 'Gimpo3 102-1111'),
-           (5, 'Bob5', 'Gimpo4 102-1111'),
-           (6, 'Bob6', 'Gimpo5 102-1111');
+	values ('John', 'Busan'),
+		   ('James', 'Gimpo'),
+           ('Jule', '');
 select * from businesscard;
 drop table businesscard;
 
