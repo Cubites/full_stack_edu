@@ -96,3 +96,6 @@
 
 * Material UI (MUI)
 - yarn add @mui/material @emotion/react @emotion/styled
+
+* Cookies
+- yarn add cookies

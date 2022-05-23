@@ -20,7 +20,9 @@ const Navbar = styled.div`
   width: 700px;
   position: relative;
   &:hover{
-
+    .subnav{
+      display: flex;
+    }
   }
 `
 const NavHeader = styled.div`
@@ -28,11 +30,6 @@ const NavHeader = styled.div`
   height: 60px;
   display: flex;
   border: 1px solid #333;
-  &:hover{
-    Subnavs{
-      display: flex;
-    }
-  }
 `
 const NavHeaderCon = styled.a`
   display: block;
@@ -66,7 +63,7 @@ const SubNav = styled.ul`
 const SubNavCon = styled.li`
   width: 100%;
   height: 60px;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
   text-align: center;
@@ -97,7 +94,7 @@ const Header = () => {
             navhead.map((content, i) => (<NavHeaderCon key={"navhead" + i}>{content.title}</NavHeaderCon>))
           }
         </NavHeader>
-        <SubNavs>
+        <SubNavs className='subnav'>
           {
             navhead.map((content, i) => (
               <SubNav key={"navmain" + i}>
