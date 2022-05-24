@@ -99,3 +99,7 @@
 
 * Cookies
 - yarn add cookies
+
+* npm, yarn 
+- npm install -save 라이브러리
+- yarn add 라이브러리
