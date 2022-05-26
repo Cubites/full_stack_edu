@@ -106,3 +106,7 @@
 
 * react kakao map sdk
 - yarn add react-kakao-maps-sdk
+
+
+* node server 셋팅
+- npm init (또는 npm init -y) -- react/myrestaurant 폴더 참고
