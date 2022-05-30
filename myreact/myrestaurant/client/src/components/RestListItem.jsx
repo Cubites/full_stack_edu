@@ -47,18 +47,18 @@ const RestListItem = (props) => {
           {/* <Map lat={props.latitude} lng={props.longitude} /> */}
           <Map 
             center={{
-            lat: lat,
-            lng: lon
-            // lat: props.latitude,
-            // lng: props.longitude
+              lat: lat,
+              lng: lon
+              // lat: props.latitude,
+              // lng: props.longitude
             }}
             style={{
-                width:"250px",
-                height:"200px",
-                border: "1px solid #ddd",
+              width:"250px",
+              height:"200px",
+              border: "1px solid #ddd",
             }}
             level={3}
-          />  
+          />
         </Col>
       </Row>
     </ListGroupItem>

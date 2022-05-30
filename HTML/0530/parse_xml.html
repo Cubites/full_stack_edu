@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="show"></p>
+    
+    <script>
+        const text = `
+            <movies>
+                <movie>
+                    <title>쥬라기월드 도미니언</title>
+                    <director>쥬라기</director>
+                    <img>https://cdn.mhnse.com/news/photo/202205/107723_91633_2342.jpg</img>
+                    <actor>크리스 프랫, 브라이스 댈러스 하워드, 샘 닐</actor>
+                </movie>
+            </movies>
+        `;
+        let parser = new DOMParser();
+        let xmlDoc = parser.parseFromString(text, "text/xml");
+        document.getElementById('show').innerHTML = xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+    </script>
+</body>
+</html>

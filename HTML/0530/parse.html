@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".view").click(function(){
+                $.ajax({
+                    type: "GET",
+                    url: "list/list.json",
+                    success: function(json){
+                        let list = json;
+                        json = JSON.stringify(list);
+                        let listLen = list.length;
+                        let contentStr = "";
+                        for(let i = 0; i < listLen; i++){
+                            contentStr += `기호: ${list[i].no}, ${list[i].name} 후보(직업: ${list[i].job})<br/>`;
+                        }
+                        $('#before').append(json);
+                        $('#after').append(contentStr);
+                    }
+                })
+            })
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <button class="view">보기</button>
+    <h1>사용한 JSON</h1>
+    <p id="before"></p>
+
+    <h1>파싱한 후 문자열</h1>
+    <p id="after"></p>
+</body>
+</html>
