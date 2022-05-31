@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Grid } from '@mui/material';
 import RestLists from './RestLists';
+import axios from 'axios';
+import { Map } from 'react-kakao-maps-sdk';
 
 const Item = styled.div`
   background: #fff;
@@ -32,6 +34,13 @@ const TopList = styled.div`
 
 
 const RestList = () => {
+  const [mapOnOff, setMapOnOff] = useState(false);
+  const [location, setLocation] = useState([0, 0]);
+  const [rest, setRest] = useState([]);
+  useEffect(() => {
+    axios('/json/rest.json')
+      .then(dt => setRest(...rest, dt.data));
+  }, []);
   return (
     <>
       <Grid container spacing={2}>
@@ -40,11 +49,35 @@ const RestList = () => {
             <TopList>
               옵션
             </TopList>
-            <RestLists />
+            {
+              rest.map(rt => 
+                <RestLists 
+                  key={rt.id} 
+                  rt={rt} 
+                  mapOnOff={mapOnOff} 
+                  setMapOnOff={setMapOnOff} 
+                  location={location}
+                  setLocation={setLocation}
+                />
+              )
+            }
           </ListItem>
         </Grid>
         <Grid item xs={4}>
-          <Item>테스트</Item>
+          <Item>
+            {
+              mapOnOff ? 
+              <Map
+                center={{lat: location[0], lng: location[1]}}
+                style={{width: "100%", height: "100%"}}
+                level={3}
+              />
+              : 
+              <div style={{width: "100%", height: "100%", textAlign: "center", lineHeight: "400px", verticalAlign: "middle"}}>
+                가게를 선택하면 지도가 나타납니다.
+              </div>
+            }
+          </Item>
         </Grid>
       </Grid>
     </>

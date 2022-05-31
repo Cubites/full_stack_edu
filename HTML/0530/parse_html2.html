@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="send2db" onclick="dbUpload">DB로 보내기</button>
+    <button id="send2db">DB로 보내기</button>
     <div class="y2017 year">
         <ul class="U9YMDCuS" data-v-025f99c7="">
             <li data-v-025f99c7="">
@@ -326,62 +326,20 @@
             </li>
         </ul>
     </div>
-    <!-- <script src="https://code.jquery.com/jquery.min.js"></script>
-    <script src="/node_modules/requirejs/require.js"></script> -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
     <script>
-        // let mysql = require('mysql');
-        // let connection = mysql.createConnection({
-        //     host: 'localhost',
-        //     user: 'root',
-        //     password: 'password',
-        //     database: 'girlgroup'
-        // });
-
-        // function dbUpload(){
-        let query = [];
-        let query_total = '';
-            console.log("전송 시작");
-            const total = document.getElementsByClassName('year');
-            for(let y of total){
-                // debut_year
-                let year = y.classList[0].slice(1, 5);
-                console.log(year);
-                let y_lis = y.getElementsByTagName('ul')[0].getElementsByTagName('li');
-                for(let y_li of y_lis){
-                    const day_tag = y_li.getElementsByTagName('div')[0];
-                    let text = day_tag.innerHTML
-                    // debut_day
-                    let date = text.slice(0, text.indexOf(':'));
-                    text = text.slice(text.indexOf(':') + 2, text.length - 1);
-                    // kor_name
-                    let name = '';
-                    if(text.indexOf('XiXNsM-f') == -1){
-                        name = text.slice(0, text.indexOf(' '));
-                        text = text.slice(text.indexOf(name), text.length);
-                    }else{
-                        name = day_tag.getElementsByClassName('XiXNsM-f')[0].innerHTML;
-                        text = text.slice(text.indexOf('</a>'), text.length);
-                    }
-                    
-                    // eng_name
-                    // let name_eng = text.slice(text.indexOf("(") + 1, text.indexOf(")"));
-                    console.log(date, name);
-                    
-                    // let queryString = `
-                    //     INSERT INTO girlgroup ('name', 'debut_year', 'debut_day') 
-                    //     values (${name}, ${year}, ${date});
-                    // `;
-                    // connection.query(queryString, function(err, result){
-                    //     if(err) throw err;
-                    //     console.log("records inserted");
-                    // })
-                    query.push(`(${name}, ${year}, ${date})`);
+        $(function(){
+            let years=[];
+            $('.year').each(function(i){
+                let y = $.trim($(this).contents()[0].textContent);
+                years.push(y);
+                let d = $(this).find('.DWU5pZeZ');
+                console.log(d);
+                for(let i = 0; u < htmlLength; i++){
+                    console.log(years[i]+"and"+ d.contents()[i]);
                 }
-            }
-            console.log(query);
-            query
-            // connection.end();
-        // }
+            });
+        });
     </script>    
 </body>
 </html>

@@ -18,3 +18,7 @@
   * <code>npm install concurrently --save-dev</code>
   * dependencies : 애플리케이션의 직접 동작과 연관된 라이브러리
   * devDependencies : 애플리케이션 직접 동작과는 연관이 없는 라이브러리
+
+# 사용법
+1. "index copy.html" 파일 명을 "index.html"로 변경
+2. 해당 파일의 kakao api 링크에 본인의 개발자 키 입력

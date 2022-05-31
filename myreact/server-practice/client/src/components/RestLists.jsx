@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ImageListItem } from '@mui/material';
 import { LocationOnTwoTone } from '@mui/icons-material';
+import { Roadview } from 'react-kakao-maps-sdk';
 
 const ABlock = styled.div`
   margin: 15px 20px 10px;
@@ -26,17 +27,34 @@ const AreaBox = styled.div`
   padding-right: 40px;
 `
 
-const RestLists = () => {
+const RestLists = ({rt, mapOnOff, setMapOnOff, location, setLocation}) => {
+  let visible = mapOnOff && rt.latitude === location[0] && rt.longitude === location[1];
   return (
     <ABlock href="#">
-      <ImgItem><img src="https://picsum.photos/220/180"/></ImgItem>
+      <ImgItem>
+        {
+          visible ?
+          <Roadview 
+            position={{lat: rt.latitude, lng: rt.longitude, radius: 100}} 
+            style={{width: "220px", height: "180px"}}
+          />
+          :
+          <img src="https://picsum.photos/220/180"/>
+        }
+      </ImgItem>
       <TypeBox>
-        <h2>에노크 샌드위치 맛집</h2>
-        <p>신선한 재료, 푸짐한 혼합</p>
-        <p>우수상점</p>
+        <h2>{rt.title}</h2>
+        <p>{rt.title_food}</p>
+        <p>{rt.tel}</p>
       </TypeBox>
       <AreaBox>
-        <LocationOnTwoTone sx={{fontSize: 40}}/>
+        <LocationOnTwoTone 
+          sx={{fontSize: 40}}
+          onClick={() => {
+            setMapOnOff(!mapOnOff);
+            setLocation([rt.latitude, rt.longitude]);
+          }}
+        />
       </AreaBox>
     </ABlock>
   )
