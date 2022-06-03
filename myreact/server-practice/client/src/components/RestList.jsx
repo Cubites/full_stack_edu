@@ -38,7 +38,7 @@ const RestList = () => {
   const [location, setLocation] = useState([0, 0]);
   const [rest, setRest] = useState([]);
   useEffect(() => {
-    axios('/json/rest.json')
+    axios.get('/api/server-practice')
       .then(dt => setRest(...rest, dt.data));
   }, []);
   return (
@@ -63,8 +63,8 @@ const RestList = () => {
             }
           </ListItem>
         </Grid>
-        <Grid item xs={4}>
-          <Item>
+        <Grid item xs={4} style={{position: 'relative'}}>
+          <Item style={{position: 'fixed', width: '20%'}}>
             {
               mapOnOff ? 
               <Map

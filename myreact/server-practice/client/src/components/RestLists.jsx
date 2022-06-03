@@ -14,8 +14,12 @@ const ABlock = styled.div`
     background: #fafcdf;
   }
 `
-const ImgItem =styled.div`
+const ImgItem = styled.div`
   flex: 0 0 30%;
+`
+const Somenail = styled.img`
+  border: 2px solid #333;
+  border-radius: 15px;
 `
 const TypeBox = styled.div`
   flex: 0 0 60%;
@@ -36,10 +40,10 @@ const RestLists = ({rt, mapOnOff, setMapOnOff, location, setLocation}) => {
           visible ?
           <Roadview 
             position={{lat: rt.latitude, lng: rt.longitude, radius: 100}} 
-            style={{width: "220px", height: "180px"}}
+            style={{width: "220px", height: "180px", border: "2px solid #333", borderRadius: "15px"}}
           />
           :
-          <img src="https://picsum.photos/220/180"/>
+          <Somenail src="https://picsum.photos/220/180"/>
         }
       </ImgItem>
       <TypeBox>
