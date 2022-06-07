@@ -59,6 +59,10 @@ create table restaurant_ggy (
 ) engine=InnoDB;
 desc restaurant_ggy;
 
+alter table restaurant_ggy add radius int default 100;
+desc restaurant_ggy;
+select * from restaurant_ggy;
+
 truncate restaurant_gy;
 load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/rest2.csv'
 	into table restaurant_ggy

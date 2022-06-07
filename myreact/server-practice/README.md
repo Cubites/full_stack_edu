@@ -22,3 +22,18 @@
 # 사용법
 1. "index copy.html" 파일 명을 "index.html"로 변경
 2. 해당 파일의 kakao api 링크에 본인의 개발자 키 입력
+
+* database 폴더 안에 db.json 파일 생성 후 아래 코드 넣기
+> <pre>
+> {
+>     "host" : "localhost",
+>     "user" : "root",
+>     "password" : "비밀번호",
+>     "port" : "3306",
+>     "database" : "study01"
+> }
+> </pre>
+
+# 설명
+### setupProxy.js
+* react 포트(3000)를 server 포트(4000)으로 연결 시켜주는 미들웨어

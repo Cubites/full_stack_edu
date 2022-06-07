@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "moment": "^2.29.3",
+    "winston": "^3.7.2",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "name": "0607",
+  "description": "* 파일 데이터 읽기 테스트용 텍스트 파일",
+  "version": "1.0.0",
+  "main": "exserver01.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

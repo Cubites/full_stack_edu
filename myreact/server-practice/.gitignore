@@ -25,3 +25,4 @@ yarn-error.log*
 # security
 /client/public/index.html
 key.json
+database/db.json
