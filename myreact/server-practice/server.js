@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-const mysql = require('mysql2');
+const mysql = require('mysql');
 
 let corsOptions = {
     origin: "http://localhost:4000"
@@ -32,7 +32,7 @@ connection.connect();
 app.get('/api/server-practice', (req, res) => {
     let offset = 0;
     let limits = 30;
-    let sql = `select * from restaurant_ggy order by id desc LIMIT ${offset}, ${limits}`;
+    let sql = `select * from restaurant_ggy order by id asc LIMIT ${offset}, ${limits}`;
     console.log(sql);
     connection.query(
         sql, (err, rows, fields) => {
