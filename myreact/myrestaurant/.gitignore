@@ -25,3 +25,4 @@ yarn-error.log*
 # file
 index.html
 key.json
+db.json
