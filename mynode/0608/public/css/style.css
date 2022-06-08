@@ -1,0 +1,38 @@
+h1.text-center{
+    margin-top: 80px;
+    text-align: center;
+}
+form{
+    width: 400px;
+    padding: 40px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+    margin: 50px auto;
+}
+ul.loginform{
+    list-style-type: none;
+}
+ul.loginform li{
+    padding: 10px 0;
+}
+label{
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+input[type=text],
+input[type=password]{
+    padding: 8px;
+    width: calc(100% - 150px);
+}
+.btnbox{
+    text-align: center;
+}
+.btnbox button{
+    padding: 10px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px;
+}

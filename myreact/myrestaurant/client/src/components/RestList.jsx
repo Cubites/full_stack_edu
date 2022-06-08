@@ -7,9 +7,9 @@ import axios from 'axios';
 const RestList = () => {
   const [rest, setRest] = useState([]);
   useEffect(() => {
-    axios.get('./json/rest.json')
+    axios.get('/api/myrestaurant')
       .then(rs => setRest(...rest, rs.data))
-  }, [])
+  }, []);
   return (
     <Container>
       <h1 className="text-center my-5"> 경기도 맛집 리스트 </h1>

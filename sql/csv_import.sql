@@ -1,3 +1,4 @@
+create database study01;
 use study01;
 
 create table nation_location (
@@ -16,7 +17,8 @@ load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/location.csv'
 	into table nation_location
 	fields terminated by ','
 	enclosed by '"' escaped by '\\' lines starting by '' terminated by '\n'
-    ignore 1 rows;
+    ignore 1 rows
+    (sigun, title, tel, title_food, zip, address, address_old, latitude, longitude);
 
 select * from nation_location;
 
@@ -34,14 +36,14 @@ create table restaurant_gy (
 ) engine=InnoDB;
 desc restaurant_gy;
 
-truncate restaurant_gy;
-load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/rest.csv'
-	into table restaurant_gy
+truncate restaurant_ggy;
+load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/location.csv'
+	into table restaurant_ggy
 	fields terminated by ',' -- 필드 구분자
     optionally enclosed by '"' -- 데이터 필드 값이 따옴표로 구분되어 있을 수도 있음(optionally)
     Lines terminated by '\n' -- 줄 끝에서 새로 시작
     ignore 1 rows -- 첫번째 줄(컬럼명)은 load 대상에서 제외
-    (sigun, title, address, address_old, grade, grade_date, orgaization, latitude, longitude);
+    (sigun, title, tel, title_food, zip, address, address_old, latitude, longitude);
 
 select grade, count(*) from restaurant_gy group by grade;
 
@@ -62,6 +64,7 @@ desc restaurant_ggy;
 alter table restaurant_ggy add radius int default 100;
 desc restaurant_ggy;
 select * from restaurant_ggy;
+select * from restaurant_ggy order by id asc limit 0, 10;
 
 truncate restaurant_gy;
 load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/rest2.csv'
