@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        form{
+            border: 2px solid #ddd;
+            width: 300px;
+            height: 200px;
+            margin: 50px auto;
+            box-sizing: border-box;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h2>폼 전송</h2>
+    <form name="myform" action="/process/login/관리자" method="post">
+        <input type="text" name="name" placeholder="이름"><br>
+        <input type="text" name="id" placeholder="아이디"><br>
+        <button type="submit">전송</button>
+    </form>
+</body>
+</html>

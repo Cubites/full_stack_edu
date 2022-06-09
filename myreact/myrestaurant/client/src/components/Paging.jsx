@@ -12,10 +12,10 @@ const Paging = () => {
     axios('/index', { pagenum: num});
   }
 
-  useEffect(() => {
-    axios.get('/api/totalNumber')
-      .then(n => setTotalPage(n.data[0].count));
-  }, []);
+  // useEffect(() => {
+  //   axios.get('/api/totalNumber')
+  //     .then(n => setTotalPage(n.data[0].count));
+  // }, []);
   for(let i = 0; i < 10; i++){
     if(i === pageNum){
       item.push(<Pagination.Item key={item} onClick={(i) => sendPage(i)} active>{i + 1}</Pagination.Item>);

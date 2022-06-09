@@ -31,7 +31,7 @@ con.connect();
 
 app.get('/api/myrestaurant', (req, res) => {
     let offset = 0;
-    let limits = 10;
+    let limits = 5;
     let dbquery = `SELECT * FROM restaurant_ggy order by id desc LIMIT ${offset}, ${limits}`;
     con.query(dbquery, (err, rows, fields) => {
         if(err){ console.log('db접속중에 에러가 발생했습니다.' + err)}

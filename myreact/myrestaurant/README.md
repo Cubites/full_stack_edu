@@ -8,3 +8,16 @@
   > node server.js
   > </pre>
 2. 주소창에 "localhost:4000/app/hello" 입력
+
+# mysql 정보 등록
+1. db 폴더 생성 후, 안에 db.json 파일 생성
+2. 파일에 다음 내용 입력
+  > <pre>
+  > {
+  >     "host": "localhost",
+  >     "user": "root",
+  >     "password": "비밀번호",
+  >     "port": "3306",
+  >     "database": "db이름"
+  > }
+  > </pre>

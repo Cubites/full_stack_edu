@@ -1,4 +1,4 @@
-use study01;
+use studydb;
 
 create table member (
 	num int auto_increment primary key,
@@ -9,3 +9,11 @@ create table member (
     logindate datetime default now(),
     userlevel int default 1
 ) charset=utf8mb4;
+
+desc member;
+
+insert into member (userid, userpass, username, userlevel) values
+	('master', '123456', '관리자', 99),
+    ('tester', '1234', '그냥회원', 1)
+    
+select * from member;

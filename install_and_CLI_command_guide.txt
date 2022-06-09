@@ -110,3 +110,4 @@
 
 * node server 셋팅
 - npm init (또는 npm init -y) -- react/myrestaurant 폴더 참고
+- package.json 파일 생성됨
