@@ -8,6 +8,7 @@ const Login = () => {
   const onSubmit = () => {
     console.log('아이디: ' + userId);
     console.log('비밀번호: ' + userPass);
+
     axios.post('/user_inform/onLogin', null, {
       params: {
         'user_id' : userId,
@@ -29,14 +30,14 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className='formbox'>
       <h2>LOGIN</h2>
       <div>
-        <label>ID: </label>
+        <label htmlFor="userid">아이디</label>
         <input type="text" name="userid" value={userId} onChange={handleId} />
       </div>
       <div>
-        <label>Password: </label>
+        <label htmlFor="userpass">비밀번호</label>
         <input type="password" name="userpass" value={userPass} onChange={handlePass} />
       </div>
       <div>
