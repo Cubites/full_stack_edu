@@ -14,6 +14,6 @@ desc member;
 
 insert into member (userid, userpass, username, userlevel) values
 	('master', '123456', '관리자', 99),
-    ('tester', '1234', '그냥회원', 1)
+    ('tester', '1234', '그냥회원', 1);
     
 select * from member;

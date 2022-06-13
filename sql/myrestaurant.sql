@@ -22,5 +22,8 @@ load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/rest2.csv'
     Lines terminated by '\n' -- 줄 끝에서 새로 시작
     ignore 1 rows -- 첫번째 줄(컬럼명)은 load 대상에서 제외
     (sigun, title, tel, title_food, zip, address, address_old, latitude, longitude);
-    
+
+alter table restaurant_ggy add files varchar(100) after radius;
+
+desc restaurant_ggy;
 select * from restaurant_ggy;

@@ -7,5 +7,7 @@ drop user 'testid'@'localhost';
 grant all privileges on *.* to root@localhost;
 
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'mysql4865';
-ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'mysql4865';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '5555';
 flush privileges;
+
+show variables like 'validate_password%';

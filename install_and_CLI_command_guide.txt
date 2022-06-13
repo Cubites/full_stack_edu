@@ -111,3 +111,8 @@
 * node server 셋팅
 - npm init (또는 npm init -y) -- react/myrestaurant 폴더 참고
 - package.json 파일 생성됨
+
+* MongoDB 설치
+- 홈 > Product > On-premises > 우측의 다운로드
+- port 번호 : mongodb://localhost:27017
+- cmd > mongod --dbpath [DB로 잡을 경로]

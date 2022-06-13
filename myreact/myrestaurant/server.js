@@ -36,7 +36,7 @@ app.get('/api/myrestaurant', (req, res) => {
     con.query(dbquery, (err, rows, fields) => {
         if(err){ console.log('db접속중에 에러가 발생했습니다.' + err)}
         res.send(rows);
-    })
+    });
 });
 
 app.get('/api/totalNumber', (req, res) => {
