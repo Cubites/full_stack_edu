@@ -25,6 +25,9 @@ Remote - WSL
 Sass Lint (deprecated)
 Terminal
 
+* 집에 설치된 vscode 확장프로그램
+Markdown Preview Github Styling
+
 * App 개발(android studio)에 필요한 것
 - java : 설치후 환경변수 지정 필요
 	> 시스템 변수에 C:\Program Files\Java\jdk1.8.0_202 경로 등록 (이름 예 : JAVA_HOME)
