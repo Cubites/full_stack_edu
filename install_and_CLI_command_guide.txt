@@ -1,3 +1,30 @@
+* 학원 vscode에 설치된 확장 프로그램
+autoDocstring - Python Docstring Generator
+Beautify
+Beautify css/sass/scss/less
+Better C++ Syntax
+CMake
+CMake Tools
+Doxygen Documentation Generator
+ES7+ React/Redux/React-Native snippets
+Git History
+GitLens — Git supercharged
+IntelliCode
+Jinja
+Jupyter
+Jupyter Keymap
+Jupyter Notebook Renderers
+Korean(사용법) Language Pack for Visual Studio Code
+Live Sass Compiler
+Live Server
+Markdown Preview Enhanced
+Remote - Containers
+Remote - SSH
+Remote - SSH: Editing Configuration Files
+Remote - WSL
+Sass Lint (deprecated)
+Terminal
+
 * App 개발(android studio)에 필요한 것
 - java : 설치후 환경변수 지정 필요
 	> 시스템 변수에 C:\Program Files\Java\jdk1.8.0_202 경로 등록 (이름 예 : JAVA_HOME)
@@ -115,4 +142,11 @@
 * MongoDB 설치
 - 홈 > Product > On-premises > 우측의 다운로드
 - port 번호 : mongodb://localhost:27017
+- 환경변수 > 시스템 변수 > path > "C:\Program Files\MongoDB\Server\5.0" 추가
 - cmd > mongod --dbpath [DB로 잡을 경로]
+- collection 생성
+	- cmd에서 원하는 폴더로 이동
+	- db 생성 : use db이름
+	- 사용중인 db 확인 : db
+	- collection 생성: db.createCollection("컬렉션이름")
+	- 데이터 삽입 : db.컬렉션이름.insert({key: "value", ... })

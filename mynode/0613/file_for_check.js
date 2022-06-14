@@ -52,6 +52,7 @@ router.route('/process/login').post((req, res)=>{
     let userId = req.body.userid||req.query.userid;
     let userPass = req.body.userpass||req.query.userpass;
     console.log('요청파라미터' + userId + ', ' + userPass);
+
     if(database) {
         authUser(database, userId, userPass, (err, docs)=>{
             if(err) {
@@ -68,7 +69,7 @@ router.route('/process/login').post((req, res)=>{
                 res.write(`
                    <h1>사용자 로그인 성공</h1>
                    <div>
-                      <p>사용자 : ${doc[0].name} 님 환영하지라~</p>
+                      <p>사용자 : ${docs[0].name} 님 환영하지라~</p>
                    </div>
                    <br>
                    <a href="/login.html">다시 로그인 해보기</a>
