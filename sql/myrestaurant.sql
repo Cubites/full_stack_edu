@@ -15,6 +15,8 @@ create table restaurant_ggy (
     radius int default 100
 ) engine=InnoDB;
 
+drop table restaurant_ggy;
+
 load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/rest2.csv'
 	into table restaurant_ggy
 	fields terminated by ',' -- 필드 구분자

@@ -1,20 +1,12 @@
 const fs = require('fs');
 const express = require('express');
-const bodyParser = require('body-parser');
 const mysql = require('mysql');
+const Connection = require('mysql/lib/Connection');
 const app = express();
-const cors = require('cors');
-const router = express.Router();
-
-
-let corsOptions = {
-    origin: "http://localhost:4000"
-}
-app.use(cors(corsOptions));
 const port = process.env.PORT || 4000;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const data = fs.readFileSync('./db/db.json');
 const conf = JSON.parse(data);
@@ -26,7 +18,6 @@ const con = mysql.createConnection({
    port: conf.port,
    database: conf.database
 });
-console.log(con);
 con.connect();
 
 app.get('/api/myrestaurant', (req, res) => {
@@ -39,6 +30,11 @@ app.get('/api/myrestaurant', (req, res) => {
     });
 });
 
+app.post('/api/write', (req, res) => {
+    console.log('/write를 통해 업로드 호출');
+});
+
+// pagination response
 app.get('/api/totalNumber', (req, res) => {
     let totalquery = `SELECT count(*) as count FROM restaurant_ggy `;
     con.query(totalquery, (err, rows, fields) => {
