@@ -1,0 +1,60 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title="로그인화면"
+        style.
+            h2{
+                text-align: center;
+                margin-top: 50px;
+            }
+            div.container{
+                width: 400px;
+                border: 2px solid #ddd;
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.13);
+                margin: 60px auto;
+                box-sizing: border-box;
+                padding: 50px;
+            }
+            div{
+                margin: 15px 0;
+            }
+            label{
+                display: inline-block;
+                font-style: 18px;
+                width: 90px;
+                padding-right: 15px;
+                text-align: right;
+            }
+            .btnbox{
+                text-align: center;
+                padding-top: 20px;
+            }
+            .btnbox button{
+                padding: 10px 30px;
+                font-style: 20px;
+                font-weight: bold;
+            }
+    body
+        include header
+        h2 로그인 성공
+        div(class="container")
+            div
+                label 이름
+                #{username}
+            div
+                label 아이디
+                #{userid}
+            div
+                label 회원가입일
+                #{indate}
+            div
+                label 최근 접속일
+                #{logindate}
+            div
+                label 권한
+                #{userlevel}
+            div.btnbox
+                button(type="button", onClick="window.location.href='../login.html'") 로그인 화면으로 돌아가기
+            include footer

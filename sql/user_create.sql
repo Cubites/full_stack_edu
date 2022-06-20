@@ -1,7 +1,7 @@
 select host, user from mysql.user;
-create user 'testid'@'localhost'identified by '123456';
+create user 'testid'@'%'identified by '123456';
 grant all privileges on study01.* to 'testid'@'localhost';
-drop user 'testid'@'localhost';
+drop user 'testid'@'%';
 
 -- root 계정에 접근 권한 허용
 grant all privileges on *.* to root@localhost;
