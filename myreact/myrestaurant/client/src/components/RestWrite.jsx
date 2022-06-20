@@ -18,14 +18,16 @@ const RestWrite = () => {
     fileName: ''
   });
 
+  const [ isOpen, setIsOpen ] = useState(false);
+  const [sigun, setSigun] = useState('');
+  const [oldAddress, setOldAddress] = useState('');
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
-  const [oldAddress, setOldAddress] = useState('');
-  const [ isOpen, setIsOpen ] = useState(false);
 
   // 다음 api
   const handleComplete = (data) => {
     let fullAddress = data.address;
+    let jibunAddress = data.jibunAddress;
     let extraAddress = '';
 
     if (data.addressType === 'R') {
@@ -38,24 +40,36 @@ const RestWrite = () => {
       fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
     }
     
-    // 위도 경도 찾기
-    // 1. 주소-좌표 변환객체 생성
-    let geocoder = new window.kakao.maps.services.Geocoder();
-    // 2. 주소로 좌표 검색
-    geocoder.addressSearch(fullAddress, (result, status) => {
-      //성공
-      if(status === window.kakao.maps.services.Status.OK){
+    // 좌표찾기
+    // 주소-좌표 변환 객체를 생성합니다
+    var geocoder = new window.kakao.maps.services.Geocoder();
+
+    // 주소로 좌표를 검색합니다
+    geocoder.addressSearch(fullAddress, function(result, status) {
+
+      // 정상적으로 검색이 완료됐으면 
+      if (status === window.kakao.maps.services.Status.OK) {
         let coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
         setLatitude(coords.La);
         setLongitude(coords.Ma);
       }else{
-        console.log('실패');
+        setLatitude('33.450701');
+        setLongitude('26.570667');
       }
-    });    
+    });  
+    
+    const mysigun = fullAddress.split(' ');
+    if(mysigun[0] === '서울' || '부산' || '대구' || '인천' || '광주' || '대전' || '울산' || '세종특별자치시'){
+      setSigun(mysigun[0]);
+    }else{
+      setSigun(mysigun[1]);
+    }
+
     let newRWrite = { ...rWrite } // 기존 데이터들이 날아가지 않도록 state를 복제
     newRWrite['zipCode'] = data.zonecode;
     newRWrite['address1'] = fullAddress; // 복제한 state에 값을 변경
     setRWrite(newRWrite); // 변경된 내용으로 기존 state를 바꿈
+    setOldAddress(jibunAddress);
     setIsOpen(false); // modal 창을 닫음
   };
 
@@ -87,26 +101,40 @@ const RestWrite = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const url = "/api/write";
-    const sigun = rWrite.address1.split(' ');
+
     const formData = new FormData();
     formData.append('sigun', sigun);
     formData.append('title', rWrite.title);
     formData.append('tel', rWrite.tel1 + "-" + rWrite.tel2 + "-" + rWrite.tel3);
-    formData.append('titleFood', rWrite.titleFood);
-    formData.append('zipCode', rWrite.zipCode);
+    formData.append('title_food', rWrite.titleFood);
+    formData.append('zip', rWrite.zipCode);
     formData.append('address', rWrite.address1 + ' ' + rWrite.address2);
-    formData.append('address_old', rWrite.address1 + ' ' + rWrite.address2);
+    formData.append('oldAddress', oldAddress + ' ' + rWrite.address2);
+    formData.append('latitude', latitude);
+    formData.append('longitude', longitude);
     formData.append('radius', rWrite.radius);
     formData.append('files', rWrite.fileName);
-    for(let value of formData.values()){
-      console.log(value);
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
     }
   };
-
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   addUser()
+  //     .then((response) => {
+  //       console.log(response.data);
+  //     });
+  // };
   return (
     <Container className='writeBox'>
       <h2 className='text-center my-5'>새로운 상점 등록</h2>
       <Form name='form' action="/write" onSubmit={ handleSubmit }>
+        <Input type="hidden" name="sigun" value={ sigun } />
+        <Input type="hidden" name="address_old" value={ oldAddress } />
+        <Input type="hidden" name="latitude" value={ latitude } />
+        <Input type="hidden" name="longitude" value={ longitude } />
         <FormGroup row>
           <Label for="title" sm={2}>
             상점이름
@@ -187,9 +215,6 @@ const RestWrite = () => {
             <Input type="text" name="address2" 
               placeholder="상세주소"
               onChange={ handleInput }/>
-            <Input type="hidden" name="address_old" />
-            <Input type="hidden" name="latitude" />
-            <Input type="hidden" name="longitude" />
           </Col>
         </FormGroup>
         <FormGroup row>
@@ -212,7 +237,7 @@ const RestWrite = () => {
           <Col sm={2}></Col>
           <Col sm={3}><Button color="danger" block outline>취소</Button></Col>
           <Col sm={1}></Col>
-          <Col sm={3}><Button color="success" block outline>전송</Button></Col>
+          <Col sm={3}><Button type="submit" color="success" block outline>전송</Button></Col>
           <Col sm={2}></Col>
         </FormGroup>
       </Form>

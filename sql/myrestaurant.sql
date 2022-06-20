@@ -1,5 +1,6 @@
-create database studydb;
-use studydb;
+create database study01;
+drop database study01;
+use study01;
 
 create table restaurant_ggy (
 	id int unsigned auto_increment not null primary key,
@@ -17,7 +18,7 @@ create table restaurant_ggy (
 
 drop table restaurant_ggy;
 
-load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/rest2.csv'
+load data infile 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/rest2.csv'
 	into table restaurant_ggy
 	fields terminated by ',' -- 필드 구분자
     optionally enclosed by '"' -- 데이터 필드 값이 따옴표로 구분되어 있을 수도 있음(optionally)

@@ -4,6 +4,7 @@ const mysql = require('mysql');
 const Connection = require('mysql/lib/Connection');
 const app = express();
 const port = process.env.PORT || 4000;
+// const mysql = require('mysql2');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
