@@ -1,7 +1,7 @@
 import React from 'react';
 import RestList from './components/RestList';
-import Paging from './components/Paging';
-import RestWriter from './components/RestWrite';
+import RestWrite from './components/RestWrite';
+import RestEdit from './components/RestEdit';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -10,10 +10,10 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route index element={<RestList />}/>
-          <Route path="write" element={<RestWriter />}/>
+          <Route path="write" element={<RestWrite />}/>
+          <Route path="edit/:id" element={<RestEdit />}/>
         </Routes>
       </BrowserRouter>
-      <Paging />
     </div>
   )
 }

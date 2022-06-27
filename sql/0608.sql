@@ -1,6 +1,6 @@
 use studydb;
 
-create table member (
+create table members (
 	num int auto_increment primary key,
     userid varchar(50),
     userpass varchar(50),
@@ -10,7 +10,7 @@ create table member (
     userlevel int default 1
 ) charset=utf8mb4;
 
-desc member;
+desc members;
 
 insert into member (userid, userpass, username, userlevel) values
 	('master', '123456', '관리자', 99),

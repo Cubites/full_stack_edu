@@ -1,6 +1,8 @@
 import React, { useState } from 'react'; 
 import { Modal, ModalHeader, ModalBody, Container, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
 import DaumPostcodeEmbed from 'react-daum-postcode';
+import Paging from './Paging';
+import axios from 'axios';
 
 const RestWrite = () => {
   // state 셋팅
@@ -50,8 +52,8 @@ const RestWrite = () => {
       // 정상적으로 검색이 완료됐으면 
       if (status === window.kakao.maps.services.Status.OK) {
         let coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
-        setLatitude(coords.La);
-        setLongitude(coords.Ma);
+        setLatitude(coords.Ma);
+        setLongitude(coords.La);
       }else{
         setLatitude('33.450701');
         setLongitude('26.570667');
@@ -101,40 +103,39 @@ const RestWrite = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const url = "/api/write";
+    const tel = rWrite.tel1 + '-' + rWrite.tel2 + '-' + rWrite.tel3;
+    const address = rWrite.address1 + ' || ' + rWrite.address2;
+    const address_old = oldAddress + ' || ' + rWrite.address2;
 
     const formData = new FormData();
     formData.append('sigun', sigun);
     formData.append('title', rWrite.title);
-    formData.append('tel', rWrite.tel1 + "-" + rWrite.tel2 + "-" + rWrite.tel3);
+    formData.append('tel', tel);
     formData.append('title_food', rWrite.titleFood);
     formData.append('zip', rWrite.zipCode);
-    formData.append('address', rWrite.address1 + ' ' + rWrite.address2);
-    formData.append('oldAddress', oldAddress + ' ' + rWrite.address2);
+    formData.append('address', address);
+    formData.append('oldAddress', address_old);
     formData.append('latitude', latitude);
     formData.append('longitude', longitude);
     formData.append('radius', rWrite.radius);
-    formData.append('files', rWrite.fileName);
-    const config = {
+    formData.append('files', rWrite.file);
+    axios.post(url, formData, {
       headers: {
-        'content-type': 'multipart/form-data'
+        'Content-Type': 'multipart/form-data'
       }
-    }
+    }).then((res) => {
+      console.log(res.data);
+    });
   };
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   addUser()
-  //     .then((response) => {
-  //       console.log(response.data);
-  //     });
-  // };
+
   return (
     <Container className='writeBox'>
       <h2 className='text-center my-5'>새로운 상점 등록</h2>
-      <Form name='form' action="/write" onSubmit={ handleSubmit }>
-        <Input type="hidden" name="sigun" value={ sigun } />
+      <Form onSubmit={ handleSubmit }>
+        {/* <Input type="hidden" name="sigun" value={ sigun } />
         <Input type="hidden" name="address_old" value={ oldAddress } />
         <Input type="hidden" name="latitude" value={ latitude } />
-        <Input type="hidden" name="longitude" value={ longitude } />
+        <Input type="hidden" name="longitude" value={ longitude } /> */}
         <FormGroup row>
           <Label for="title" sm={2}>
             상점이름

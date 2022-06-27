@@ -28,5 +28,8 @@ load data infile 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/rest2.csv'
 
 alter table restaurant_ggy add files varchar(100) after radius;
 
+alter table restaurant_ggy modify latitude varchar(30);
+alter table restaurant_ggy modify longitude varchar(30);
+
 desc restaurant_ggy;
 select * from restaurant_ggy;

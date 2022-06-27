@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Roadview, Map } from 'react-kakao-maps-sdk';
 import { ListGroupItem, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
+// import { Restaurant } from '@mui/icons-material';
 // import Map from './Map';
 // import rest from '../json/rest.json';
 
@@ -8,11 +10,13 @@ const RestListItem = (props) => {
   const [lat, setLat] = useState('');
   const [lon, setLon] = useState('');
   const [radius, setRadius] = useState('');
+
   useEffect(() => {
     setLat(props.latitude);
     setLon(props.longitude);
     setRadius(props.radius);
-  })
+  }, []);
+
   return (
     <ListGroupItem className='py-4 px-4'>
       <Row>
@@ -37,7 +41,7 @@ const RestListItem = (props) => {
           />
         </Col>
         <Col xs="5">
-          <h2>{props.title}</h2>
+          <h2>{props.title}<small><Link to={"edit/" + props.id}> + </Link></small></h2>
           <p>{props.sigun}</p>
           <p>{props.tel}</p>
           <p>{props.title_food}</p>

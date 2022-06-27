@@ -1,0 +1,141 @@
+{
+    "list": [
+        {
+            "id": 1,
+            "img": "best01.jpg", 
+            "title": "경품으로 살림 장만하는 사람들", 
+            "desc": "경품으로 살림 장만하는 사람들의 비밀스런 노하우가 가득한 카페", 
+            "hash": "추천카페, 경품, 이벤트, 샘플"
+        },
+        {
+            "id": 2,
+            "img": "best02.jpg", 
+            "title": "숲길따라 감성여행", 
+            "desc": "도시 생활에 지친 심신을 힐링하고 재충전 하는 카페", 
+            "hash": "추천카페, 감성여행, 혼자여행"
+        },
+        {
+            "id": 3,
+            "img": "best03.jpg",  
+            "title": "펜후드", 
+            "desc": "만년필과 필기구 그리고 손글씨를 사랑하는 사람들의 공간", 
+            "hash": "추천카페, 만년필연구소, 펜후드"
+        },
+        {
+            "id": 4,
+            "img": "best04.jpg", 
+            "title": "서울개인택시연대", 
+            "desc": "서울 개인택시 기사들의 정보교류, 토론의 공인이 되는 카페", 
+            "hash": "추천카페, 연대, 개인택시연대"
+        },
+        {
+            "id": 5,
+            "img": "best05.jpg", 
+            "title": "야호~!!즐거운 요리시간이다!!!", 
+            "desc": "간단한 요리부터 도시락, 소풍, 초대요리, 모임요리 다모여라", 
+            "hash": "추천카페, 요기, 간식안주, 초대요리"
+        },
+        {
+            "id": 6,
+            "img": "best06.jpg", 
+            "title": "바이크조아", 
+            "desc": "중고부속, 용품, 기타 튜닝", 
+            "hash": "추천카페, 바이크조아, 혼다"
+        }
+    ],
+    "pop": [
+        {
+            "img": "pop01.jpg",
+            "lank": 1,
+            "title": "조리사 연봉이 1억.JPG",
+            "cafeName": "도탁스 (DOTAX)",
+            "review": 18
+        },
+        {
+            "img": "pop02.jpg",
+            "lank": 2,
+            "title": "다욧하는데 도저히 살이안빠져서 피티쌤한테 물어봤더니ㅠㅠㅠㅠ",
+            "cafeName": "＊여성시대＊ 차분한 20대들의 알흠다운 공간",
+            "review": 85
+        },
+        {
+            "img": "pop03.jpg",
+            "lank": 3,
+            "title": "아무도 모르게 시술받은 연예인",
+            "cafeName": "이종격투기",
+            "review": 33
+        },
+        {
+            "img": "pop04.jpg",
+            "lank": 4,
+            "title": "미국 본사 가도 못 먹는다, 한국에서도 단 한곳에만 있는 쉑쉑메뉴.jpg",
+            "cafeName": "＊여성시대＊ 차분한 20대들의 알흠다운 공간",
+            "review": 20
+        },
+        {
+            "img": "pop05.jpg",
+            "lank": 5,
+            "title": "친한 동생이 대신 계산하면 차라리 절교한다는 이용진",
+            "cafeName": "＊여성시대＊ 차분한 20대들의 알흠다운 공간",
+            "review": 86
+        },
+        {
+            "img": "pop06.jpg",
+            "lank": 6,
+            "title": "게임하다가 응급실 실려간 사람.jpg",
+            "cafeName": "도탁스 (DOTAX)",
+            "review": 11
+        },
+        {
+            "img": "pop07.jpg",
+            "lank": 7,
+            "title": "기가 센 조별과제 팀장.jpg",
+            "cafeName": "도탁스 (DOTAX)",
+            "review": 60
+        },
+        {
+            "img": "pop08.jpg",
+            "lank": 8,
+            "title": "우리 할머니 양성애자 되심...",
+            "cafeName": "＊여성시대＊ 차분한 20대들의 알흠다운 공간",
+            "review": 33
+        },
+        {
+            "img": "pop09.jpg",
+            "lank": 9,
+            "title": "손톱 물어뜯다가 결국 수술까지 하게된 사람.twt",
+            "cafeName": "＊여성시대＊ 차분한 20대들의 알흠다운 공간",
+            "review": 32
+        },
+        {
+            "img": "pop10.jpg",
+            "lank": 10,
+            "title": "GOS에 뼈맞은 삼성, 원가절감 없애나",
+            "cafeName": "도탁스 (DOTAX)",
+            "review": 106
+        }
+    ],
+    "fancafe": [
+        {
+            "rank": 1,
+            "img": "009.gif",
+            "name": "임영웅",
+            "cafeRank": 1,
+            "cheerRank": 1
+        },
+        {
+            "rank": 2,
+            "img": "009.gif",
+            "name": "박서진",
+            "cafeRank": 2,
+            "cheerRank": 3
+        },
+        {
+            "rank": 3,
+            "img": "009.gif",
+            "name": "정동원",
+            "cafeRank": 6,
+            "cheerRank": 2
+        }
+    ]
+}

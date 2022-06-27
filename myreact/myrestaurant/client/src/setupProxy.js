@@ -9,7 +9,23 @@ module.exports = function(app) {
             target: 'http://localhost:4000',
             changeOrigin: true
         })
-    )
+    );
+
+    app.use(
+        '/api/write',
+        createProxyMiddleware({
+            target: 'http://localhost:4000',
+            changeOrigin: true
+        })
+    );
+
+    app.use(
+        '/api/edit',
+        createProxyMiddleware({
+            target: 'http://localhost:4000',
+            changeOrigin: true
+        })
+    );
 
     app.use(
         '/api/totalNumber',
@@ -17,5 +33,5 @@ module.exports = function(app) {
             target: 'http://localhost:4000',
             changeOrigin: true
         })
-    )
+    );
 }
