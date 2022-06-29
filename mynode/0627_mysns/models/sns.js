@@ -6,11 +6,7 @@ module.exports = class Sns extends Sequelize.Model {
                 type: Sequelize.TEXT,
                 allowNull: false
             },
-            oldimg: {
-                type: Sequelize.STRING(200),
-                allowNull: true
-            },
-            newimg: {
+            img: {
                 type: Sequelize.STRING(200),
                 allowNull: true
             }
@@ -19,11 +15,14 @@ module.exports = class Sns extends Sequelize.Model {
             timestamps: true,
             underscored: false,
             modelName: 'Sns',
-            tableName: 'Snss',
+            tableName: 'snss',
             paranoid: false,
             charset: 'utf8mb4',
-            coolate: 'utf8_unicode_ci'
+            collate: 'utf8mb4_unicode_ci'
         })
     }
-    static associate(db){}
+    static associate(db) {
+        db.Sns.belongsTo(db.Member);
+        db.Sns.belongsToMany(db.Hash, { through: 'PostHashtag'});
+    }
 }

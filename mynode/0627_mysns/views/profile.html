@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- 로그아웃 -->
+<div class="card">
+    <div class="card-body text-center">
+        <figure>
+            <img src="http://www.webcoderskull.com/img/team4.png" class="img-fluid" alt="아이디명">
+        </figure>
+        <h3>{{user.nick}} 님</h3>
+        <p>가입일: {{user.createdAt}}, 최근로그인: {{updatedAt}}</p>
+        <ul class="d-flex">
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <ul class="d-flex">
+            <li><label>팔로잉</label> {{followingCount}}</li>
+            <li><label>팔로워</label> {{followerCount}}</li>
+        </ul>
+        <input type="hidden" id="my-id" value="{{user.id}}">
+        <p ckass="mb-5">
+            <a href="/profile" id="myprofile">내 프로필</a>
+            <a href="logout">로그아웃</a>
+        </p>
+    </div>
+</div>
+<!-- /로그아웃 -->
+{% endblock %}

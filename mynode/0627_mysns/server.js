@@ -10,6 +10,8 @@ const passport = require('passport');
 dotenv.config();
 const pageRouter = require('./routes/page'); // 모듈화
 const authRouter = require('./routes/auth');
+const memberRouter = require('./routes/member');
+const snsRouter = require('./routes/sns');
 const { sequelize } = require('./models');
 const passportConfig = require('./passport'); // 로그인관리
 
@@ -36,6 +38,7 @@ sequelize.sync({ force: false })
 /** log 셋팅 **/
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public'))); // static 폴더
+app.use('/img', express.static(path.join(__dirname, 'uploads')));
 
 /** form post **/
 app.use(express.json());
@@ -57,13 +60,15 @@ app.use(passport.session()); // req.session에 passport 정보를 저장
 
 app.use('/', pageRouter);
 app.use('/auth', authRouter);
+app.use('/sns', snsRouter);
+app.use('/member', memberRouter);
 app.use((req, res, next) => {
     const error = new Error(`${req.method}[${req.url}] - 라우터가 없습니다.`);
     error.status = 404;
     next(error);
 });
 
-app.use((req, res, next) => {
+app.use((err, req, res, next) => {
     res.locals.message = err.message;
     res.locals.error = process.env.NODE_ENV !== 'production' ? err : {};
     res.status(err.status || 500);

@@ -32,10 +32,10 @@ module.exports = class Member extends Sequelize.Model {
             tableName: 'members',
             paranoid: true,
             charset: 'utf8mb4',
-            coolate: 'utf8_general_ci'
+            collate: 'utf8mb4_general_ci'
         });
     }
-    static associate(db){
+    static associate(db) {
         db.Member.hasMany(db.Sns);
         db.Member.belongsToMany(db.Member, {
             foreignKey: 'followingId',

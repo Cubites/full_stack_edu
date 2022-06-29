@@ -15,10 +15,10 @@ module.exports = class Hash extends Sequelize.Model {
             tableName: 'hashs',
             paranoid: false,
             charset: 'utf8mb4',
-            coolate: 'utf8_unicode_ci'
+            collate: 'utf8mb4_unicode_ci'
         })
     }
-    static associate(db){
+    static associate(db) {
         db.Hash.belongsToMany(db.Sns, {
             through: 'PostHashtag'
         })

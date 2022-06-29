@@ -17,7 +17,7 @@ router.post('/join', isNotLoggedIn, async (req, res, next) => {
     const { email,  nick, password } = req.body;
     try{
         const exUser = await Member.findOne({ where: { email }});
-        if(exUser){
+        if(exUser){ // 같은 이메일이 있는 경우 에러 출력
             return res.redirect('/join?error=exist');
         }
         const hash = await bcrypt.hash(password, 12);
@@ -44,7 +44,7 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
             console.error(authError);
             return next(authError);
         }
-        if(!user){
+        if(!user){ // 로그인 시, 유저가 있는지 없는지 확인
             return res.redirect(`/?loginError=${info.message}`);
         }
         return req.login(user, (loginError) => {
@@ -60,8 +60,8 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
 // 로그아웃
 router.get('/logout', isLoggedIn, (req, res) => {
     req.logout();
-    req.session.destroy();
-    res.redirect();
+    req.session.destroy(); // 세션 삭제
+    res.redirect('/');
 });
 
 router.get('/kakao', passport.authenticate('kakao'));

@@ -15,15 +15,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 pe-4">
-                {% if user and user.id %}
+                {% if user and member.id %}
                     <!-- 로그아웃 -->
                     <div class="card">
                         <div class="card-body text-center">
                             <figure>
                                 <img src="http://www.webcoderskull.com/img/team4.png" class="img-fluid" alt="아이디명">
                             </figure>
-                            <h3>{{user.nick}} 님</h3>
-                            <p>가입일: {{user.createAt}}, 최근로그인: {{updataAt}}</p>
+                            <h3>{{member.nick}} 님</h3>
+                            <p>가입일: {{member.createdAt}}, 최근로그인: {{updatedAt}}</p>
                             <ul class="d-flex">
                                 <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>

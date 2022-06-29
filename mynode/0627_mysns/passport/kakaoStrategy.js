@@ -13,9 +13,9 @@ module.exports = () => {
             const exUser = await Member.findOne({
                 where: { snsId: profile.id, provide: 'kakao' }
             });
-            if(exUser){
+            if(exUser){ // 로그인 확인
                 done(null, exUser);
-            }else{
+            }else{ // 로그인이 안된 경우, 회원가입으로 넘김
                 const newUser = await Member.create({
                     email: profile._json && profile._json.kakao_account_email,
                     nick: profile.displayName,

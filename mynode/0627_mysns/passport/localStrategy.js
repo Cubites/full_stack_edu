@@ -10,9 +10,9 @@ module.exports = () => {
         passwordField: 'password'
     }, async (email, password, done) => {
         try{
-            const exUser = await Member.fineOne({ where: { email }});
+            const exUser = await Member.findOne({ where: { email }});
             if(exUser){
-                const result = await bcrypt.compare(password, exUser.password);
+                const result = await bcrypt.compare(password, exUser.password); // 함호화된 비밀번호 확인
                 if(result){
                     done(null, exUser);
                 }else{
