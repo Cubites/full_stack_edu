@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
-const Member = require('../models/member');
+const User = require('../models/user');
 
 const router = express.Router();
 
@@ -14,14 +14,14 @@ const router = express.Router();
         - 프로미스를 지원하는 함수이므로 await를 사용함
 */
 router.post('/join', isNotLoggedIn, async (req, res, next) => {
-    const { email,  nick, password } = req.body;
+    const { email, nick, password } = req.body;
     try{
-        const exUser = await Member.findOne({ where: { email }});
+        const exUser = await User.findOne({ where: { email }});
         if(exUser){ // 같은 이메일이 있는 경우 에러 출력
             return res.redirect('/join?error=exist');
         }
         const hash = await bcrypt.hash(password, 12);
-        await Member.create({
+        await User.create({
             email,
             nick,
             password: hash
@@ -59,7 +59,7 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
 
 // 로그아웃
 router.get('/logout', isLoggedIn, (req, res) => {
-    req.logout();
+    // req.logout();
     req.session.destroy(); // 세션 삭제
     res.redirect('/');
 });

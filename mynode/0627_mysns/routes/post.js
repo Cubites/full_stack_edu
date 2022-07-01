@@ -3,7 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
-const { Sns, Hash } = require('../models');
+const { Post, Hashtag } = require('../models');
 const { isLoggedIn } = require('./middlewares');
 
 const router = express.Router();
@@ -18,7 +18,7 @@ try{
 const upload = multer({
     storage: multer.diskStorage({
         destination: (req, file, db) => { // 파일이 업로드될 경로 설정
-            db(null, 'uploads');
+            db(null, 'uploads/');
         },
         filename: (req, file, cb) => {
             const ext = path.extname(file.originalname);
@@ -36,22 +36,22 @@ router.post('/img', isLoggedIn, upload.single('img'), (req, res) => {
 const upload2 = multer();
 router.post('/', isLoggedIn, upload2.none(), async (req, res, next) => {
     try{
-        console.log(req.member);
-        const sns = await Sns.create({
+        console.log(req.user);
+        const post = await Post.create({
             content: req.body.content,
             img: req.body.url,
-            UserId: req.member.id
+            UserId: req.user.id
         });
-        const hash = req.body.content.match(/#[^\s#]+/g);
-        if(hash){
+        const hashtags = req.body.content.match(/#[^\s#]+/g);
+        if(hashtags){
             const result = await Promise.all(
-                hash.map(tag => {
-                    return Hash.findOrCreate({
+                hashtags.map(tag => {
+                    return Hashtag.findOrCreate({
                         where: { title: tag.slice(1).toLowerCase()}
                     })
                 })
             );
-            await sns.addHash(result.map(r => r[0]));
+            await post.addHashtags(result.map(r => r[0]));
         }
         res.redirect('/');
     }catch(err){

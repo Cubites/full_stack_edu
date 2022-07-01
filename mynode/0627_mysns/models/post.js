@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-module.exports = class Sns extends Sequelize.Model {
+module.exports = class Post extends Sequelize.Model {
     static init(sequelize){
         return super.init({
             content: {
@@ -14,15 +14,15 @@ module.exports = class Sns extends Sequelize.Model {
             sequelize,
             timestamps: true,
             underscored: false,
-            modelName: 'Sns',
-            tableName: 'snss',
+            modelName: 'Post',
+            tableName: 'posts',
             paranoid: false,
             charset: 'utf8mb4',
             collate: 'utf8mb4_unicode_ci'
         })
     }
     static associate(db) {
-        db.Sns.belongsTo(db.Member);
-        db.Sns.belongsToMany(db.Hash, { through: 'PostHashtag'});
+        db.Post.belongsTo(db.User);
+        db.Post.belongsToMany(db.Hashtag, { through: 'PostHashtag'});
     }
 }

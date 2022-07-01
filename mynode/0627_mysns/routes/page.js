@@ -1,13 +1,13 @@
 const express = require('express');
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
-const { Sns, Member, Hash } = require('../models');
+const { Post, User, Hashtag } = require('../models');
 const router = express.Router();
 
 router.use((req, res, next) => {
-    res.locals.member = req.member;
-    res.locals.followerCount = req.member ? req.member.Followwers.length : 0;
-    res.locals.followingCount = req.member ? req.member.Followings.length : 0;
-    res.locals.followerIdList = req.member ? req.member.Followings.map(f => f.id) : [];
+    res.locals.user = req.user;
+    res.locals.followerCount = req.user ? req.user.Followers.length : 0;
+    res.locals.followingCount = req.user ? req.user.Followings.length : 0;
+    res.locals.followerIdList = req.user ? req.user.Followings.map(f => f.id) : [];
     next();
 });
 
@@ -23,19 +23,17 @@ router.get('/join', isNotLoggedIn,(req, res) => {
 
 router.get('/', async (req, res, next) => {
     try{
-        const snss = await Sns.findAll({
+        const posts = await Post.findAll({
             include:{
-                model: Member,
+                model: User,
                 attributes: ['id', 'nick']
             },
             order: [['createdAt', 'DESC']]
         });
         res.render('main', {
             title: 'MYSNS',
-            sns: snss
+            lists: posts
         });
-        console.log('유저' + user);
-        console.log('유저아이디' + user.id);
     }catch(err){
         console.error(err);
         next(err);
@@ -43,19 +41,19 @@ router.get('/', async (req, res, next) => {
 });
 
 router.get('/hashtag', async (req, res, next) => {
-    const query = req.query.hash;
+    const query = req.query.hashtag;
     if(!query){
         return res.redirect('/');
     }
     try{
-        const hash = await Hash.findOne({ where: { title: query }});
-        let lists = [];
-        if(hash){
-            lists = await hash.getLists({include: [{model: Member}]});
+        const hashtag = await Hashtag.findOne({ where: { title: query }});
+        let posts = [];
+        if(hashtag){
+            posts = await hashtag.getPosts({include: [{model: User}]});
         }
         return res.render('main', {
             title: `${query} | MYSNS`,
-            sns: lists
+            lists: posts
         })
     }catch(err){
         console.log(err);

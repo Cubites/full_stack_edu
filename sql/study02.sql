@@ -1,10 +1,16 @@
+drop database study02;
 create database study02;
 use study02;
 show tables;
 
-drop database study02;
 desc follow;
-desc hashs;
-desc members;
+desc hashtags;
 desc posthashtag;
-desc snss;
+desc posts;
+desc users;
+
+select * from follow;
+select * from hashtags;
+select * from posthashtag;
+select * from posts;
+select * from users;

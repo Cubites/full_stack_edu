@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 {% block content %}
-{% if user and user.id %}
+{% if user %}
 <!-- 글쓰기 -->
-<from id="writeForm" action="/post" method="post" enctype="multipart/form-data" class="input-form mt-5 border-1">
+<form id="writeForm" action="/post" method="post" enctype="multipart/form-data" class="input-form mt-5 border-1">
     <div class="p-4 bg-warning">
         <textarea class="form-control" rows="5" name="content" maxlength="200"></textarea>
     </div>
@@ -10,15 +10,15 @@
         <div class="row">
             <div class="col">
                 <img src="" id="img-preview" style="display:none" width="250" alt="미리보기">
-                <input id="img-url" type="hidden" name="url"/></div><br />
-                <input id="img-url" type="file" accept="image/*" value="업로드" />
+                <input id="img-url" type="hidden" name="url"/><br />
+                <input id="img" type="file" accept="image/*" />
             </div>
             <div class="col text-end">
                 <button type="submit" class="btn btn-secondary">등록</button>
             </div>
         </div>
     </div>
-</from>
+</form>
 <!-- /글쓰기 -->
 {% endif %}
 <!-- 검색 -->
@@ -38,11 +38,11 @@
 <ul class="list-group mt-3">
     {% for list in lists %}
     <li class="list-group-item p-4">
-        <input type="hidden" value="{{list.Member.id}}" class="umid">
+        <input type="hidden" value="{{list.User.id}}" class="umid">
         <input type="hidden" value="{{list.id}}" class="uid">
-        <div class="sns-author">{{list.Member.nick}}</div>
-        {% if not followerIdList.includes(list.Member.id) and list.Member.id !== user.id %}
-        <button class="btn btn-warning">팔로우하기</button>
+        <div class="sns-author">{{list.User.nick}}</div>
+        {% if not followerIdList.includes(list.User.id) and list.User.id !== user.id %}
+        <button class="btn btn-warning follower">팔로우하기</button>
         {% endif %}
         {% if list.img %}
         <img src="{{list.img}}" class="img-thumbnail d-block my-3 mx-auto" alt="섬네일">
@@ -51,4 +51,42 @@
     </li>
     {% endfor %}
 </ul>
+{% endblock %}
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js" integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    if(document.getElementById('img')){
+        document.getElementById('img').addEventListener('change', function(e){
+            const formData = new FormData();
+            // console.log(this, this.files);
+            formData.append('img', this.files[0]);
+            axios.post('/post/img', formData)
+                .then((res) => {
+                    document.getElementById('img-url').value = res.data.url;
+                    document.getElementById('img-preview').src = res.data.url;
+                    document.getElementById('img-preview').style.display = 'inline';
+                })
+                .catch((err) => console.error(err));
+        });
+    }
+
+    document.querySelectorAll('.follower').forEach(function(tag){
+        tag.addEventListener('click', () => {
+            const myId = document.querySelector('#my-id');
+            if(myId){
+                const userId = tag.parentNode.querySelector('.umid').value;
+                if(userId !== myId.value){
+                    if(confirm('팔로잉 하시겠습니까?')){
+                        axios.post(`/user/${userId}/follow`)
+                            .then(() => {
+                                location.reload();
+                            })
+                            .catch(err => console.error(err));
+                    }
+                }
+            }
+        })
+    });
+</script>
 {% endblock %}
