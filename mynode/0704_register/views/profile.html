@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %} 
+<ul class="list-group">
+   <li class="list-group-item text-center">
+       <img src="images/{{rs.newfileName}}" alt="{{rs.name}}" />  
+   </li>
+   <li class="list-group-item">
+       <label class="me-3">이름</label>
+         {{rs.name}}
+   </li>
+   <li class="list-group-item">
+       <label class="me-3">아이디</label>{{rs.id}}
+   </li>
+   <li class="list-group-item">
+       <label class="me-3">가입일</label>{{rs.creatDt}}</li>
+   <li class="list-group-item">
+      <label class="me-3">최근접속일</label>{{rs.updateDt}}</li>
+</ul> 
+<button type="button" class="btn btn-warning" onCLick="edt('{{rs._id}}')">수정</button>
+<button type="button" class="btn btn-danger" onclick="del('{{rs._id}}')">삭제</button>
+{% endblock %}

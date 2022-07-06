@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block content %} 
+
+<ul class="list-group">
+  {% for doc in docs %}
+    <li class="list-group-item">
+       <div class="row">
+          <div class="col-2">
+       <!-- {% if doc.fileSize > 0 %} -->
+       <img src="/image/{{doc.newfileName}}" alt="{{doc.name}}" height="150" />
+       {% else %} 
+       <div style="width:180px; height:150px; background:#ddd"></div>
+       {% endif %}
+          </div>
+          <div class="col-8">
+       <h3> {{doc.name}} </h3>
+       <p> <label>아이디</label>{{doc.id}} <span class="font-size:12px"> (가입일 : {{doc.creatDt}}, 최근로그인 : {{doc.updateDt}} )</span></p>        
+          </div>
+          <div class="col-2 d-flex align-items-center justify-content-center">
+              <button type="button" class="btn btn-warning me-3" onclick="edit('{{doc._id}}')">수정</button> 
+              <button type="button" class="btn btn-danger" onclick="del('{{doc._id}}')">삭제</button>
+          </div>
+      </div>
+     </li>
+  {% endfor %}
+</ul>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function edit(uid) {
+   window.location.href="/profile-edit/"+uid;
+}
+function del(uid) {
+   //window.location.href="/profile-del/"+uid;
+   if(confirm('정말로 삭제하시겠습니까?')){
+        //session을 갖고 있다 생각하고 링크로 삭제
+
+   }
+}
+</script>
+{% endblock %}

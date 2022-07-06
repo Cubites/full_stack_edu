@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+    <title>회원가입</title>
+</head>
+<body>
+   <div class="container">
+      <form name="form" 
+            method="post" 
+            enctype="multipart/form-data"
+            onsubmit="return multerform()">
+          <input type="text" name="userid" readonly placeholder="아이디" value="{{rs.id}}" /><br>
+          <input type="text" name="username" placeholder="이름" value="{{rs.name}}" /><br>
+          <input type="text" name="userpass" placeholder="비밀번호" /><br>
+          <input type="file" name="file" placeholder="이미지" /><br>
+          <input type="submit" value="회원수정" /><br>
+          <input type="hidden" name="uid" value="{{rs._id}}">
+          <input type="hidden" name="oldfilename" value="{{rs.newfileName}}">
+      </form>
+   </div>  
+   <script>
+      function multerform(){
+         const form = document.form;
+         if(form.file.value){
+            form.action = "/joinedtfile";
+         }else{
+            form.action = "/joinnonefile";
+         }
+      }
+   </script>
+</body>
+</html>
