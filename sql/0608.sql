@@ -1,6 +1,6 @@
-use studydb;
+use study01;
 
-create table members (
+create table member (
 	num int auto_increment primary key,
     userid varchar(50),
     userpass varchar(50),
@@ -10,10 +10,10 @@ create table members (
     userlevel int default 1
 ) charset=utf8mb4;
 
-desc members;
+desc member;
 
 insert into member (userid, userpass, username, userlevel) values
-	('master', '123456', '관리자', 99),
-    ('tester', '1234', '그냥회원', 1);
+	('master', '123456', '운영자', '99'),
+    ('tester', '1234', '그냥회원', '1');
     
 select * from member;
