@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "target": "ES6", // 컴파일 버전 지정
+        "module": "CommonJS"
+    }
+}
